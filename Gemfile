@@ -44,3 +44,5 @@ gem "will_paginate"
 gem "inherited_resources"
 gem "rspec-rails", :group => [:test, :development]
 gem "devise"
+gem "page_title_helper"
+gem "friendly_id"
