@@ -35,12 +35,12 @@ namespace :bundler do
     end
   end
 
-namespace :deploy do
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
-    end
+  namespace :deploy do
+    %w[start stop restart].each do |command|
+      desc "#{command} unicorn server"
+      task command, roles: :app, except: {no_release: true} do
+        run "/etc/init.d/unicorn_#{application} #{command}"
+      end
   end
 
   desc "creates database & database user"
@@ -66,6 +66,8 @@ namespace :deploy do
     sudo "wget --no-check-certificate 'https://raw.github.com/paulsutcliffe/stereosonica/master/config/database.example.yml' -O #{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
+
+  before "deploy:cold", "deploy:create_database"
   after "deploy:setup", "deploy:setup_config"
 
   task :symlink_config, roles: :app do
