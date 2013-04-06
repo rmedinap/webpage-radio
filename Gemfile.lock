@@ -128,6 +128,8 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -169,6 +171,7 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.13)
   rspec-rails
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn

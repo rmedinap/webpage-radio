@@ -23,12 +23,37 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
+namespace :bundler do
+    desc "|DarkRecipes| Installs bundler gem to your server"
+    task :setup, :roles => :app do
+      run "if ! gem list | grep --silent -e 'bundler'; then #{try_sudo} gem uninstall bundler; #{try_sudo} gem install --no-rdoc --no-ri bundler; fi"
+    end
+
+    desc "|DarkRecipes| Runs bundle install on the app server (internal task)"
+    task :install, :roles => :app, :except => { :no_release => true } do
+      run "cd #{current_path} && bundle install --deployment --without=development test"
+    end
+  end
+
 namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
     end
+  end
+
+  desc "creates database & database user"
+
+  task :create_database do
+    set :root_password, Capistrano::CLI.password_prompt("MySQL root password: ")
+    set :db_user, Capistrano::CLI.ui.ask("Application database user: ")
+    set :db_pass, Capistrano::CLI.password_prompt("Password: ")
+    set :db_name, Capistrano::CLI.ui.ask("Database name: ")
+
+    run "mysql --user=root --password=#{root_password} -e \"CREATE DATABASE IF NOT EXISTS #{db_name}\""
+    run "mysql --user=root --password=#{root_password} -e \"GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION\""
+
   end
 
   task :setup_config, roles: :app do
