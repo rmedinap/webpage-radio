@@ -6,7 +6,7 @@ set :application, "stereosonica"
 set :user, "paul"
 set :deploy_to, "/var/www/#{application}"
 set :deploy_via, :remote_cache
-set :use_sudo, true
+set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:paulsutcliffe/#{application}.git"
