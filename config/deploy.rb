@@ -35,14 +35,14 @@ ssh_options[:forward_agent] = true
     end
   end
 
-  namespace :deploy do
-    %w[start stop restart].each do |command|
-      desc "#{command} unicorn server"
-      task command, roles: :app, except: {no_release: true} do
-        run "/etc/init.d/unicorn_#{application} #{command}"
-        sudo "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
-      end
-  end
+  #namespace :deploy do
+  #  %w[start stop restart].each do |command|
+  #    desc "#{command} unicorn server"
+  #    task command, roles: :app, except: {no_release: true} do
+  #      run "/etc/init.d/unicorn_#{application} #{command}"
+  #      sudo "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
+  #    end
+  #end
 
   desc "creates database & database user"
 
