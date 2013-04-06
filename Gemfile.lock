@@ -53,6 +53,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    friendly_id (4.0.9)
     haml (4.0.2)
       tilt
     haml-rails (0.4)
@@ -88,6 +89,8 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     orm_adapter (0.4.0)
+    page_title_helper (2.1.0)
+      rails (>= 3.0.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -164,11 +167,13 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   devise
+  friendly_id
   haml
   haml-rails
   inherited_resources
   jquery-rails
   mysql2
+  page_title_helper
   rails (= 3.2.13)
   rspec-rails
   rvm-capistrano
