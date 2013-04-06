@@ -26,7 +26,9 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "rm /etc/nginx/sites-enabled/default"
+    if File.exist? '/etc/nginx/sites-enabled/default'
+      sudo "rm /etc/nginx/sites-enabled/default"
+    end
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     sudo "mkdir -p #{shared_path}/config"
