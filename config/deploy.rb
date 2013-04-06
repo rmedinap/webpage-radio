@@ -87,7 +87,7 @@ namespace :deploy do
   after "deploy", "deploy:restart_unicorn"
 
   task :restart_unicorn, roles: :app do
-    run "bundle install --binstubs"
+    run "cd #{current_path} && bundle install --binstubs"
     sudo "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
   end
 end
