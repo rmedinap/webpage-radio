@@ -21,9 +21,9 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases
+  #after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-namespace :bundler do
+  namespace :bundler do
     desc "|DarkRecipes| Installs bundler gem to your server"
     task :setup, :roles => :app do
       run "if ! gem list | grep --silent -e 'bundler'; then #{try_sudo} gem uninstall bundler; #{try_sudo} gem install --no-rdoc --no-ri bundler; fi"
@@ -83,5 +83,5 @@ namespace :bundler do
       exit
     end
   end
-  before "deploy", "deploy:check_revision"
+  #before "deploy", "deploy:check_revision"
 end
