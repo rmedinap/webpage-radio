@@ -1,0 +1,19 @@
+%h1 Listing soundclouds
+
+%table
+  %tr
+    %th Link
+    %th
+    %th
+    %th
+
+  - @soundclouds.each do |soundcloud|
+    %tr
+      %td= soundcloud.link
+      %td= link_to 'Show', soundcloud
+      %td= link_to 'Edit', edit_soundcloud_path(soundcloud)
+      %td= link_to 'Destroy', soundcloud, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Soundcloud', new_soundcloud_path

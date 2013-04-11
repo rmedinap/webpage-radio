@@ -46,3 +46,4 @@ gem "rspec-rails", :group => [:test, :development]
 gem "devise"
 gem "page_title_helper"
 gem "friendly_id"
+gem "paperclip"

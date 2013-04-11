@@ -1,0 +1,19 @@
+%h1 Listing itunes_players
+
+%table
+  %tr
+    %th Embed
+    %th
+    %th
+    %th
+
+  - @itunes_players.each do |itunes_player|
+    %tr
+      %td= itunes_player.embed
+      %td= link_to 'Show', itunes_player
+      %td= link_to 'Edit', edit_itunes_player_path(itunes_player)
+      %td= link_to 'Destroy', itunes_player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Itunes player', new_itunes_player_path

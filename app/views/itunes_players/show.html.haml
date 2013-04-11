@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Embed:
+  = @itunes_player.embed
+
+= link_to 'Edit', edit_itunes_player_path(@itunes_player)
+\|
+= link_to 'Back', itunes_players_path

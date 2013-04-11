@@ -1,4 +1,39 @@
 Stereosonica::Application.routes.draw do
+  resources :posts
+
+
+  resources :itunes_players
+
+
+  resources :fotos
+
+
+  resources :videos
+
+
+  resources :soundclouds
+
+
+  resources :auspiciadores
+
+
+  resources :programas
+
+
+  resources :contactos
+
+
+  resources :banners
+
+
+  resources :categoria
+
+
+  resources :djs
+
+
+  devise_for :admins
+
   root to: 'home#index'
 
   get "home/index"
