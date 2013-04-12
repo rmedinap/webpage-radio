@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "categoria/show" do
+describe "categorias/show" do
   before(:each) do
-    @categorium = assign(:categorium, stub_model(Categorium,
+    @categoria = assign(:categoria, stub_model(Categoria,
       :nombre => "Nombre"
     ))
   end

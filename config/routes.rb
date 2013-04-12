@@ -1,4 +1,7 @@
 Stereosonica::Application.routes.draw do
+  resources :categorias
+
+
   resources :posts
 
 
@@ -24,9 +27,6 @@ Stereosonica::Application.routes.draw do
 
 
   resources :banners
-
-
-  resources :categoria
 
 
   resources :djs

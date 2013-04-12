@@ -6,4 +6,7 @@ class Post < ActiveRecord::Base
   has_many :videos
 
   belongs_to :categoria
+
+  extend FriendlyId
+  friendly_id :titulo, use: :slugged
 end
