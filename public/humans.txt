@@ -1,9 +1,14 @@
 /* TEAM */
 
-Your title: Your name.
-Site: email, link to a contact form, etc.
-Twitter: your Twitter username.
-Location: City, Country.
+Developer, interface designer: Paul Sutcliffe.
+Site: paul@kosmyka.com
+Twitter: @paulyoyo
+Location: Lima, Peru.
+
+Front-end Engineer: Ricardo Castañeda
+Site: ricardo@kosmyka.com
+Twitter:
+Location: Lima, Peru.
 
 /* THANKS */
 
