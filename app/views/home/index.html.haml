@@ -1,3 +1,73 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
-= Rails.env
+= render '/scripts/isotope'
+= render '/scripts/royal_slider_init'
+
+%h2.page-title
+
+#slider.content
+  .royalSlider.rsDefault.length-3
+    - @diapositivas.each do |diapositiva|
+      .rsContent
+        = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva
+        = link_to diapositiva.pie_de_foto, 'google.com', :class => 'caption rsABlock'
+#noticias.region
+  %h2.title
+    %b
+      Noticias
+  .content
+    %ul#noticias-botones{:"data-option-key" => 'filter'}
+      -#
+        %li
+          = link_to 'Todos', '#filter', :class => 'active todos', :"data-filter" => '*'
+      %li
+        = link_to 'Banda de la semana', '#filter', :class => 'active banda', :"data-filter" => '.banda'
+      %li
+        = link_to 'Álbum de la semana', '#filter', :class => 'album', :"data-filter" => '.album'
+      %li
+        = link_to 'Reseñas', '#filter', :class => 'resenas', :"data-filter" => '.resenas'
+
+    %ul#noticias-listado
+      %li.banda
+        = image_tag 'images/img-noticia-index.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.album
+        = image_tag '/images/images/img-noticia-index-2.jpg'
+      %li.resenas
+        = image_tag '/images/images/img-noticia-index-3.jpg'
+      %li.album
+        = image_tag '/images/images/img-noticia-index-2.jpg'
+      %li.banda
+        = image_tag '/images/images/img-noticia-index.jpg'
+      %li.album
+        = image_tag '/images/images/img-noticia-index-2.jpg'
+      %li.resenas
+        = image_tag '/images/images/img-noticia-index-3.jpg'
+
+#mensaje-front.region
+  %h2.title
+    stereosonica
+    %b
+      radio
+  %p
+    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+
+#share.region
+  
+
+
+
+
+
+
+
+
+
+

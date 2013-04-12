@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Diapositiva.delete_all
+Diapositiva.create [{:pie_de_foto => 'Programming', :diapositiva_picture => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+#
+#Diapositiva.create [{:pie_de_foto => 'Programming', :diapositiva_picture => File.open(File.join(Rails.root, '/public/img-slider.jpg'))},
+#                {:pie_de_foto => 'Event'},
+#                {:pie_de_foto => 'Travel'},
+#                {:pie_de_foto => 'Music'},
+#                {:pie_de_foto => 'TV'}]

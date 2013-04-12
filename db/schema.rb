@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411030533) do
+ActiveRecord::Schema.define(:version => 20130412052410) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -41,21 +41,14 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
     t.datetime "logo_updated_at"
   end
 
-  create_table "banners", :force => true do |t|
-    t.string   "pie_de_foto"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "imagen_banner_file_name"
-    t.string   "imagen_banner_content_type"
-    t.integer  "imagen_banner_file_size"
-    t.datetime "imagen_banner_updated_at"
-  end
-
-  create_table "categoria", :force => true do |t|
+  create_table "categorias", :force => true do |t|
     t.string   "nombre"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "categorias", ["slug"], :name => "index_categorias_on_slug", :unique => true
 
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
@@ -63,6 +56,16 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
     t.text     "mensaje"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "diapositivas", :force => true do |t|
+    t.string   "pie_de_foto"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "diapositiva_picture_file_name"
+    t.string   "diapositiva_picture_content_type"
+    t.integer  "diapositiva_picture_file_size"
+    t.datetime "diapositiva_picture_updated_at"
   end
 
   create_table "djs", :force => true do |t|
@@ -76,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
   end
 
   create_table "fotos", :force => true do |t|
+    t.integer  "post_id"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "imagen_foto_file_name"
@@ -86,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
 
   create_table "itunes_players", :force => true do |t|
     t.text     "embed"
+    t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -93,9 +98,13 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
   create_table "posts", :force => true do |t|
     t.string   "titulo"
     t.text     "contenido"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "categoria_id"
+    t.string   "slug"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
+
+  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
 
   create_table "programas", :force => true do |t|
     t.string   "titulo"
@@ -106,12 +115,14 @@ ActiveRecord::Schema.define(:version => 20130411030533) do
 
   create_table "soundclouds", :force => true do |t|
     t.string   "link"
+    t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "videos", :force => true do |t|
     t.string   "link"
+    t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,4 +1,7 @@
 Stereosonica::Application.routes.draw do
+  resources :diapositivas
+
+
   resources :categorias
 
 
@@ -24,9 +27,6 @@ Stereosonica::Application.routes.draw do
 
 
   resources :contactos
-
-
-  resources :banners
 
 
   resources :djs
