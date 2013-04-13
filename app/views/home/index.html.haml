@@ -30,44 +30,7 @@
 
 
 		
-    %ul#noticias-botones{:"data-option-key" => 'filter'}
-      -#
-        %li
-          = link_to 'Todos', '#filter', :class => 'active todos', :"data-filter" => '*'
-      %li
-        = link_to 'Banda de la semana', '#filter', :class => 'active banda', :"data-filter" => '.banda'
-      %li
-        = link_to 'Álbum de la semana', '#filter', :class => 'album', :"data-filter" => '.album'
-      %li
-        = link_to 'Reseñas', '#filter', :class => 'resenas', :"data-filter" => '.resenas'
-
-
-
-    %ul#noticias-listado
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.album
-        = image_tag 'images/img-noticia-index-2.jpg'
-      %li.resenas
-        = image_tag 'images/img-noticia-index-3.jpg'
-      %li.album
-        = image_tag 'images/img-noticia-index-2.jpg'
-      %li.banda
-        = image_tag 'images/img-noticia-index.jpg'
-      %li.album
-        = image_tag 'images/img-noticia-index-2.jpg'
-      %li.resenas
-        = image_tag 'images/img-noticia-index-3.jpg'
+    = render 'megafolio'
 
 #mensaje-front.region
   %h2.title
