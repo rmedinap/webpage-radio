@@ -1,7 +1,8 @@
 = render '/scripts/isotope'
 = render '/scripts/royal_slider'
 = render '/scripts/royal_slider_init'
-
+= render '/scripts/megafolio'
+= render '/scripts/megafolio_init'
 
 #slider.region
   %div{class: 'royalSlider rsDefault'+ diapositivas_counter(@diapositivas) }
@@ -14,6 +15,21 @@
     %b
       Noticias
   .content
+
+
+    .filter_padder{:style => 'display:none'}
+      .filter_wrapper{style: 'max-width: 950px'}
+        .filter.selected{:"data-category" => 'cat-all'}
+          All
+        .filter{:"data-category" => 'cat-one'}
+          Banda
+        .filter{:"data-category" => 'cat-two'}
+          Álbum
+        .filter{:"data-category" => 'cat-three'}
+          Reseñas
+
+
+		
     %ul#noticias-botones{:"data-option-key" => 'filter'}
       -#
         %li
@@ -24,6 +40,8 @@
         = link_to 'Álbum de la semana', '#filter', :class => 'album', :"data-filter" => '.album'
       %li
         = link_to 'Reseñas', '#filter', :class => 'resenas', :"data-filter" => '.resenas'
+
+
 
     %ul#noticias-listado
       %li.banda
