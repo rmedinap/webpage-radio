@@ -1,14 +1,14 @@
 
 
-$bg-body:                         url(../images/backgrounds/bg-body.jpg) repeat;
-$bg-footer:                       url(../images/backgrounds/bg-footer-top.jpg) no-repeat center 0px, url(../images/backgrounds/bg-footer-x.jpg) repeat-x 0 0, url(../images/backgrounds/bg-footer.jpg) repeat;
+$bg-body:                         url(backgrounds/bg-body.jpg) repeat;
+$bg-footer:                       url(backgrounds/bg-footer-top.jpg) no-repeat center 0px, url(backgrounds/bg-footer-x.jpg) repeat-x 0 0, url(backgrounds/bg-footer.jpg) repeat;
 $bg-footer-inner:                 none;
-$bg-postscript-bottom:            url(../images/backgrounds/bg-postscript-bottom.jpg) repeat;
-$bg-postscript-bottom-inner:      url(../images/backgrounds/bg-postscript-bottom-inner.jpg) no-repeat center -33px;
-$bg-slider:                       url(../images/backgrounds/bg-slider.png) no-repeat 50% 0;
-$multiple:                        url(../images/backgrounds/multiple.png) no-repeat;
-$bevel-vertical:                  url(../images/backgrounds/bevel-1.jpg) no-repeat 100% 50%;
-$bevel-region:                    url(../images/backgrounds/bevel-region.png) no-repeat 50% 0%;
+$bg-postscript-bottom:            url(backgrounds/bg-postscript-bottom.jpg) repeat;
+$bg-postscript-bottom-inner:      url(backgrounds/bg-postscript-bottom-inner.jpg) no-repeat center -33px;
+$bg-slider:                       url(backgrounds/bg-slider.png) no-repeat 50% 0;
+$multiple:                        url(backgrounds/multiple.png) no-repeat;
+$bevel-vertical:                  url(backgrounds/bevel-1.jpg) no-repeat 100% 50%;
+$bevel-region:                    url(backgrounds/bevel-region.png) no-repeat 50% 0%;
 
 $space:                           5px;
 $space-vertical:                  $space*3;

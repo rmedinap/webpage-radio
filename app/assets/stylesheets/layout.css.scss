@@ -60,7 +60,7 @@ footer {
   .rsDefault.rsHor {
     .rsBullets {background: none; bottom: -30px; overflow: visible;
       .rsBullet {
-        @include inline-block;  border-radius: 0; margin: 0 1px 0 0; background: $gray;
+        @include inline-block;  border-radius: 0; margin: 0; background: $gray;
         cursor: pointer;
         &.rsNavSelected {
           background: $black; cursor: default;

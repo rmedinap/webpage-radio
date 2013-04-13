@@ -1,10 +1,13 @@
 = render '/scripts/isotope'
+= render '/scripts/royal_slider'
 = render '/scripts/royal_slider_init'
 
 %h2.page-title
 
+
+
 #slider.content
-  .royalSlider.rsDefault.length-3
+  %div{class: 'royalSlider rsDefault'+ diapositivas_counter(@diapositivas) }
     - @diapositivas.each do |diapositiva|
       .rsContent
         = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva
@@ -29,27 +32,27 @@
       %li.banda
         = image_tag 'images/img-noticia-index.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.album
-        = image_tag '/images/images/img-noticia-index-2.jpg'
+        = image_tag 'images/img-noticia-index-2.jpg'
       %li.resenas
-        = image_tag '/images/images/img-noticia-index-3.jpg'
+        = image_tag 'images/img-noticia-index-3.jpg'
       %li.album
-        = image_tag '/images/images/img-noticia-index-2.jpg'
+        = image_tag 'images/img-noticia-index-2.jpg'
       %li.banda
-        = image_tag '/images/images/img-noticia-index.jpg'
+        = image_tag 'images/img-noticia-index.jpg'
       %li.album
-        = image_tag '/images/images/img-noticia-index-2.jpg'
+        = image_tag 'images/img-noticia-index-2.jpg'
       %li.resenas
-        = image_tag '/images/images/img-noticia-index-3.jpg'
+        = image_tag 'images/img-noticia-index-3.jpg'
 
 #mensaje-front.region
   %h2.title
