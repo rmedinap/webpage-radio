@@ -1,9 +1,22 @@
 	
 .container
+  .megafolio-tabs
+    .filter_padder
+      .filter_wrapper{style: 'max-width: 950px'}
+        .filter.selected{:"data-category" => 'cat-all'}
+          All
+        .filter{:"data-category" => 'cat-banda'}
+          Banda
+        .filter{:"data-category" => 'cat-album'}
+          Álbum
+        .filter{:"data-category" => 'cat-resenas'}
+          Reseñas
   .megafolio-container
-    %div#entry-1.mega-entry{:"data-src" => 'images/image1.jpg', :"data-width" => '320', :"data-height" => '240'}
-    %div#entry-2.mega-entry{:"data-src" => 'images/image1.jpg', :"data-width" => '320', :"data-height" => '240'}
-    %div#entry-3.mega-entry{:"data-src" => 'images/image1.jpg', :"data-width" => '320', :"data-height" => '240'}
+
+
+    %div#entry-1.mega-entry.cat-all.cat-banda{:"data-src" => 'assets/megafolio/images/image1.jpg', :"data-width" => '320', :"data-height" => '240'}
+    %div#entry-2.mega-entry.cat-all.cat-album{:"data-src" => 'assets/megafolio/images/image2.jpg', :"data-width" => '320', :"data-height" => '240'}
+    %div#entry-3.mega-entry.cat-all.cat-resenas{:"data-src" => 'assets/megafolio/images/image3.jpg', :"data-width" => '320', :"data-height" => '240'}
 
 
 
@@ -25,3 +38,14 @@
      box-sizing: border-box;
      -webkit-box-sizing: border-box;
   }
+
+:javascript
+  jQuery(document).ready(function() {
+    var api=jQuery('.megafolio-container').megafoliopro({});
+
+    // CALL FILTER FUNCTION IF ANY FILTER HAS BEEN CLICKED
+    jQuery('.filter').click(function() {
+      api.megafilter(jQuery(this).data('category'));   
+    });
+
+  });
