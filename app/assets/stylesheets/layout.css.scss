@@ -7,18 +7,28 @@ img {vertical-align: top}
 
 ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 
-.region {background: $bevel-region; padding: 60px 0 40px}
+.region {
+  background: $bevel-region; padding: 40px 0 60px;
+}
+  #slider.region {
+    padding-top: 0;
+ }
 .inner {margin: 0 10px; padding: $space-vertical 0}
+#content {padding-top: 20px}
 
 h2.title {
-  text-align: center; font-size: 45px; padding-bottom: 10px;
+  text-align: center; font-size: 45px; padding-bottom: 40px; line-height: 100%;
   b {
     font-weight: bolder;
   }
 }
 
 .content {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
+}
+
+#wrapper {
+  background: $bg-slider; 
 }
 
 header {
@@ -49,7 +59,9 @@ footer {
 }
 
 #slider {
-  background: $bg-slider; 
+  .royalSlider {
+    padding-bottom: 20px;
+  }
   .rsDefault.rsHor {
     .rsArrowIcn {
       @include size(63px, 63px); background: $multiple; margin: 0; top: 190px;
@@ -83,6 +95,11 @@ footer {
     &.length-10 .rsBullet {@include size(33%, 5px)}
   }
 } 
+
+.caption {
+  background: $black; color: white; text-transform: uppercase; font-size: 24px; padding: 10px 20px; font-weight: lighter;
+}
+
 #mensaje-front {
   p {
     text-align: center; font-style: italic; font-weight: lighter; font-size: 20px;
@@ -90,6 +107,7 @@ footer {
 }
 #noticias-botones {
   text-align: center;
+  padding-bottom: 30px;
   li, a {
     @include inline-block;
   }

@@ -2,11 +2,8 @@
 = render '/scripts/royal_slider'
 = render '/scripts/royal_slider_init'
 
-%h2.page-title
 
-
-
-#slider.content
+#slider.region
   %div{class: 'royalSlider rsDefault'+ diapositivas_counter(@diapositivas) }
     - @diapositivas.each do |diapositiva|
       .rsContent

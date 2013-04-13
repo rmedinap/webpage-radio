@@ -41,35 +41,36 @@
 
 
   %body{id: bodyid, class: bodyclass}
-    - if notice
-      %p.notice= notice
-    .container
-      %header.main.sixteen.columns{:role => 'banner'}
-        .inner
-          %h1#logo
-            = link_to image_tag('logo.png'), '/'
-      %nav#main-menu.sixteen.columns
-        = render '/layouts/menu'
-      %section#content.sixteen.columns.region{:role => 'main'}
-        = yield
- 
-    #postscript-bottom
-      .container 
-        %p 
-          stereosonica
-          %b 
-            radio
-    %footer.main.sixteen.columns
-      #footer-top
-        .container
+    #wrapper
+      - if notice
+        %p.notice= notice
+      .container
+        %header.main.sixteen.columns{:role => 'banner'}
+          .inner
+            %h1#logo
+              = link_to image_tag('logo.png'), '/'
+        %nav#main-menu.sixteen.columns
           = render '/layouts/menu'
-          = render '/shared/follow_us'
-      #footer-bottom
-        .container
-          #copyright
-            © 2013 Todos los derechos reservados, Stereosonica.
-          #autor
-            DISEÑO Y DESARROLLO WEB POR 
-            =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
+        %section#content.sixteen.columns.region{:role => 'main'}
+          = yield
+ 
+      #postscript-bottom
+        .container 
+          %p 
+            stereosonica
+            %b 
+              radio
+      %footer.main.sixteen.columns
+        #footer-top
+          .container
+            = render '/layouts/menu'
+            = render '/shared/follow_us'
+        #footer-bottom
+          .container
+            #copyright
+              © 2013 Todos los derechos reservados, Stereosonica.
+            #autor
+              DISEÑO Y DESARROLLO WEB POR 
+              =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
 
 
