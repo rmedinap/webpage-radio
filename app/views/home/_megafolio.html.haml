@@ -11,7 +11,7 @@
           Álbum de la semana
         .filter.resenas{:"data-category" => 'resenas'}
           Reseñas
-  .megafolio-container
+  .megafolio-container.te
 
 
     #entry-1.mega-entry.cat-all.banda{:"data-src" => 'assets/megafolio/images/image1.jpg', :"data-width" => '230', :"data-height" => '170'}
@@ -29,17 +29,24 @@
 
       // socialbar
       %span.mega-socialbar  
-        .mega-leftfloat
+        %span.mega-leftfloat
           Share this
-        = link_to '1', '#', class: 'mega-soc mega-facebook mega-leftfloat'
-        = link_to '2', '#', class: 'mega-soc mega-twitter mega-leftfloat'
+
+        = content_tag(:a, '#') do
+          %span.mega-soc.mega-facebook.mega-leftfloat
+            
+        = content_tag(:a, '#') do
+          %span.mega-soc.mega-twitter.mega-leftfloat
+               
         .mega-show-more.mega-soc.mega-more.mega-rightfloat
         = content_tag(:a, '#') do
-          %span.mega-soc.mega-like.mega-rightfloat
-            2
+          .mega-soc.mega-like.mega-rightfloat
+            %span
+              2
         = content_tag(:a, '#') do
-          %span.mega-soc.mega-comments.mega-rightfloat
-            3     
+          .mega-soc.mega-comments.mega-rightfloat
+            %span
+              3     
 
 
 
