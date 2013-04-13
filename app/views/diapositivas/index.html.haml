@@ -1,0 +1,19 @@
+%h1 Listing diapositivas
+
+%table
+  %tr
+    %th Pie de foto
+    %th
+    %th
+    %th
+
+  - @diapositivas.each do |diapositiva|
+    %tr
+      %td= diapositiva.pie_de_foto
+      %td= link_to 'Show', diapositiva
+      %td= link_to 'Edit', edit_diapositiva_path(diapositiva)
+      %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Diapositiva', new_diapositiva_path

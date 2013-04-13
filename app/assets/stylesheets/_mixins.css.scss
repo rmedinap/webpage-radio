@@ -1,0 +1,55 @@
+
+@mixin button {
+  padding: $space $space*3;
+  @include inline-block;
+  font-size: $font-size-2;
+  margin-bottom: $space-vertical;
+}
+
+
+
+// core 
+@mixin full-width {
+  width: 100%; float: left; clear: left;
+}
+
+@mixin size($width, $height) {
+  width: $width; height: $height;
+}
+
+@mixin absolute($side-horizontal, $side-vertical, $coord-x, $coord-y) {
+  position: absolute;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+@mixin relative($side-vertical, $side-horizontal, $coord-y, $coord-x) {
+  position: relative;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; vertical-align: top;
+}
+
+@mixin min-height($value) {
+  min-height: $value;
+  *height: auto !important;
+  height: $value;
+}
+
+@mixin box-sizing($value) {
+  -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
+}
+
+@mixin clearfix2 {
+  content: "."; display: block; line-height: 0; clear: both; visibility: hidden; height: 0;
+  &:after {
+    *zoom: 1;
+  }
+}
+
+
+

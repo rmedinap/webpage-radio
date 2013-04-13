@@ -1,0 +1,211 @@
+body {font: normal normal 16px/145% 'Open Sans', sans-serif; background: $bg-body}
+h1, h2, h3, h4, h5, h6 {font-family: 'Open Sans', sans-serif; font-weight: 400; color: $black}
+p, span {color: $black; font-family: 'Open Sans', sans-serif}
+p {margin-bottom: 15px; font-weight: lighter}
+a {text-decoration: none}
+img {vertical-align: top}
+
+ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
+
+.region {background: $bevel-region; padding: 60px 0 40px}
+.inner {margin: 0 10px; padding: $space-vertical 0}
+
+h2.title {
+  text-align: center; font-size: 45px; padding-bottom: 10px;
+  b {
+    font-weight: bolder;
+  }
+}
+
+.content {
+  padding-top: 50px;
+}
+
+header {
+  height: 135px; position: relative;
+  #logo {@include absolute(top, left, 35px, 0)}
+}
+
+footer {
+  background: $bg-footer; * {color: $white; font-weight: lighter} a, a:visited {color: orange}
+  #footer-top {border-bottom: $bevel-border-bottom;
+    .container {
+      min-height: 250px; padding-top: 100px;
+      .menu {
+        background: $bevel-vertical; @include inline-block; padding-top: 10px;
+        li { padding: 0 30px 10px 0; text-align: right;
+          a {
+            color: white; text-transform: uppercase; font-weight: lighter;
+            &:hover {color: $cyan}
+          }
+        }
+      }
+    }
+  }
+  #footer-bottom {
+    border-top: $bevel-border-top; font-size: 11px; padding: 10px 0;
+    #copyright {float: left} #autor {float: right}
+  }
+}
+
+#slider {
+  background: $bg-slider; 
+  .rsDefault.rsHor {
+    .rsArrowIcn {
+      @include size(63px, 63px); background: $multiple; margin: 0; top: 190px;
+    }
+    .rsArrowLeft .rsArrowIcn {background-position: -13px -181px; left: 10px }
+    .rsArrowRight .rsArrowIcn {background-position: -98px -181px; left: auto; right: 10px }
+  }
+  .rsDefault.rsHor {
+    .rsBullets {background: none; bottom: -30px; overflow: visible;
+      .rsBullet {
+        @include inline-block;  border-radius: 0; margin: 0 1px 0 0; background: $gray;
+        cursor: pointer;
+        &.rsNavSelected {
+          background: $black; cursor: default;
+        }
+        span {text-align: right;
+          display: block; font-size: 11px; color: $black; @include size(100%, 15px);
+          position: relative; top: -15px;
+        }
+      }
+    }
+    &.length-1 .rsBullet {@include size(100%, 5px)}
+    &.length-2 .rsBullet {@include size(50%, 5px)}
+    &.length-3 .rsBullet {@include size(33%, 5px)}
+    &.length-4 .rsBullet {@include size(25%, 5px)}
+    &.length-5 .rsBullet {@include size(33%, 5px)}
+    &.length-6 .rsBullet {@include size(33%, 5px)}
+    &.length-7 .rsBullet {@include size(33%, 5px)}
+    &.length-8 .rsBullet {@include size(33%, 5px)}
+    &.length-9 .rsBullet {@include size(33%, 5px)}
+    &.length-10 .rsBullet {@include size(33%, 5px)}
+  }
+} 
+#mensaje-front {
+  p {
+    text-align: center; font-style: italic; font-weight: lighter; font-size: 20px;
+  }
+}
+#noticias-botones {
+  text-align: center;
+  li, a {
+    @include inline-block;
+  }
+  a {
+    padding: 7px 18px; color: white; font-weight: lighter; 
+    &.banda {background: $violet;}
+    &.album {background: $green; }
+    &.resenas {background: $red; }
+  }
+}
+#noticias-listado {
+  width: 110%;
+  li {
+    margin: 0 7px 7px 0;
+  }
+}
+#postscript-bottom {
+   background: $bg-postscript-bottom;
+  .container {
+    min-height: 450px; background: $bg-postscript-bottom-inner; 
+    p {
+      font-size: 100px; line-height: 100%; color: black; text-align: center; padding: 180px 0 160px; margin: 0;
+      b {font-weight: bold}
+    }
+  }
+}
+
+#main-menu {
+ background: $cyan;
+ ul, li, a {
+  @include inline-block; margin: 0;
+  }
+  a {
+    width: 155px; text-align: center; color: white; padding: 15px 0; text-transform: uppercase; border-right: 1px solid white;
+  }
+}
+
+.social-links {
+ padding-top: 5px;
+ li {
+    @include inline-block; vertical-align: middle;
+    a {
+      background: $multiple; display: block;
+    }
+  }
+
+  #main-menu & {
+    float: right;  
+      li {
+        a {
+          @include size(30px, 40px); padding: 0; border: 0;
+          &.apple {background-position: -13px -8px}
+          &.blackberry {background-position: -73px -8px}
+          &.android {background-position: -140px -8px}
+          &.tunein {background-position: -210px -8px}
+       }
+    }
+  }
+  footer.main & {
+    display: none;
+    &.follow { float: right; display: block; text-align: center; padding-top: 20px;
+      li {margin-left: 20px;
+        a {
+          @include size(34px, 40px); 
+          &.youtube {background-position: -280px -8px} 
+          &.twitter {background-position: -280px-$bg_position_follow -8px}   
+          &.facebook {background-position: -280px-$bg_position_follow*2  -8px}
+          &.rss {background-position: -280px-$bg_position_follow*3  -8px}
+          &.email {background-position: -280px-$bg_position_follow*4  -8px}
+        }
+      }
+    }
+  }
+}
+
+form {
+  input, textarea, button {background: $multiple;  width: 300px; height: 100px; border: 0; @include inline-block}
+  label {text-transform: uppercase; color: $black; @include inline-block; width: 90px; padding: 20px 5px 0 0; text-align: right}
+  .field {
+    input {background-position: -10px -260px; padding: 20px 25px 20px 35px; @include size(300px, 20px);
+      &:focus {background-position: -380px -259px}
+    }
+    textarea {background-position: -10px -340px; padding: 20px 25px 20px 35px; @include size(300px, 170px);
+      &:focus {
+        background-position: -380px -340px;
+      }
+    }
+  }
+  .actions {
+    input, button {background-position: -174px -565px; @include size(194px, 0px); padding-top: 60px; overflow: hidden; float: right;
+    cursor: pointer}
+  }
+}
+
+.button {
+  &.default {
+    padding: 10px 20px; text-align: center; background: $cyan; color: white; @include inline-block; font-size: 18px;
+    font-weight: lighter;
+  }
+  &.italic {font-style: italic}
+  &.full {display: block}
+}
+
+#noticia {
+  &.show {
+    article {
+      h1.title {border-bottom: 1px solid white; display: block; padding: 15px; text-transform: uppercase; color: white}
+      p {color: white; }
+      .inner {padding: 15px; margin: 0}
+      background: $cyan; color: white; padding: 10px 0;
+    }
+  }
+}
+#contacto {
+  p {
+    text-align: right; color: $black; font-size: 12px; text-transform: uppercase;
+  }
+}
+

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Pie de foto:
+  = @diapositiva.pie_de_foto
+
+= link_to 'Edit', edit_diapositiva_path(@diapositiva)
+\|
+= link_to 'Back', diapositivas_path
