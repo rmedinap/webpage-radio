@@ -32,6 +32,7 @@
   display: inline-block;
   *display: inline;
   *zoom: 1; vertical-align: top;
+  float: none;
 }
 
 @mixin min-height($value) {

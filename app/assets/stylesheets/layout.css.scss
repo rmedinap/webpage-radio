@@ -1,6 +1,6 @@
 body {font: normal normal 16px/145% 'Open Sans', sans-serif; background: $bg-body}
 h1, h2, h3, h4, h5, h6 {font-family: 'Open Sans', sans-serif; font-weight: 400; color: $black}
-p, span {color: $black; font-family: 'Open Sans', sans-serif}
+p, div, span {color: $black; font-family: 'Open Sans', sans-serif}
 p {margin-bottom: 15px; font-weight: lighter}
 a {text-decoration: none}
 img {vertical-align: top}
@@ -108,11 +108,13 @@ footer {
 #noticias-botones {
   text-align: center;
   padding-bottom: 30px;
-  li, a {
+  li, a, .filter {
     @include inline-block;
   }
-  a {
-    padding: 7px 18px; color: white; font-weight: lighter; 
+  a, .filter {
+    padding: 7px 18px; color: white; font-weight: lighter; line-height: 100%; font-size: 16px;
+    margin: 0;
+    &.all {background: black}
     &.banda {background: $violet;}
     &.album {background: $green; }
     &.resenas {background: $red; }
