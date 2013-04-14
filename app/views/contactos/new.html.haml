@@ -1,5 +1,13 @@
-%h1 New contacto
+%h2.title
+  = page_title! 'Contáctanos'
 
-= render 'form'
+.content
+  .eight.columns.alpha
+    %p
+      Contacto
+    = link_to 'info@stereosonica.com', '/', :class => 'button default italic full'
+  .eight.columns.omega
+    %p
+      Envíanos un mensaje
+    = render 'form'
 
-= link_to 'Back', contactos_path

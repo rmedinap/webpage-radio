@@ -1,3 +1,4 @@
+# coding: utf-8
 class ContactosController < InheritedResources::Base
   before_filter :authenticate_user!, :except => [:new, :create]
   
@@ -9,7 +10,7 @@ class ContactosController < InheritedResources::Base
         ContactosMailer.confirmacion_de_contacto(@contacto).deliver
         ContactosMailer.notificacion_de_contacto(@contacto).deliver
 
-        flash[:notice] = "Tu mensaje fue enviado con éxito."
+        flash[:notice] = "Tu mensaje fue enviado con exito."
         redirect_to new_contacto_path
       end
 
