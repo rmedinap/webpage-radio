@@ -1,4 +1,7 @@
 Stereosonica::Application.routes.draw do
+  resources :quienes_somos
+
+
   resources :diapositivas
 
 

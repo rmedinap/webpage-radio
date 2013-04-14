@@ -1,4 +1,4 @@
-= form_for @dj do |f|
+= form_for @dj, html: {multipart: true} do |f|
   - if @dj.errors.any?
     #error_explanation
       %h2= "#{pluralize(@dj.errors.count, "error")} prohibited this dj from being saved:"
@@ -9,5 +9,8 @@
   .field
     = f.label :nombre
     = f.text_field :nombre
+  .field
+    = f.label :imagen_dj
+    = f.file_field :imagen_dj
   .actions
     = f.submit 'Save'

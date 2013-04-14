@@ -1,0 +1,16 @@
+= form_for @quienes_somos do |f|
+  - if @quienes_somos.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@quienes_somos.errors.count, "error")} prohibited this quienes_somos from being saved:"
+      %ul
+        - @quienes_somos.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :descripcion
+    = f.text_area :descripcion
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  .actions
+    = f.submit 'Save'

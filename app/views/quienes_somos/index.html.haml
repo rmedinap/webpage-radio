@@ -1,0 +1,16 @@
+.region
+  %h2.title
+    = page_title! 'Quiénes Somos'
+  .content
+    =# paragraph(@quienes_somos_first.descripcion)
+
+.region.dj-list
+  %h2.title
+    los dj's
+  %ul.content 
+    - @dj_list.each do |dj|
+      %li
+        .field-image
+          = link_to image_tag(dj.imagen_dj(:index)), dj
+        %h3.button
+          = dj.nombre

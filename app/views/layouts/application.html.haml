@@ -6,7 +6,7 @@
 %html.no-js
   / <![endif]
   %head
-    %title "Rails App"
+    %title= page_title
     == <meta name="keywords" content="" />
     == <meta name="description" content="" />
     == <meta name="googlebot" content="index,follow" />
@@ -28,7 +28,8 @@
     = stylesheet_link_tag 'application.css'
     = yield :css
 
-    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'
+    =# javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'
+    = javascript_include_tag 'jquery.min.js'
     = yield :javascript
 
     /[if lt IE 9]

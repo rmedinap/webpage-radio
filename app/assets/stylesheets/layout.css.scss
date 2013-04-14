@@ -229,3 +229,30 @@ form {
   }
 }
 
+
+p {
+  #quienes_somos #content & {text-align: center}
+}
+
+.dj-list {
+  ul {
+    li, img {
+      @include border-radius(100px);
+      @include inline-block;
+    }
+    li {
+      @include size(188px, 188px);
+      border: $border-bold solid transparent;
+      &:hover {
+        border-color: $cyan;
+      }
+      .field-image {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.button {
+  @include button;
+}
