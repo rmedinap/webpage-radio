@@ -243,16 +243,26 @@ p {
     li {
       @include size(188px, 188px);
       border: $border-bold solid transparent;
+      margin: 0 10px;
+      -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; 
+      -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
       &:hover {
         border-color: $cyan;
+        .button {top: 20px; opacity: 1; *filter: alpha(opacity=100)}
       }
       .field-image {
         overflow: hidden;
+      }
+      .button {
+        width: 176px; top: -50px;
+        position: relative; left: -10px; margin-top: 10px; opacity: 0; *filter: alpha(opacity=0);
+      -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; 
+      -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
       }
     }
   }
 }
 
 .button {
-  @include button;
+  @include button-triangle;
 }

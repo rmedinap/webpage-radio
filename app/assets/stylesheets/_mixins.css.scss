@@ -10,8 +10,16 @@
 @mixin triangle {
   &:after {
     border-color: transparent transparent $cyan transparent;
-    
+    border-style: solid;
+    border-width: 10px;  
+    content:"";
+    @include absolute(left, bottom, 92px, 100%);
   }
+}
+
+@mixin button_triangle {
+  @include button; @include triangle;
+  margin-top: 10px;
 }
 
 
