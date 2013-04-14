@@ -256,8 +256,8 @@ p {
       .button {
         width: 176px; top: -50px;
         position: relative; left: -10px; margin-top: 10px; opacity: 0; *filter: alpha(opacity=0);
-      -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; 
-      -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715); -webkit-transition: all 0.3s ease-out; 
+      -o-transition: all 0.3s ease-out; transition: all 0.3s $easeInBack;
       }
     }
   }
