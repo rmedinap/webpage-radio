@@ -1,13 +1,13 @@
-class CreatePosts < ActiveRecord::Migration
+class CreateNoticias < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
+    create_table :noticias do |t|
       t.string :titulo
       t.text :contenido
+      t.string :autor
       t.integer :categoria_id
       t.string :slug
 
       t.timestamps
     end
-    add_index :posts, :slug, unique: true
   end
 end

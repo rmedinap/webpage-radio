@@ -1,5 +1,8 @@
-class Post < ActiveRecord::Base
-  attr_accessible :contenido, :titulo
+class Noticia < ActiveRecord::Base
+
+  attr_accessible :autor, :contenido, :titulo, :fotos_attributes
+
+
   has_many :fotos
   has_many :itunes_players
   has_many :soundclouds
@@ -9,4 +12,7 @@ class Post < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :titulo, use: :slugged
+
+
+  accepts_nested_attributes_for :fotos, :allow_destroy => true
 end

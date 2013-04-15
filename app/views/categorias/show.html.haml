@@ -4,6 +4,15 @@
   %b Nombre:
   = @categoria.nombre
 
+%div
+  - @posts.each do |post|
+    = post.titulo
+    %br
+
+  
+
 = link_to 'Edit', edit_categoria_path(@categoria)
 \|
 = link_to 'Back', categorias_path
+
+= link_to 'Crear', new_categoria_post_path(@categoria)

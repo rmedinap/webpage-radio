@@ -1,0 +1,23 @@
+= form_for [@categoria, @noticia], html: {multipart: true} do |f|
+  - if @noticia.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@noticia.errors.count, "error")} prohibited this noticia from being saved:"
+      %ul
+        - @noticia.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :titulo
+    = f.text_field :titulo
+  .field
+    = f.label :contenido
+    = f.text_area :contenido
+  .field
+    = f.label :autor
+    = f.text_field :autor
+  .field
+    = f.label :categoria_id
+    = f.number_field :categoria_id
+  = nested_form_for @noticia do |f| 
+  .actions
+    = f.submit 'Save'

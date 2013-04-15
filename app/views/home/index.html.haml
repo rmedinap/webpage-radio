@@ -4,6 +4,8 @@
 = render '/scripts/megafolio'
 = render '/scripts/megafolio_init'
 
+- page_title! 'Stereosonica Radio'
+
 #slider.region
   %div{class: 'royalSlider rsDefault'+ diapositivas_counter(@diapositivas) }
     - @diapositivas.each do |diapositiva|

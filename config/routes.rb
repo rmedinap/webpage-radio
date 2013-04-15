@@ -1,26 +1,24 @@
 Stereosonica::Application.routes.draw do
+
+
   resources :quienes_somos
 
 
   resources :diapositivas
 
-
-  resources :categorias
-
-
-  resources :posts
-
-
-  resources :itunes_players
-
-
-  resources :fotos
+  resources :noticias
+  resources :categorias do
+    resources :noticias do
+      resources :itunes_players
+      resources :soundclouds
+      resources :fotos
+      resources :videos
+    end
+  end
 
 
-  resources :videos
 
 
-  resources :soundclouds
 
 
   resources :auspiciadores

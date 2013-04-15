@@ -1,3 +1,4 @@
+
 	
 #content-megafolio
   #noticias-botones.megafolio-tabs
@@ -12,45 +13,42 @@
         .filter.resenas{:"data-category" => 'resenas'}
           Reseñas
   .megafolio-container.te
+    - @noticias_banda.each do |noticia|
+      .mega-entry.cat-all.banda{:"data-src" => 'assets/megafolio/images/image1.jpg', :"data-width" => '230', :"data-height" => '170'}
+        // covercaption
+        .mega-covercaption.mega-square-top.mega-landscape-left.mega-portrait-bottom.mega-white.mega-withsocialbar.mega-smallcaptions
+          .mega-title
+            Title
+          .mega-date
+            Enero
+          %p
 
-    #entry-1.mega-entry.cat-all.banda{:"data-src" => 'assets/megafolio/images/image1.jpg', :"data-width" => '230', :"data-height" => '170'}
-      // covercaption
-      .mega-covercaption.mega-square-top.mega-landscape-left.mega-portrait-bottom.mega-white.mega-withsocialbar.mega-smallcaptions
-        .mega-title
-          Title
-        .mega-date
-          Enero
-        %p
-          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua...
+        // socialbar
+        %span.mega-socialbar  
+          %span.mega-leftfloat
+            Share this
 
+          = content_tag(:a, '#') do
+            %span.mega-soc.mega-facebook.mega-leftfloat
+              
+          = content_tag(:a, '#') do
+            %span.mega-soc.mega-twitter.mega-leftfloat
+                 
+          .mega-show-more.mega-soc.mega-more.mega-rightfloat
+          = content_tag(:a, '#') do
+            .mega-soc.mega-like.mega-rightfloat
+              %span
+                2
+          = content_tag(:a, '#') do
+            .mega-soc.mega-comments.mega-rightfloat
+              %span
+                3     
 
+    - @noticias_album.each do |noticia|
+      .mega-entry.cat-all.album{:"data-src" => 'assets/megafolio/images/image2.jpg', :"data-width" => '230', :"data-height" => '170'}
 
-
-      // socialbar
-      %span.mega-socialbar  
-        %span.mega-leftfloat
-          Share this
-
-        = content_tag(:a, '#') do
-          %span.mega-soc.mega-facebook.mega-leftfloat
-            
-        = content_tag(:a, '#') do
-          %span.mega-soc.mega-twitter.mega-leftfloat
-               
-        .mega-show-more.mega-soc.mega-more.mega-rightfloat
-        = content_tag(:a, '#') do
-          .mega-soc.mega-like.mega-rightfloat
-            %span
-              2
-        = content_tag(:a, '#') do
-          .mega-soc.mega-comments.mega-rightfloat
-            %span
-              3     
-
-
-
-    #entry-2.mega-entry.cat-all.album{:"data-src" => 'assets/megafolio/images/image2.jpg', :"data-width" => '230', :"data-height" => '170'}
-    #entry-3.mega-entry.cat-all.resenas{:"data-src" => 'assets/megafolio/images/image3.jpg', :"data-width" => '230', :"data-height" => '170'}
+    - @noticias_resena.each do |noticia|
+      .mega-entry.cat-all.resenas{:"data-src" => 'assets/megafolio/images/image3.jpg', :"data-width" => '230', :"data-height" => '170'}
 
 
 

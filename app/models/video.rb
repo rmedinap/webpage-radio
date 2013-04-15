@@ -1,4 +1,4 @@
 class Video < ActiveRecord::Base
   attr_accessible :link
-  belongs_to :post
+  belongs_to :noticia
 end

@@ -1,10 +1,13 @@
 require 'spec_helper'
 
-describe "posts/show" do
+describe "noticias/show" do
   before(:each) do
-    @post = assign(:post, stub_model(Post,
+    @noticia = assign(:noticia, stub_model(Noticia,
       :titulo => "Titulo",
-      :contenido => "MyText"
+      :contenido => "MyText",
+      :autor => "Autor",
+      :categoria_id => 1,
+      :slug => "Slug"
     ))
   end
 
@@ -13,5 +16,8 @@ describe "posts/show" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Titulo/)
     rendered.should match(/MyText/)
+    rendered.should match(/Autor/)
+    rendered.should match(/1/)
+    rendered.should match(/Slug/)
   end
 end
