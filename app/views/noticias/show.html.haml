@@ -1,22 +1,18 @@
-= link_to 'Crear', new_categoria_noticia_path(@categoria, @noticia)
 
-%p#notice= notice
 
-%p
-  %b Titulo:
-  = @noticia.titulo
-%p
-  %b Contenido:
-  = @noticia.contenido
-%p
-  %b Autor:
-  = @noticia.autor
-%p
-  %b Categoria:
-  = @noticia.categoria_id
-%p
-  %b Slug:
-  = @noticia.slug
+%article.region
+  %header
+    = @noticia.titulo
+    %span
+      = @noticia.autor
+  .inner
+    = paragraph(@noticia.contenido)
+
+  %figure
+    - @noticia.fotos.each do |foto|
+      = image_tag foto.imagen_foto(:show)
+
+
 
 = link_to 'Edit', edit_noticia_path(@noticia)
 \|

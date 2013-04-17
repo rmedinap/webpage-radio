@@ -1,6 +1,6 @@
 class Noticia < ActiveRecord::Base
 
-  attr_accessible :autor, :contenido, :titulo, :fotos_attributes
+  attr_accessible :autor, :contenido, :titulo, :fotos_attributes, :categoria_id, :imagen_foto
 
 
   has_many :fotos

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130415014342) do
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
+    t.string   "color"
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -79,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20130415014342) do
   end
 
   create_table "fotos", :force => true do |t|
-    t.integer  "post_id"
+    t.integer  "noticia_id"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "imagen_foto_file_name"
@@ -104,18 +105,6 @@ ActiveRecord::Schema.define(:version => 20130415014342) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
-
-  create_table "posts", :force => true do |t|
-    t.string   "titulo"
-    t.text     "contenido"
-    t.string   "autor"
-    t.integer  "categoria_id"
-    t.string   "slug"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
 
   create_table "programas", :force => true do |t|
     t.string   "titulo"

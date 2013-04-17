@@ -1,28 +1,17 @@
+= render '/scripts/megafolio'
+= render '/scripts/megafolio_init'
 
-%h1 Listing noticias
-
-%table
-  %tr
-    %th Titulo
-    %th Contenido
-    %th Autor
-    %th Categoria
-    %th Slug
-    %th
-    %th
-    %th
-
-  - @noticias_banda.each do |noticia|
-    %tr
-      %td= noticia.titulo
-      %td= noticia.contenido
-      %td= noticia.autor
-      %td= noticia.categoria_id
-      %td= noticia.slug
-      %td= link_to 'Show', categoria_noticia_path(noticia.categoria, noticia)
-      %td= link_to 'Edit', edit_noticia_path(noticia)
-      %td= link_to 'Destroy', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
+= link_to 'New Categoría', new_categoria_path
 = link_to 'New Noticia', new_noticia_path
+
+%h1.page-title
+  = page_title! 'Noticias'
+
+= render 'megafolio/megafolio'
+
+-#
+  - Noticia.first.fotos.each do |foto|
+    = image_tag foto.imagen_foto(:index)
+
+=# image_tag Noticia.first.fotos.first.imagen_foto(:index)
+

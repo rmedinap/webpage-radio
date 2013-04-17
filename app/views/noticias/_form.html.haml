@@ -1,4 +1,4 @@
-= form_for [@categoria, @noticia], html: {multipart: true} do |f|
+= nested_form_for @noticia, html: {multipart: true} do |f|
   - if @noticia.errors.any?
     #error_explanation
       %h2= "#{pluralize(@noticia.errors.count, "error")} prohibited this noticia from being saved:"
@@ -17,7 +17,13 @@
     = f.text_field :autor
   .field
     = f.label :categoria_id
-    = f.number_field :categoria_id
-  = nested_form_for @noticia do |f| 
+    = f.collection_select :categoria_id, Categoria.all, :id, :nombre
+  .field
+    = f.fields_for :fotos do |foto_form|
+      = foto_form.file_field :imagen_foto
+      = foto_form.link_to_remove "Remove this foto"
+
+    = f.link_to_add "Agregar foto", :fotos
+
   .actions
     = f.submit 'Save'
