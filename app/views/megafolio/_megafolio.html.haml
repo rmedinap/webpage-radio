@@ -13,45 +13,15 @@
   .megafolio-container
     - @categorias.each_with_index do |categoria, index|
       - categoria.noticias.limit(@maximo_noticias).each do |noticia|
-        %div{:class => 'mega-entry cat-all ' + 'megafolio-elemento-' + index.to_s, :"data-src" => 'assets/megafolio/images/image1.jpg', :"data-width" => '230', :"data-height" => '170'}
+        %div{:class => 'mega-entry cat-all ' + 'megafolio-elemento-' + index.to_s, :"data-src" => noticia.fotos.first.imagen_foto(:index), :"data-width" => '504', :"data-height" => '400'}
           // covercaption
-          .mega-covercaption.mega-square-top.mega-landscape-left.mega-portrait-bottom.mega-white.mega-withsocialbar.mega-smallcaptions
+          .mega-covercaption.mega-square-top.mega-landscape-left.mega-portrait-bottom.mega-white.mega-smallcaptions
             .mega-title
               %h2
                 = link_to noticia.titulo, categoria_noticia_path(noticia.categoria, noticia)
             .mega-date
-              Enero
+              = fecha_noticia noticia.created_at
             %p
-
-          // socialbar
-          %span.mega-socialbar  
-            %span.mega-leftfloat
-              Share this
-
-            = content_tag(:a, '#') do
-              %span.mega-soc.mega-facebook.mega-leftfloat
-                
-            = content_tag(:a, '#') do
-              %span.mega-soc.mega-twitter.mega-leftfloat
-                   
-            .mega-show-more.mega-soc.mega-more.mega-rightfloat
-            = content_tag(:a, '#') do
-              .mega-soc.mega-like.mega-rightfloat
-                %span
-                  2
-            = content_tag(:a, '#') do
-              .mega-soc.mega-comments.mega-rightfloat
-                %span
-                  3     
-
-
-
-
-    
-
-
-
-							
 
 
 
@@ -90,7 +60,7 @@
       defaultWidth:980,
       paddingHorizontal:10,
       paddingVertical:10
-      //layoutarray:[9,11,5,3,7,12,4,6,13]  // Defines the Layout Types which can be used in the Gallery. 2-9 or "random". You can define more than one, like {5,2,6,4} where the first items will be orderd in layout 5, the next comming items in layout 2, the next comming items in layout 6 etc... You can use also simple {9} then all item ordered in Layout 9 type.
+      layoutarray:[9]  // Defines the Layout Types which can be used in the Gallery. 2-9 or "random". You can define more than one, like {5,2,6,4} where the first items will be orderd in layout 5, the next comming items in layout 2, the next comming items in layout 6 etc... You can use also simple {9} then all item ordered in Layout 9 type.
     });
 
     // CALL FILTER FUNCTION IF ANY FILTER HAS BEEN CLICKED
