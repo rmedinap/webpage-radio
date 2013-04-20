@@ -1,4 +1,4 @@
-= form_for @programa do |f|
+= form_for [@dia, @programa] do |f|
   - if @programa.errors.any?
     #error_explanation
       %h2= "#{pluralize(@programa.errors.count, "error")} prohibited this programa from being saved:"

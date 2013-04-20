@@ -138,17 +138,22 @@ footer {
 }
 
 #main-menu,
-#days-menu {
+#days-menu,
+#week-days-wrapper .coda-nav {
  background: $cyan;
  ul, li, a {
-  @include inline-block; margin: 0;
+  @include inline-block; margin: 0; background: transparent;
   }
   a {
     width: 155px; text-align: center; color: white; padding: 15px 0; text-transform: uppercase; border-right: 1px solid white;
+    &.current {
+      background: black;
+    }
   }
 }
-#days-menu a  {width: 129px}
-#days-menu li.last a {border-right: 0}
+#week-days-wrapper .coda-nav ul {width: 100% !important}
+#week-days-wrapper .coda-nav a  {width: 133px}
+#week-days-wrapper .coda-nav li.tab7 a {border-right: 0}
 
 .social-links {
  padding-top: 5px;
@@ -267,10 +272,13 @@ p {
 }
 
 .button {
-  @include button-triangle;
+  @include button;
+  &.triangle {
+    @include button-triangle;
+  }
 }
 
-article {background: gray; margin-bottom: 10px;
+article {background: gray; margin-bottom: 10px; width: 950px;
   .inner {padding-bottom: 10px}
 
 
@@ -292,5 +300,23 @@ article {background: gray; margin-bottom: 10px;
 
   &.region {
   background: $cyan; padding: 0;
+  }
+}
+
+
+h2.dia {display: none}
+
+#content .coda-slider-wrapper .coda-slider,
+#content .coda-slider-wrapper .coda-slider .panel {width: 950px}
+
+#content .coda-slider-wrapper .coda-slider {background: none}
+#content .coda-slider-wrapper .coda-slider .panel .panel-wrapper {padding: 0}
+
+#content #week-days {padding-top: 30px}
+
+.administration {
+  &.iteration {
+    .panel-wrapper & {padding-bottom: 20px; position: relative; top:  -9px}
+
   }
 }

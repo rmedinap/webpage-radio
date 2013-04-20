@@ -38,9 +38,16 @@ noti2 = cate2.noticias.create ({:titulo => 'Kiosko: el regreso de Porter', :cont
 noti3 = cate3.noticias.create ({:titulo => 'The Strokes: Comedown Machine (2013)', :contenido => noticia3, :autor => 'Emilio Legonía'})
 
 Dia.delete_all
-['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'].each do |dia|
+lunes = Dia.create ({:nombre => 'Lunes'})
+['Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'].each do |dia|
   Dia.create ({:nombre => dia})
 end
+
+Programa.delete_all
+lunes.programas.create ({:titulo => 'Entrevistas a grupos nacionales', :contenido => ipsum})
+lunes.programas.create ({:titulo => 'Indie Dance y Nu Disco', :contenido => ipsum})
+lunes.programas.create ({:titulo => 'Indie Actual', :contenido => ipsum})
+lunes.programas.create ({:titulo => 'Indie Dance y Nu Disco', :contenido => ipsum})
 
 
 Dj.delete_all
@@ -51,8 +58,4 @@ Dj.create [{:nombre => 'Enrique Enriquez', :imagen_dj => File.open(File.join(Rai
 
 
 
-Programa.delete_all
-Programa.create [{:titulo => 'Entrevistas a grupos nacionales', :contenido => ipsum}]
-Programa.create [{:titulo => 'Indie Dance y Nu Disco', :contenido => ipsum}]
-Programa.create [{:titulo => 'Indie Actual', :contenido => ipsum}]
-Programa.create [{:titulo => 'Indie Dance y Nu Disco', :contenido => ipsum}]
+

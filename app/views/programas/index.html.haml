@@ -1,37 +1,33 @@
 
 = render 'scripts/codaslider'
-= render 'programas_menu'
 
 .region
   %h2.title
     = page_title! 'Programación'
 
   .administration.head
-    = link_to 'New Programa', new_dia_path
+    = link_to 'Add Day', new_dia_path, :class => 'button new'
 
   #week-days.coda-slider
     - @dias.each do |dia|
       %div
         %h2.dia
           = link_to dia.nombre, dia
-        -# dia.programas.each do |programa|
-          = #programa.titulo
-
-
-
-
-
--#
-  - @programas.each do |programa|
-    %article
-      %header
-        %h3
-          = programa.titulo
-      .inner
-        = paragraph(programa.contenido)
-      .administration.iteration
-        = link_to 'Editar', edit_programa_path(programa), :class => 'button edit'
-        = link_to 'Eliminar', programa, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
+        - if current_admin
+          .administration.head
+            = link_to 'Agregar Programa', new_dia_programa_path(dia), :class => 'button new'
+        - dia.programas.each do |programa|
+          .content
+            %article
+              %header
+                %h3
+                  = programa.titulo
+              .inner
+                = paragraph(programa.contenido)
+            - if !current_admin
+              .administration.iteration
+                = link_to 'Editar', edit_dia_programa_path(dia, programa), :class => 'button edit'
+                = link_to 'Eliminar', dia_programa_path(dia, programa), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
 
 
 

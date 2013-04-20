@@ -18,18 +18,13 @@ Stereosonica::Application.routes.draw do
     end
   end
 
-
-
-
-
-
   resources :auspiciadores
 
   resources :programas
   resources :dias
 
-  resources :programas do
-    resources :dias
+  resources :dias do
+    resources :programas
   end
 
 
