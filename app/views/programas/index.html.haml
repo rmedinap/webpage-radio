@@ -24,7 +24,7 @@
                   = programa.titulo
               .inner
                 = paragraph(programa.contenido)
-            - if !current_admin
+            - if current_admin
               .administration.iteration
                 = link_to 'Editar', edit_dia_programa_path(dia, programa), :class => 'button edit'
                 = link_to 'Eliminar', dia_programa_path(dia, programa), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
