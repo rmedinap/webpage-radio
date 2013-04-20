@@ -8,7 +8,7 @@ img {vertical-align: top}
 ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 
 .region {
-  background: $bevel-region; padding: 40px 0 60px;
+  background: $bevel-region; padding: 40px 0 60px; overflow: hidden;
 }
   #slider.region {
     padding-top: 0;

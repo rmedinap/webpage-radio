@@ -40,6 +40,10 @@ Stereosonica::Application.routes.draw do
 
   get "home/index"
 
+
+
+  devise_for :admins, :path => "admins", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

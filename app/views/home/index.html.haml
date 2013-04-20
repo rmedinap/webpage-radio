@@ -5,6 +5,9 @@
 = render '/scripts/megafolio_init'
 = render '/scripts/facebook_like'
 
+- content_for :javascript do
+  = javascript_include_tag 'http://s1.streammonster.com/system/streaminfo.js', 'http://s1.streammonster.com/js.php/edgaruiz/streaminfo/rnd0'
+
 - page_title! 'Stereosonica Radio'
 
 #slider.region
