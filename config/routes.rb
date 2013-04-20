@@ -1,6 +1,8 @@
 Stereosonica::Application.routes.draw do
 
 
+
+
   resources :quienes_somos
 
 
@@ -23,8 +25,12 @@ Stereosonica::Application.routes.draw do
 
   resources :auspiciadores
 
-
   resources :programas
+  resources :dias
+
+  resources :programas do
+    resources :dias
+  end
 
 
   resources :contactos

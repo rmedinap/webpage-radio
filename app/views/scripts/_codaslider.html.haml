@@ -1,0 +1,11 @@
+- content_for :css do
+  = stylesheet_link_tag 'codaslider/css/coda-slider.css'
+
+- content_for :javascript do
+  = javascript_include_tag 'codaslider/js/jquery-ui-1.8.20.custom.min.js', 'codaslider/js/jquery.coda-slider-3.0.min.js'
+  :javascript
+    $(function(){
+      $('#week-days').codaSlider({
+        panelTitleSelector: "h2.dia"
+      });
+    }); 

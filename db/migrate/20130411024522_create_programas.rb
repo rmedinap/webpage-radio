@@ -3,6 +3,7 @@ class CreateProgramas < ActiveRecord::Migration
     create_table :programas do |t|
       t.string :titulo
       t.text :contenido
+      t.integer :dia_id
 
       t.timestamps
     end

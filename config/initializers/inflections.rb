@@ -8,6 +8,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'auspiciador', 'auspiciadores'
   inflect.irregular 'categoria', 'categorias'
   inflect.irregular 'noticia', 'noticias'
+  inflect.irregular 'dia', 'dias'
   inflect.uncountable %w( quienes_somos )
 #   inflect.uncountable %w( fish sheep )
 end

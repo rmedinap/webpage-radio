@@ -1,0 +1,23 @@
+%h1 Listing dias
+
+
+= link_to 'New Programa', new_programa_dia_path
+
+%table
+  %tr
+    %th Nombre
+    %th Slug
+    %th
+    %th
+    %th
+
+  - @dias.each do |dia|
+    %tr
+      %td= dia.nombre
+      %td= dia.slug
+      %td= link_to 'Show', dia
+      %td= link_to 'Edit', edit_dia_path(dia)
+      %td= link_to 'Destroy', dia, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

@@ -1,62 +1,40 @@
 
-#days-menu
-  %ul
-    %li
-      = link_to 'Lunes', '#'
-    %li
-      = link_to 'Martes', '#'
-    %li
-      = link_to 'Miércoles', '#'
-    %li
-      = link_to 'Jueves', '#'
-    %li
-      = link_to 'Viernes', '#'
-    %li
-      = link_to 'Sábado', '#'
-    %li.last
-      = link_to 'Domingo', '#'
-
-
+= render 'scripts/codaslider'
+= render 'programas_menu'
 
 .region
   %h2.title
     = page_title! 'Programación'
 
-  %article
-    %header
-      %h3
-        títulooo
-    .inner
-      %p
-        Far wasaerafsfsdfsdfsafsdfsdfsfasfd
+  .administration.head
+    = link_to 'New Programa', new_dia_path
 
-  %article
-    %header
-      %h3
-        títulooo
-    .inner
-      %p
-        Far wasaerafsfsdfsdfsafsdfsdfsfasfd
+  #week-days.coda-slider
+    - @dias.each do |dia|
+      %div
+        %h2.dia
+          = link_to dia.nombre, dia
+        -# dia.programas.each do |programa|
+          = #programa.titulo
 
 
-%h1 Listing programas
 
-%table
-  %tr
-    %th Titulo
-    %th Contenido
-    %th
-    %th
-    %th
 
+
+-#
   - @programas.each do |programa|
-    %tr
-      %td= programa.titulo
-      %td= programa.contenido
-      %td= link_to 'Show', programa
-      %td= link_to 'Edit', edit_programa_path(programa)
-      %td= link_to 'Destroy', programa, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %article
+      %header
+        %h3
+          = programa.titulo
+      .inner
+        = paragraph(programa.contenido)
+      .administration.iteration
+        = link_to 'Editar', edit_programa_path(programa), :class => 'button edit'
+        = link_to 'Eliminar', programa, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
 
-%br
 
-= link_to 'New Programa', new_programa_path
+
+
+
+

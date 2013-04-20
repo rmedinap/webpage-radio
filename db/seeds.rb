@@ -37,8 +37,10 @@ noti1 = cate1.noticias.create ({:titulo => 'Demons: adelanto de próximo disco d
 noti2 = cate2.noticias.create ({:titulo => 'Kiosko: el regreso de Porter', :contenido => noticia2, :autor => 'Emilio Legonía'})
 noti3 = cate3.noticias.create ({:titulo => 'The Strokes: Comedown Machine (2013)', :contenido => noticia3, :autor => 'Emilio Legonía'})
 
-
-
+Dia.delete_all
+['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'].each do |dia|
+  Dia.create ({:nombre => dia})
+end
 
 
 Dj.delete_all
