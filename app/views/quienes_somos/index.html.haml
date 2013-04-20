@@ -11,6 +11,6 @@
     - @dj_list.each do |dj|
       %li
         .field-image
-          = link_to image_tag(dj.imagen_dj(:index)), dj
+          = image_tag(dj.imagen_dj(:index))
         %h3.button
           = dj.nombre

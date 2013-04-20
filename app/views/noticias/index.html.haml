@@ -8,10 +8,3 @@
   = page_title! 'Noticias'
 
 = render 'megafolio/megafolio'
-
--#
-  - Noticia.first.fotos.each do |foto|
-    = image_tag foto.imagen_foto(:index)
-
-=# image_tag Noticia.first.fotos.first.imagen_foto(:index)
-

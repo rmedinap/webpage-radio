@@ -50,6 +50,7 @@ gem "rvm-capistrano"
 # To use debugger
 # gem 'debugger'
 
+gem "auto_html"
 gem 'jquery-minicolors-rails'
 gem "nested_form"
 gem "haml"

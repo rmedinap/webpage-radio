@@ -21,9 +21,28 @@
   .field
     = f.fields_for :fotos do |foto_form|
       = foto_form.file_field :imagen_foto
-      = foto_form.link_to_remove "Remove this foto"
+      = foto_form.link_to_remove "Eliminar esta foto"
 
     = f.link_to_add "Agregar foto", :fotos
+  .field
+    = f.fields_for :itunes_players do |itunes_player_form|
+      = itunes_player_form.text_field :embed
+      = itunes_player_form.link_to_remove "Eliminar este iTunes player"
+
+    = f.link_to_add "Agregar iTunes player", :itunes_players
+
+  .field
+    = f.fields_for :soundclouds do |soundcloud_form|
+      = soundcloud_form.text_field :link
+      = soundcloud_form.link_to_remove "Eliminar este Soundcloud player"
+
+    = f.link_to_add "Agregar Soundcloud player", :soundclouds
+  .field
+    = f.fields_for :videos do |video_form|
+      = video_form.text_field :link
+      = video_form.link_to_remove "Eliminar este video"
+
+    = f.link_to_add "Agregar video", :videos
 
   .actions
     = f.submit 'Save'

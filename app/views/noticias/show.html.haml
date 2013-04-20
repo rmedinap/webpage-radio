@@ -11,6 +11,15 @@
   %figure
     - @noticia.fotos.each do |foto|
       = image_tag foto.imagen_foto(:show)
+  %section
+    - @noticia.itunes_players.each do |itunes_player|
+      = raw(itunes_player.embed)
+  %section
+    - @noticia.soundclouds.each do |soundcloud|
+      = soundcloud.link_html
+  %section
+    - @noticia.videos.each do|video|
+      = video.link_html
 
 
 
