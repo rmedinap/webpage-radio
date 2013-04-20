@@ -43,6 +43,9 @@
 
 
   %body{id: bodyid, class: bodyclass}
+    - if current_admin
+      #admin-config
+        = link_to 'Cerrar Sesión', destroy_admin_session_path, :class => 'button'
     #wrapper
       - if notice
         %p.notice= notice

@@ -7,6 +7,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Admin.delete_all
+Admin.create(:email => 'paul@kosmyka.com', :password => '12345678')
+Admin.create(:email => 'ricardo@kosmyka.com', :password => '12345678')
+
 quienes_somos = File.read(File.join(Rails.root, '/public/support/quienes_somos.txt'))
 noticia1 = File.read(File.join(Rails.root, '/public/support/noticia-1.txt'))
 noticia2 = File.read(File.join(Rails.root, '/public/support/noticia-2.txt'))
