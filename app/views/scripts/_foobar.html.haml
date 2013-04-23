@@ -1,0 +1,58 @@
+- content_for :css do
+  = stylesheet_link_tag 'jquery.foobar-2.1/jquery.foobar.2.1.css'
+  :css
+    .custom-bg .foobar-container {
+      /*background:orange;*/
+    }
+    .notice {display: none}
+
+- content_for :scripts do
+  = javascript_include_tag 'jquery.foobar-2.1/jquery.foobar.2.1.min.js'
+  :javascript
+    var mensaje = "#{notice}"
+  
+  
+    $foobar({
+      "height" : {
+        "bar" : 100, "button" : 30
+      },
+      
+      "width": {
+        "left": "0", "center": "*",
+        "right": "0", "button": "80px"
+      },
+     
+      "display" : {
+        //"backgroundColor" : "transparent",
+        "border": "solid 3px #000",
+        "button": {
+          "backgroundColor": "#800",
+          "type": "close"
+        },
+        "theme": {
+          "bar": "x-white custom-bg"
+        }
+      },
+      
+      "messages": [
+        mensaje,
+        'Te responderemos en breve'
+      ],
+      
+      "message": {
+        "font": {
+          "color": "#ff0",
+          "size": "24px",
+          "shadow": "1px 1px 0 #444",
+          "weight": "bold"
+        }
+      }
+    });
+      
+
+
+
+
+
+
+
