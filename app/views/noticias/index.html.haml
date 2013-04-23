@@ -1,10 +1,15 @@
 = render '/scripts/megafolio'
 = render '/scripts/megafolio_init'
 
-= link_to 'New Categoría', new_categoria_path
-= link_to 'New Noticia', new_noticia_path
 
-%h1.page-title
-  = page_title! 'Noticias'
+.region
+  %h2.title
+    = page_title! 'Noticias'
+
+- if current_admin
+  .administration.head
+    = link_to 'New Categoría', new_categoria_path, :class => 'button new'
+    = link_to 'New Noticia', new_noticia_path, :class => 'button new'
+
 
 = render 'megafolio/megafolio'

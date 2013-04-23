@@ -23,7 +23,11 @@ class ApplicationController < ActionController::Base
     @bodyclass = @action + ' ' + @front + ' ' + @admin
   end
 
+  def diapositivas
+    @diapositivas = Diapositiva.all
+  end
 
   helper_method :bodyid
   helper_method :bodyclass
+  helper_method :diapositivas
 end

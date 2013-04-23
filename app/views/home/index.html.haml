@@ -1,6 +1,4 @@
-= render '/scripts/isotope'
-= render '/scripts/royal_slider'
-= render '/scripts/royal_slider_init'
+= #render '/scripts/isotope'
 = render '/scripts/megafolio'
 = render '/scripts/megafolio_init'
 = render '/scripts/facebook_like'
@@ -10,12 +8,7 @@
 
 - page_title! 'Stereosonica Radio'
 
-#slider.region
-  %div{class: 'royalSlider rsDefault'+ diapositivas_counter(@diapositivas) }
-    - @diapositivas.each do |diapositiva|
-      .rsContent
-        = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva
-        = link_to diapositiva.pie_de_foto, 'google.com', :class => 'caption rsABlock'
+
 #facebook.region
   .eight.columns.alpha
     %p

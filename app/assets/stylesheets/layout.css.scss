@@ -320,3 +320,11 @@ h2.dia {display: none}
 
   }
 }
+
+
+/* slider */
+body .royalSlider{width:940px; height:450px}
+body .rsOverflow{position:relative}
+body .rsABlock{position:absolute; top: auto; bottom:10px; left:auto;  right:35px}
+body .rsDefault .rsPreloader {background-image:url(/javascripts/libs/royal-slider-9.2/preloaders/preloader-white.gif)}
+body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slider-9.2/rs-default.png') -64px 0}
