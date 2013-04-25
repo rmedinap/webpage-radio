@@ -56,17 +56,21 @@
           .inner
             %h1#logo
               = link_to image_tag('logo.png'), '/'
+            #radio-online
+              %span
+                Escucha
+              = link_to '', '', id: 'radio-online-link'
         %nav#main-menu.sixteen.columns
           = render '/layouts/menu'
         %section#content.sixteen.columns.region{:role => 'main'}
           = render '/diapositivas/slider'
           = yield
- 
+
       #postscript-bottom
-        .container 
-          %p 
+        .container
+          %p
             stereosonica
-            %b 
+            %b
               radio
       %footer.main.sixteen.columns
         #footer-top
@@ -78,7 +82,7 @@
             #copyright
               © 2013 Todos los derechos reservados, Stereosonica.
             #autor
-              DISEÑO Y DESARROLLO WEB POR 
+              DISEÑO Y DESARROLLO WEB POR
               =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
 
 

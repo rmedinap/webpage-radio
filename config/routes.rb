@@ -3,6 +3,8 @@ Stereosonica::Application.routes.draw do
 
 
 
+  get "radio_online/index"
+
   resources :quienes_somos
 
 

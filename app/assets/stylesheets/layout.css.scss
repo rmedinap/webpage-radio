@@ -29,7 +29,7 @@ h2.title {
 }
 
 #wrapper {
-  background: $bg-slider; 
+  background: $bg-slider;
 }
 
 header {
@@ -95,7 +95,7 @@ footer {
     &.length-9 .rsBullet {@include size(33%, 5px)}
     &.length-10 .rsBullet {@include size(33%, 5px)}
   }
-} 
+}
 
 .caption {
   background: $black; color: white; text-transform: uppercase; font-size: 24px; padding: 10px 20px; font-weight: lighter;
@@ -130,7 +130,7 @@ footer {
 #postscript-bottom {
    background: $bg-postscript-bottom;
   .container {
-    min-height: 450px; background: $bg-postscript-bottom-inner; 
+    min-height: 450px; background: $bg-postscript-bottom-inner;
     p {
       font-size: 100px; line-height: 100%; color: black; text-align: center; padding: 180px 0 160px; margin: 0;
       b {font-weight: bold}
@@ -166,7 +166,7 @@ footer {
   }
 
   #main-menu & {
-    float: right;  
+    float: right;
       li {
         a {
           @include size(30px, 40px); padding: 0; border: 0;
@@ -182,9 +182,9 @@ footer {
     &.follow { float: right; display: block; text-align: center; padding-top: 20px;
       li {margin-left: 20px;
         a {
-          @include size(34px, 40px); 
-          &.youtube {background-position: -280px -8px} 
-          &.twitter {background-position: -280px-$bg_position_follow -8px}   
+          @include size(34px, 40px);
+          &.youtube {background-position: -280px -8px}
+          &.twitter {background-position: -280px-$bg_position_follow -8px}
           &.facebook {background-position: -280px-$bg_position_follow*2  -8px}
           &.rss {background-position: -280px-$bg_position_follow*3  -8px}
           &.email {background-position: -280px-$bg_position_follow*4  -8px}
@@ -251,7 +251,7 @@ p {
       @include size(188px, 188px);
       border: $border-bold solid transparent;
       margin: 0 10px;
-      -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; 
+      -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
       &:hover {
         border-color: $cyan;
@@ -263,7 +263,7 @@ p {
       .button {
         width: 176px; top: -50px;
         position: relative; left: -10px; margin-top: 10px; opacity: 0; *filter: alpha(opacity=0);
-      -moz-transition: all 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715); -webkit-transition: all 0.3s ease-out; 
+      -moz-transition: all 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715); -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out; transition: all 0.3s $easeInBack;
       }
     }
@@ -342,3 +342,9 @@ body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slide
 
 .button span,
 .button a {color: white; font-size: 16px}
+
+#radio-online {width: 75px; height: 75px;
+position: absolute; top: 30px; right: 0; }
+
+#radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
+#radio-online-link {width: 75px; height: 75px;background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
