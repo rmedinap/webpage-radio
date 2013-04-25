@@ -53,12 +53,19 @@ lunes.programas.create ({:titulo => 'Indie Dance y Nu Disco', :contenido => ipsu
 lunes.programas.create ({:titulo => 'Indie Actual', :contenido => ipsum})
 lunes.programas.create ({:titulo => 'Indie Dance y Nu Disco', :contenido => ipsum})
 
-
 Dj.delete_all
 Dj.create [{:nombre => 'Pedro Lopez', :imagen_dj => File.open(File.join(Rails.root, '/public/support/dj-pic.jpg'))}]
 Dj.create [{:nombre => 'LuisAlberto Fernandez', :imagen_dj => File.open(File.join(Rails.root, '/public/support/dj-pic.jpg'))}]
 Dj.create [{:nombre => 'Horacio Manuel Villamarín', :imagen_dj => File.open(File.join(Rails.root, '/public/support/dj-pic.jpg'))}]
 Dj.create [{:nombre => 'Enrique Enriquez', :imagen_dj => File.open(File.join(Rails.root, '/public/support/dj-pic.jpg'))}]
+
+Auspiciador.delete_all
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
+Auspiciador.create [{:logo => File.open(File.join(Rails.root, '/public/img-slider.jpg'))}]
 
 
 

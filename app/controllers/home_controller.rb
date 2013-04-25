@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   
     @categorias = Categoria.limit(3)
     @maximo_noticias = 1
+    @auspiciadores = Auspiciador.all
   end
 end

@@ -10,6 +10,7 @@ ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 .region {
   background: $bevel-region; padding: 40px 0 60px; overflow: hidden;
 }
+#facebook.region {background: none; padding:0 0 60px}
   #slider.region {
     padding-top: 0;
  }
@@ -142,7 +143,7 @@ footer {
 #week-days-wrapper .coda-nav {
  background: $cyan;
  ul, li, a {
-  @include inline-block; margin: 0; background: transparent;
+  @include inline-block; margin: 0;/* background: transparent;*/
   }
   a {
     width: 155px; text-align: center; color: white; padding: 15px 0; text-transform: uppercase; border-right: 1px solid white;
@@ -231,11 +232,9 @@ form {
     }
   }
 }
-#contactos {
-  p {
+  .sub-label {
     text-align: right; color: $black; font-size: 12px; text-transform: uppercase;
   }
-}
 
 
 p {
@@ -269,6 +268,10 @@ p {
       }
     }
   }
+}
+
+.like-it {
+  padding-top: 30px;
 }
 
 .button {
@@ -328,3 +331,14 @@ body .rsOverflow{position:relative}
 body .rsABlock{position:absolute; top: auto; bottom:10px; left:auto;  right:35px}
 body .rsDefault .rsPreloader {background-image:url(/javascripts/libs/royal-slider-9.2/preloaders/preloader-white.gif)}
 body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slider-9.2/rs-default.png') -64px 0}
+
+.social-region-side {
+  .box, .box-small {float: left}
+  .box {width: 100%}
+  .box-small {width: 50%}
+  iframe, .fb-like-box, .fb-like-box span {width: 100% !important}
+  width: 48%; float: left; margin-right: 0.5%
+}
+
+.button span,
+.button a {color: white; font-size: 16px}
