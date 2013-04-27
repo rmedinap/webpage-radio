@@ -5,18 +5,15 @@
   %h2.title
     = page_title! 'Programación'
 
-  .administration.head
-    = link_to 'Add Day', new_dia_path, :class => 'button new'
-
+  - if current_admin
+    .administration.head
+      = link_to 'Agregar Programa', new_programa_path, :class => 'button new'
   #week-days.coda-slider
-    - @dias.each do |dia|
+    - Programa::DIAS.each_with_index do |dia, i|
       %div
         %h2.dia
-          = link_to dia.nombre, dia
-        - if current_admin
-          .administration.head
-            = link_to 'Agregar Programa', new_dia_programa_path(dia), :class => 'button new'
-        - dia.programas.each do |programa|
+          = dia
+        - Programa.where("dia = ?", i).each do |programa|
           .content
             %article
               %header
@@ -26,11 +23,5 @@
                 = paragraph(programa.contenido)
             - if current_admin
               .administration.iteration
-                = link_to 'Editar', edit_dia_programa_path(dia, programa), :class => 'button edit'
-                = link_to 'Eliminar', dia_programa_path(dia, programa), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
-
-
-
-
-
-
+                = link_to 'Editar', edit_programa_path(programa), :class => 'button edit'
+                = link_to 'Eliminar', programa_path(programa), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'

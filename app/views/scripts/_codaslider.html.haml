@@ -6,7 +6,10 @@
   :javascript
     $(function(){
       $('#week-days').codaSlider({
-        panelTitleSelector: "h2.dia",
-        dynamicArrows: false
-      });
-    }); 
+               dynamicArrows: false,
+      dynamicArrowsGraphical: false,
+          panelTitleSelector: "h2.dia",
+           slideEaseDuration: 1500,
+           slideEaseFunction: "easeOutExpo"
+           });
+    });

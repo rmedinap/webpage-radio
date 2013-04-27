@@ -337,6 +337,9 @@ h2.dia {display: none}
 #content .coda-slider-wrapper .coda-slider {background: none}
 #content .coda-slider-wrapper .coda-slider .panel .panel-wrapper {padding: 0}
 
+#content .coda-slider-wrapper .coda-nav a {background: $cyan}
+#content .coda-slider-wrapper .coda-nav .current {background: grey}
+
 #content #week-days {padding-top: 30px}
 
 .administration {

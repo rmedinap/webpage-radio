@@ -1,4 +1,4 @@
-= form_for [@dia, @programa] do |f|
+= form_for @programa do |f|
   - if @programa.errors.any?
     #error_explanation
       %h2= "#{pluralize(@programa.errors.count, "error")} prohibited this programa from being saved:"
@@ -12,5 +12,8 @@
   .field
     = f.label :contenido
     = f.text_area :contenido
+  .field
+    = f.label :dia
+    = f.select :dia, options_for_select(Programa::DIAS.each_with_index.collect{ |value, i| [value, i] })
   .actions
     = f.submit 'Save'

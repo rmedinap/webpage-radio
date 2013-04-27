@@ -1,5 +1,7 @@
+# coding = utf-8
 class Programa < ActiveRecord::Base
-  attr_accessible :contenido, :titulo
+  attr_accessible :contenido, :titulo, :dia
 
-  belongs_to :dia
+  DIAS = %w(domingo lunes martes miércoles jueves viernes sábado)
+
 end
