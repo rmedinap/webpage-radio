@@ -259,7 +259,7 @@ p {
     li {
       @include size(188px, 188px);
       border: $border-bold solid transparent;
-      margin: 0 10px;
+      margin: 0 10px 70px 0px;
       -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
       &:hover {
