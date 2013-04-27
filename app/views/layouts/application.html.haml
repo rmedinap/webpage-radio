@@ -28,12 +28,16 @@
     = stylesheet_link_tag 'application.css'
     = stylesheet_link_tag 'royal-slider-9.2/royalslider.css', 'royal-slider-9.2/rs-default.css'
     = yield :css
+    - if current_admin
+      = stylesheet_link_tag 'jquery.foobar-2.1/jquery.foobar.2.1.css'
 
     = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'
 
     = javascript_include_tag 'application'
     = javascript_include_tag 'jquery.min.js', 'royal-slider-9.2/jquery.royalslider.custom.min.js', 'royal-slider-9.2/jquery.easing-1.3.js', 'royal-slider-9.2/royal-slider-init.js'
     = yield :javascript
+    - if current_admin
+      =# render 'scripts/foobar'
 
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
@@ -44,45 +48,46 @@
 
 
   %body{id: bodyid, class: bodyclass}
-    - if current_admin
-      #admin-config
-        = link_to 'Cerrar Sesión', destroy_admin_session_path, :class => 'button'
     #wrapper
-      - if notice
-        test
-        = render 'scripts/foobar'
-      .container.top
-        %header.main.sixteen.columns{:role => 'banner'}
-          .inner
-            %h1#logo
-              = link_to image_tag('logo.png'), '/'
-            #radio-online
-              %span
-                Escucha
-              = link_to '', '', id: 'radio-online-link'
-        %nav#main-menu.sixteen.columns
-          = render '/layouts/menu'
-        %section#content.sixteen.columns.region.top{:role => 'main'}
-          = render '/diapositivas/slider'
-          = yield
+      #wrapper-inner
+        - if current_admin
+          #admin-config
+            = link_to 'Cerrar Sesión', destroy_admin_session_path, :class => 'button'
 
-      #postscript-bottom
-        .container
-          %p
-            stereosonica
-            %b
-              radio
-      %footer.main.sixteen.columns
-        #footer-top
-          .container
+          - if notice
+            = render 'scripts/foobar'
+        .container.top
+          %header.main.sixteen.columns{:role => 'banner'}
+            .inner
+              %h1#logo
+                = link_to image_tag('logo.png'), '/'
+              #radio-online
+                %span
+                  Escucha
+                = link_to '', '', id: 'radio-online-link'
+          %nav#main-menu.sixteen.columns
             = render '/layouts/menu'
-            = render '/shared/follow_us'
-        #footer-bottom
+          %section#content.sixteen.columns.region.top{:role => 'main'}
+            = render '/diapositivas/slider'
+            = yield
+
+        #postscript-bottom
           .container
-            #copyright
-              © 2013 Todos los derechos reservados, Stereosonica.
-            #autor
-              DISEÑO Y DESARROLLO WEB POR
-              =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
+            %p
+              stereosonica
+              %b
+                radio
+        %footer.main.sixteen.columns
+          #footer-top
+            .container
+              = render '/layouts/menu'
+              = render '/shared/follow_us'
+          #footer-bottom
+            .container
+              #copyright
+                © 2013 Todos los derechos reservados, Stereosonica.
+              #autor
+                DISEÑO Y DESARROLLO WEB POR
+                =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
 
 
