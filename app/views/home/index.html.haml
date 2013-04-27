@@ -1,6 +1,5 @@
-= #render '/scripts/isotope'
 = render '/scripts/megafolio'
-= render '/scripts/megafolio_init'
+=# render '/scripts/megafolio_init'
 = render '/scripts/facebook_like'
 
 - content_for :javascript do
@@ -36,4 +35,7 @@
     críticas, videos, singles, discos, etc. de las mejores bandas del mundo de todas las épocas.
     Encuéntranos online en facebook, twitter, youtube y soundcloud.
 #share.region
+  %h2.title
+    %b
+      síguenos
   = render 'social_likebox'

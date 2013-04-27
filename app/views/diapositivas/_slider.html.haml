@@ -5,5 +5,5 @@
   %div{class: 'royalSlider rsDefault'+ diapositivas_counter(diapositivas) }
     - diapositivas.each do |diapositiva|
       .rsContent
-        = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva
-        = link_to diapositiva.pie_de_foto, 'google.com', :class => 'caption rsABlock'
+        = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva.link
+        = link_to diapositiva.pie_de_foto, diapositiva.link, :class => 'caption rsABlock'

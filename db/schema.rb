@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427080440) do
+ActiveRecord::Schema.define(:version => 20130427170113) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130427080440) do
     t.string   "diapositiva_picture_content_type"
     t.integer  "diapositiva_picture_file_size"
     t.datetime "diapositiva_picture_updated_at"
+    t.string   "link"
   end
 
   create_table "djs", :force => true do |t|
