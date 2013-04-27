@@ -9,12 +9,12 @@
   %figure
     - @noticia.fotos.each do |foto|
       = image_tag foto.imagen_foto(:show)
-  %section
-    - @noticia.itunes_players.each do |itunes_player|
-      = raw(itunes_player.embed)
-  %section
+    %section
     - @noticia.videos.each do|video|
       = video.link_html
+    %section
+    - @noticia.itunes_players.each do |itunes_player|
+      = raw(itunes_player.embed)
   %section
     .autor
       = 'Autor: ' + @noticia.autor

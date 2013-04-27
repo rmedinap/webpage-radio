@@ -3,6 +3,7 @@ class NoticiasController < InheritedResources::Base
   def index
     @categorias = Categoria.all
     @maximo_noticias = Noticia.all.size
+    @noticias = Noticia.all
   end
 
  # def create
