@@ -8,17 +8,11 @@
 
 - page_title! 'Stereosonica Radio'
 
-
 #facebook.region
   .eight.columns.alpha
     %p.sub-label
       Ahora suena
-
-  
     = link_to content_tag(:span, 'Cargando...', :id => 'cc_stream_info_summary'), '/', :class => 'button default italic full'
-
-    -#
-      ==  <span id="cc_stream_info_summary">Loading...</span>
 
   .eight.columns.omega.like-it
     %p
@@ -36,7 +30,10 @@
     %b
       radio
   %p
-    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-
+    stereosónica es una radio online de música alternativa, donde escucharás artistas,
+    bandas, álbumes y canciones rock, pop, punk, new wave, electrónica, reggae, folk, etc.
+    que no encontrarás en otras emisoras. Compartiremos noticias, lanzamientos, reseñas,
+    críticas, videos, singles, discos, etc. de las mejores bandas del mundo de todas las épocas.
+    Encuéntranos online en facebook, twitter, youtube y soundcloud.
 #share.region
   = render 'social_likebox'

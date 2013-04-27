@@ -7,9 +7,14 @@ img {vertical-align: top}
 
 ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 
+.container.top { background: $bg-top-page-shadow }
+
 .region {
   background: $bevel-region; padding: 40px 0 60px; overflow: hidden;
 }
+
+.region.top { background: none; }
+
 #facebook.region {background: none; padding:0 0 60px}
   #slider.region {
     padding-top: 0;
@@ -71,6 +76,7 @@ footer {
     .rsArrowRight .rsArrowIcn {background-position: -98px -181px; left: auto; right: 10px }
   }
   .rsDefault.rsHor {
+    .rsOverflow { }// background: $bevel-region; }
     .rsBullets {background: none; bottom: -30px; overflow: visible;
       .rsBullet {
         @include inline-block;  border-radius: 0; margin: 0; background: $gray;
@@ -233,7 +239,7 @@ form {
   }
 }
   .sub-label {
-    text-align: right; color: $black; font-size: 12px; text-transform: uppercase;
+    text-align: right; color: $black; font-size: 11px; text-transform: uppercase; margin-bottom: 2px;
   }
 
 
@@ -261,6 +267,7 @@ p {
         overflow: hidden;
       }
       .button {
+        font-size: 14px;
         width: 176px; top: -50px;
         position: relative; left: -10px; margin-top: 10px; opacity: 0; *filter: alpha(opacity=0);
       -moz-transition: all 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715); -webkit-transition: all 0.3s ease-out;
@@ -281,15 +288,17 @@ p {
   }
 }
 
-article {background: gray; margin-bottom: 10px; width: 950px;
-  .inner {padding-bottom: 10px}
+article { margin-bottom: 10px; // width: 950px;
+  .inner {background: $cyan; padding-bottom: 10px}
 
 
   h3, h2 span, p {
     color: white; text-align: left; font-weight: 200;
   }
   header {
+    color: white;
     height: auto;
+    background: $cyan;
     border-bottom: 1px solid white; line-height: 125%;
     padding: 15px 15px 7px; font-size: 20px; text-transform: uppercase;
   }
@@ -302,10 +311,23 @@ article {background: gray; margin-bottom: 10px; width: 950px;
   }
 
   &.region {
-  background: $cyan; padding: 0;
+    // background: $cyan; padding: 0;
   }
+  figure {
+    img { margin-top: 10px; }
+  }
+  section {
+    iframe { margin-top: 10px; }
+    .autor { color: white; text-align: right; background: gray; padding: 10px; margin-top: 10px; }
+  }
+
 }
 
+a.btn  {
+    padding: 10px 20px; text-align: center; background: $cyan; color: white; @include inline-block; font-size: 18px;
+    font-weight: lighter;
+    float: right;
+  }
 
 h2.dia {display: none}
 
@@ -347,4 +369,4 @@ body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slide
 position: absolute; top: 30px; right: 0; }
 
 #radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
-#radio-online-link {width: 75px; height: 75px;background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
+#radio-online-link {width: 75px; height: 75px; background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}

@@ -51,7 +51,7 @@
       - if notice
         test
         = render 'scripts/foobar'
-      .container
+      .container.top
         %header.main.sixteen.columns{:role => 'banner'}
           .inner
             %h1#logo
@@ -62,7 +62,7 @@
               = link_to '', '', id: 'radio-online-link'
         %nav#main-menu.sixteen.columns
           = render '/layouts/menu'
-        %section#content.sixteen.columns.region{:role => 'main'}
+        %section#content.sixteen.columns.region.top{:role => 'main'}
           = render '/diapositivas/slider'
           = yield
 
