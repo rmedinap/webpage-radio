@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
     t.string   "link"
   end
 
+  create_table "dias", :force => true do |t|
+    t.string   "nombre"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "djs", :force => true do |t|
     t.string   "nombre"
     t.datetime "created_at",             :null => false
@@ -110,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
   create_table "programas", :force => true do |t|
     t.string   "titulo"
     t.text     "contenido"
+    t.integer  "dia_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "dia"

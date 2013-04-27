@@ -7,7 +7,7 @@ img {vertical-align: top}
 
 ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 
-.container.top { background: $bg-top-page-shadow }
+.container.top {  }
 
 .region {
   background: $bevel-region; padding: 40px 0 60px; overflow: hidden;
@@ -35,6 +35,9 @@ h2.title {
 
 #wrapper {
   background: $bg-slider;
+}
+#wrapper-inner {
+  background: $bg-top-page-shadow;
 }
 
 header {
@@ -373,3 +376,5 @@ position: absolute; top: 30px; right: 0; }
 
 #radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
 #radio-online-link {width: 75px; height: 75px; background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
+
+.notice {display: none}
