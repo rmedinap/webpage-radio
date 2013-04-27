@@ -1,9 +1,11 @@
 class CategoriasController < InheritedResources::Base
 
-
-
-  def show
-    @categoria = Categoria.find(params[:id])
-    @noticias = @categoria.noticias.all
+  def update
+    update! {categorias_path}
   end
+
+  def create
+    create!{categorias_path}
+  end
+
 end
