@@ -5,15 +5,16 @@ defaults: &defaults
   pool: 5
   username: root
   password: chimpance99
-  socket: /tmp/mysql.sock
 
 development:
   database: stereosonica_development
   <<: *defaults
+  socket: /tmp/mysql.sock
 
 test: &test
   database: stereosonica_test
   <<: *defaults
+  socket: /tmp/mysql.sock
 
 production:
   host: localhost
