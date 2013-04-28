@@ -87,11 +87,12 @@ namespace :deploy do
   after "deploy", "deploy:restart_unicorn"
 
   task :restart_unicorn, roles: :app do
-    if File.exist? '#{current_path}/bin/unicorn'
-      run "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
-    else
-      run "cd #{current_path} && bundle install --binstubs"
-      run "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
-    end
+    sudo "service unicorn_#{application} restart"
+    # if File.exist? '#{current_path}/bin/unicorn'
+      # run "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
+    # else
+      # run "cd #{current_path} && bundle install --binstubs"
+      # run "#{current_path}/bin/unicorn -D -c #{current_path}/config/unicorn.rb -E production"
+    # end
   end
 end
