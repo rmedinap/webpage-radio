@@ -25,6 +25,8 @@
 
     = favicon_link_tag 'favicon.png'
 
+    = auto_discovery_link_tag(:atom, noticias_url(format: "atom"))
+
     = stylesheet_link_tag 'application.css'
     = stylesheet_link_tag 'royal-slider-9.2/royalslider.css', 'royal-slider-9.2/rs-default.css'
     = yield :css
@@ -92,13 +94,13 @@
               #autor
                 DISEÑO Y DESARROLLO WEB POR
                 =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
-      
+
   = javascript_include_tag 'jquery.popupWindow.js'
 
   :javascript
-    $('#radio-online-link').popupWindow({ 
+    $('#radio-online-link').popupWindow({
        height: 700,
-       width: 500,       
-       centerScreen:1 
+       width: 500,
+       centerScreen:1
     });
 
