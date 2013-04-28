@@ -198,6 +198,14 @@ footer {
           &.rss {background-position: -280px-$bg_position_follow*3  -8px}
           &.email {background-position: -280px-$bg_position_follow*4  -8px}
         }
+        a:hover {
+          @include size(34px, 40px);
+          &.youtube {background-position: -280px -58px}
+          &.twitter {background-position: -280px-$bg_position_follow -58px}
+          &.facebook {background-position: -280px-$bg_position_follow*2  -58px}
+          &.rss {background-position: -280px-$bg_position_follow*3  -58px}
+          &.email {background-position: -280px-$bg_position_follow*4  -58px}
+        }
       }
     }
   }
