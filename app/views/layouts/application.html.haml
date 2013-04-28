@@ -61,10 +61,13 @@
             .inner
               %h1#logo
                 = link_to image_tag('logo.png'), '/'
+              %h2.slogan
+                Slogan
               #radio-online
                 %span
                   Escucha
-                = link_to '', '', id: 'radio-online-link'
+                = link_to '', radio_online_index_path(id: 'radio-online'), id: 'radio-online-link'
+
           %nav#main-menu.sixteen.columns
             = render '/layouts/menu'
           %section#content.sixteen.columns.region.top{:role => 'main'}
@@ -89,5 +92,13 @@
               #autor
                 DISEÑO Y DESARROLLO WEB POR
                 =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
+      
+  = javascript_include_tag 'jquery.popupWindow.js'
 
+  :javascript
+    $('#radio-online-link').popupWindow({ 
+       height: 700,
+       width: 500,       
+       centerScreen:1 
+    });
 
