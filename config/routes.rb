@@ -16,6 +16,8 @@ Stereosonica::Application.routes.draw do
     end
   end
 
+  match 'radio_online' => 'index'
+
   resources :auspiciadores
 
   resources :programas

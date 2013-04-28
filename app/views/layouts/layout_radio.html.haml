@@ -1,0 +1,20 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %title= page_title
+    = stylesheet_link_tag 'application.css' 
+
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+
+    /[if lt IE 9]
+      %script{:src => 'http://html5shim.googlecode.com/svn/trunk/html5.js'}
+    = csrf_meta_tag
+
+  %body
+    = yield

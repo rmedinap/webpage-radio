@@ -1,2 +1,36 @@
-%h1 RadioOnline#index
-%p Find me in app/views/radio_online/index.html.haml
+
+#radio-online-wrapper
+  %header
+    %h1#logo
+      = link_to image_tag('logo.png'), '/'
+    %h2.slogan
+      Slogan
+  %section#radio-online-controles
+    .controles-top
+      #flash-wrapper
+        = render 'flash_wrapper'
+
+
+      %nav#main-menu
+        .label
+          Reproductores
+        %ul.social-links
+          %li
+            = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'apple'
+          %li
+            = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'blackberry'
+          %li
+            = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'android'
+          %li
+            = link_to '', 'http://tunein.com/radio/Stereosonica-s197293/', :class => 'tunein'
+    .controles-bottom
+      .label
+        Ahora suena
+      = link_to content_tag(:span, 'Cargando...', :id => 'cc_stream_info_summary'), '/', :class => 'button default italic full'
+
+
+  %section#auspiciadores
+    %ul
+      - @auspiciadores.each do |auspiciador|
+        %li
+          = image_tag auspiciador.logo(:index) 

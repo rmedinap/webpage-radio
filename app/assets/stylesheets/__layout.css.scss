@@ -165,6 +165,7 @@ footer {
 #week-days-wrapper .coda-nav ul {width: 100% !important}
 #week-days-wrapper .coda-nav a  {width: 133px}
 #week-days-wrapper .coda-nav li.tab7 a {border-right: 0}
+#radio-online-wrapper #main-menu {@include inline-block}
 
 .social-links {
  padding-top: 5px;
@@ -198,14 +199,6 @@ footer {
           &.facebook {background-position: -280px-$bg_position_follow*2  -8px}
           &.rss {background-position: -280px-$bg_position_follow*3  -8px}
           &.email {background-position: -280px-$bg_position_follow*4  -8px}
-        }
-        a:hover {
-          @include size(34px, 40px);
-          &.youtube {background-position: -280px -58px}
-          &.twitter {background-position: -280px-$bg_position_follow -58px}
-          &.facebook {background-position: -280px-$bg_position_follow*2  -58px}
-          &.rss {background-position: -280px-$bg_position_follow*3  -58px}
-          &.email {background-position: -280px-$bg_position_follow*4  -58px}
         }
       }
     }
@@ -387,7 +380,6 @@ position: absolute; top: 30px; right: 0; }
 #radio-online-link {width: 75px; height: 75px; background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
 
 .notice {display: none}
-
 
 
 #radio-online-wrapper {
