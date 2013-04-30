@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
 
   create_table "auspiciadores", :force => true do |t|
     t.string   "link"
-    t.string   "lado"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "logo_file_name"
