@@ -1,4 +1,5 @@
 class CategoriasController < InheritedResources::Base
+  before_filter :authenticate_admin!
 
   def update
     update! {categorias_path}
