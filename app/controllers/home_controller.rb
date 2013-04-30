@@ -4,6 +4,8 @@ class HomeController < ApplicationController
   
     @categorias = Categoria.limit(3)
     @maximo_noticias = 1
-    @auspiciadores = Auspiciador.all
+
+    @auspiciadores_left = Auspiciador.where("lado = ?", "Izquierdo")
+    @auspiciadores_right = Auspiciador.where("lado = ?", "Derecho")
   end
 end

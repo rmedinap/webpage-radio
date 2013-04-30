@@ -15,8 +15,3 @@
 //= require_tree .
 //= require jquery-minicolors
 //= require jquery_nested_form
-
-console.log('test 1'); 
-console.log('test 2'); 
- 
-console.log('test 3'); 

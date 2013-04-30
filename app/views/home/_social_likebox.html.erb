@@ -1,3 +1,6 @@
+<%= render 'scripts/jcarousel' %>
+
+
 <div id="social-region">
   <div class="social-region-side">
     <div class="box">
@@ -17,11 +20,12 @@
     </div>
     <div class="box-small">
 
-
-<% @auspiciadores.each do |auspiciador| %>
-  <%= image_tag auspiciador.logo(:index) %>
+<!-- <ul id="carousel-left" class="jcarousel-skin-tango"> -->
+<ul id="jcarousel-left" class="jcarousel">
+<% @auspiciadores_left.each do |auspiciador| %>
+  <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li>
 <% end %>
-
+</ul>
 
     </div>
     <div class="box-small">
@@ -31,6 +35,13 @@
 
   <div class="social-region-side">
     <div class="box-small">
+
+<ul id="jcarousel-right" class="jcarousel">
+<% @auspiciadores_right.each do |auspiciador| %>
+  <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li> 
+<% end %>
+</ul>
+
 
     </div>
     <div class="box-small">

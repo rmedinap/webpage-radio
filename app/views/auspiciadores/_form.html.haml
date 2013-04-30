@@ -12,5 +12,8 @@
   .field
     = f.label :logo
     = f.file_field :logo
+  .field
+    = f.label :lado
+    = f.select(:lado, Auspiciador::LADOS)
   .actions
     = f.submit 'Save'
