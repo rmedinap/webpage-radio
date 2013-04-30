@@ -3,8 +3,6 @@
   %header
     %h1#logo
       = link_to image_tag('logo.png'), '/'
-    %h2.slogan
-      Slogan
   %section#radio-online-controles
     .controles-top
       #flash-wrapper
@@ -33,4 +31,4 @@
     %ul
       - @auspiciadores.each do |auspiciador|
         %li
-          = image_tag auspiciador.logo(:index) 
+          = image_tag auspiciador.logo(:index)
