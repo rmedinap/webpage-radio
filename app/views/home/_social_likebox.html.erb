@@ -20,12 +20,19 @@
     </div>
     <div class="box-small">
 
-<!-- <ul id="carousel-left" class="jcarousel-skin-tango"> -->
-<ul id="jcarousel-left" class="jcarousel">
-<% @auspiciadores_left.each do |auspiciador| %>
-  <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li>
+
+<% if @auspiciadores_left.exists? %>
+  <!-- <ul id="carousel-left" class="jcarousel-skin-tango"> -->
+  <ul id="jcarousel-left" class="jcarousel">
+  <% @auspiciadores_left.each do |auspiciador| %>
+   
+    <% if auspiciador.logo_file_name? %>
+      <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li>
+    <% end %>
+  
+  <% end %>
+  </ul>
 <% end %>
-</ul>
 
     </div>
     <div class="box-small">
@@ -36,11 +43,15 @@
   <div class="social-region-side">
     <div class="box-small">
 
-<ul id="jcarousel-right" class="jcarousel">
-<% @auspiciadores_right.each do |auspiciador| %>
-  <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li> 
+<% if @auspiciadores_right.exists? %>
+  <ul id="jcarousel-right" class="jcarousel">
+  <% @auspiciadores_right.each do |auspiciador| %>
+  
+      <li><%= link_to image_tag(auspiciador.logo(:index)), auspiciador.link, :target => '_blank' %></li>
+  
+  <% end %>
+  </ul>
 <% end %>
-</ul>
 
 
     </div>
