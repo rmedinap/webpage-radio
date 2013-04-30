@@ -18,31 +18,36 @@
   .field
     = f.label :categoria_id
     = f.collection_select :categoria_id, Categoria.all, :id, :nombre
+  %br
+  %hr
   .field
     = f.fields_for :fotos do |foto_form|
       = foto_form.file_field :imagen_foto
-      = foto_form.link_to_remove "Eliminar esta foto"
+      = foto_form.link_to_remove "Eliminar esta foto", :class => 'button'
 
-    = f.link_to_add "Agregar foto", :fotos
+    = f.link_to_add "Agregar foto", :fotos, :class => 'button'
+  %hr
   .field
     = f.fields_for :itunes_players do |itunes_player_form|
       = itunes_player_form.text_field :embed
-      = itunes_player_form.link_to_remove "Eliminar este iTunes player"
+      = itunes_player_form.link_to_remove "Eliminar este iTunes player", :class => 'button'
 
-    = f.link_to_add "Agregar iTunes player", :itunes_players
-
+    = f.link_to_add "Agregar iTunes player", :itunes_players, :class => 'button'
+  %hr
   .field
     = f.fields_for :soundclouds do |soundcloud_form|
       = soundcloud_form.text_field :link
-      = soundcloud_form.link_to_remove "Eliminar este Soundcloud player"
+      = soundcloud_form.link_to_remove "Eliminar este Soundcloud player", :class => 'button'
 
-    = f.link_to_add "Agregar Soundcloud player", :soundclouds
+    = f.link_to_add "Agregar Soundcloud player", :soundclouds, :class => 'button'
+  %hr
   .field
     = f.fields_for :videos do |video_form|
       = video_form.text_field :link
-      = video_form.link_to_remove "Eliminar este video"
+      = video_form.link_to_remove "Eliminar este video", :class => 'button'
 
-    = f.link_to_add "Agregar video", :videos
-
+    = f.link_to_add "Agregar video", :videos, :class => 'button'
+  %hr
+  %br
   .actions
     = f.submit 'Save'

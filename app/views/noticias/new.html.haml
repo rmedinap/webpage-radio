@@ -1,5 +1,7 @@
-%h1 New noticia
+.region
+  %h2.title
+    = page_title! 'Agregar Noticia'
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Back', noticias_path
+  = link_to 'Back', noticias_path, :class => 'button'

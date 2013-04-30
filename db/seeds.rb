@@ -11,10 +11,10 @@ Admin.delete_all
 Admin.create(:email => 'paul@kosmyka.com', :password => '12345678')
 Admin.create(:email => 'ricardo@kosmyka.com', :password => '12345678')
 
-quienes_somos = File.read(File.join(Rails.root, '/public/support/quienes_somos.txt'))
-noticia1 = File.read(File.join(Rails.root, '/public/support/noticia-1.txt'))
-noticia2 = File.read(File.join(Rails.root, '/public/support/noticia-2.txt'))
-noticia3 = File.read(File.join(Rails.root, '/public/support/noticia-3.txt'))
+# quienes_somos = File.read(File.join(Rails.root, '/public/support/quienes_somos.txt'))
+# noticia1 = File.read(File.join(Rails.root, '/public/support/noticia-1.txt'))
+# noticia2 = File.read(File.join(Rails.root, '/public/support/noticia-2.txt'))
+# noticia3 = File.read(File.join(Rails.root, '/public/support/noticia-3.txt'))
 
 ipsum = File.read(File.join(Rails.root, '/public/support/ipsum.txt'))
 nombre = File.read(File.join(Rails.root, '/public/support/nombre.txt'))
@@ -29,17 +29,17 @@ Diapositiva.create [{:pie_de_foto => 'Título 2', :diapositiva_picture => File.o
 #                {:pie_de_foto => 'Music'},
 #                {:pie_de_foto => 'TV'}]
 
-QuienesSomos.delete_all
-QuienesSomos.create [{:descripcion => quienes_somos }]
+# QuienesSomos.delete_all
+# QuienesSomos.create [{:descripcion => quienes_somos }]
 
 Categoria.delete_all
 cate1 = Categoria.create ({:nombre => 'Próximo lanzamiento', :color => '#000000'})
 cate2 = Categoria.create ({:nombre => 'Lanzamiento - single', :color => '#542533'})
 cate3 = Categoria.create ({:nombre => 'Reseña de disco', :color => '#712121'})
   # categoria has_many noticias
-noti1 = cate1.noticias.create ({:titulo => 'Demons: adelanto de próximo disco de The National', :contenido => noticia1, :autor => 'Emilio Legonía'})
-noti2 = cate2.noticias.create ({:titulo => 'Kiosko: el regreso de Porter', :contenido => noticia2, :autor => 'Emilio Legonía'})
-noti3 = cate3.noticias.create ({:titulo => 'The Strokes: Comedown Machine (2013)', :contenido => noticia3, :autor => 'Emilio Legonía'})
+# noti1 = cate1.noticias.create ({:titulo => 'Demons: adelanto de próximo disco de The National', :contenido => noticia1, :autor => 'Emilio Legonía'})
+# noti2 = cate2.noticias.create ({:titulo => 'Kiosko: el regreso de Porter', :contenido => noticia2, :autor => 'Emilio Legonía'})
+# noti3 = cate3.noticias.create ({:titulo => 'The Strokes: Comedown Machine (2013)', :contenido => noticia3, :autor => 'Emilio Legonía'})
 
 Dia.delete_all
 lunes = Dia.create ({:nombre => 'Lunes'})
