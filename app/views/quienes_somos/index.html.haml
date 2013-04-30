@@ -1,6 +1,7 @@
 .region
   %h2.title
-    = page_title! 'Quiénes Somos'
+    %b
+      = page_title! 'quiénes Somos'
   - if current_admin
     .administration.head
       = link_to 'Editar', edit_quienes_somos_path(@quienes_somos_first), :class => 'button'
@@ -11,8 +12,9 @@
 
 .region.dj-list
   %h2.title
-    los dj's
-  %ul.content 
+    %b
+      los dj's
+  %ul.content
     - @dj_list.each do |dj|
       %li
         .field-image

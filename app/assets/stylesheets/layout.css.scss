@@ -144,9 +144,9 @@ footer {
    background: $bg-postscript-bottom;
   .container {
     min-height: 450px; background: $bg-postscript-bottom-inner;
-    p {
-      font-size: 100px; line-height: 100%; color: black; text-align: center; padding: 180px 0 160px; margin: 0;
-      b {font-weight: bold}
+    text-align: center;
+    img {
+      padding: 180px 0 160px; margin: 0;
     }
   }
 }
@@ -428,7 +428,7 @@ position: absolute; top: 30px; right: 0; }
           &.apple {background-position: -10px 0px}
           &.blackberry {background-position: -70px 0px}
           &.android {background-position: -137px 0px}
-          &.tunein {background-position: -207px 0px} 
+          &.tunein {background-position: -207px 0px}
         }
       }
     }
