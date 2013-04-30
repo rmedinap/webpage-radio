@@ -4,10 +4,23 @@
   .administration.head
     = link_to 'Agregar Auspiciador', new_auspiciador_path, :class => 'button'
 
-  - @auspiciadores.each do |auspiciador|
-    = link_to image_tag(auspiciador.logo(:index)), auspiciador.link
-    = link_to auspiciador.link, auspiciador.link, :class => 'button'
-    = link_to 'Edit', edit_auspiciador_path(auspiciador), :class => 'button'
-    = link_to 'Destroy', auspiciador, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
-    %hr
+  .sides
+    - @auspiciadores_left.each do |auspiciador|
+      = link_to image_tag(auspiciador.logo(:index)), auspiciador.link
+      .side-inner
+        - if auspiciador.link?
+          .link-auspiciador= auspiciador.link
+        = link_to 'Edit', edit_auspiciador_path(auspiciador), :class => 'button'
+        = link_to 'Destroy', auspiciador, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+      %hr
+
+  .sides.sides-right
+    - @auspiciadores_right.each do |auspiciador|
+      = link_to image_tag(auspiciador.logo(:index)), auspiciador.link
+      .side-inner
+        - if auspiciador.link?
+          = link_to auspiciador.link, auspiciador.link, :class => 'button'
+        = link_to 'Edit', edit_auspiciador_path(auspiciador), :class => 'button'
+        = link_to 'Destroy', auspiciador, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+      %hr
 

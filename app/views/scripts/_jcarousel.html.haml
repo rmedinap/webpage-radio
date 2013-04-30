@@ -1,0 +1,50 @@
+- content_for :css do
+  = stylesheet_link_tag 'jcarousel/skins/tango/skin.css'
+- content_for :javascript do
+  = javascript_include_tag 'jcarousel/lib/jquery.jcarousel.min.js'
+  :javascript
+    jQuery(document).ready(function() {
+
+      // Credits: Robert Penners easing equations (http://www.robertpenner.com/easing/).
+      jQuery.easing['BounceEaseOut'] = function(p, t, b, c, d) {
+      	if ((t/=d) < (1/2.75)) {
+      		return c*(7.5625*t*t) + b;
+      	} else if (t < (2/2.75)) {
+      		return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+      	} else if (t < (2.5/2.75)) {
+      		return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+      	} else {
+      		return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+      	}
+      };
+      function mycarousel_initCallback(carousel)
+      {
+          // Disable autoscrolling if the user clicks the prev or next button.
+        /*  carousel.buttonNext.bind('click', function() {
+              carousel.startAuto(0);
+          });
+      
+          carousel.buttonPrev.bind('click', function() {
+              carousel.startAuto(0);
+          });  */
+      
+          // Pause autoscrolling if the user moves with the cursor over the clip.
+          carousel.clip.hover(function() {
+              carousel.stopAuto();
+          }, function() {
+              carousel.startAuto();
+          });
+      };
+
+
+      jQuery('.jcarousel').jcarousel({
+        auto: 2,
+        scroll: 2,
+        visible: 2,
+        buttonNextHTML: null,
+        buttonPrevHTML: null,
+        wrap: 'last',
+        easing: 'BounceEaseOut',
+        initCallback: mycarousel_initCallback
+      });
+    });

@@ -381,7 +381,7 @@ body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slide
   .box {width: 100%}
   .box-small {width: 50%}
   iframe, .fb-like-box, .fb-like-box span {width: 100% !important}
-  width: 48%; float: left; margin-right: 0.5%
+  width: 48%; float: left; margin-right: 0.5%; overflow: hidden;
 }
 
 .button span,
@@ -439,3 +439,27 @@ select, input[type="file"] {margin: 23px 0 0 0}
 
 .menu-admin { border-top: 1px solid white; width: 100%}
 footer .menu-admin {display: none}
+
+
+.side-left {float: left}
+.sides-right {background: #ccc}
+.sides {@include inline-block; width: 48%; padding: 5px}
+.link-auspiciador {overflow: hidden; @include inline-block; width: 290px}
+
+.side-inner {@include inline-block; width: 200px}
+
+
+.jcarousel-container {
+  width: 400px; position: relative;
+  .jcarousel-clip {
+    position: relative; @include size(450px, 165px); overflow: hidden;
+    ul.jcarousel {
+      .jcarousel-item {
+        @include size(230px, 165px);
+      }
+    }
+  }
+}
+
+#jcarousel-left {padding-top: 0px}
+#jcarousel-right {padding-bottom: 5px}

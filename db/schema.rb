@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
 
   create_table "auspiciadores", :force => true do |t|
     t.string   "link"
+    t.string   "lado"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "logo_file_name"
@@ -68,13 +69,6 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
     t.integer  "diapositiva_picture_file_size"
     t.datetime "diapositiva_picture_updated_at"
     t.string   "link"
-  end
-
-  create_table "dias", :force => true do |t|
-    t.string   "nombre"
-    t.string   "slug"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "djs", :force => true do |t|
@@ -117,7 +111,6 @@ ActiveRecord::Schema.define(:version => 20130427170113) do
   create_table "programas", :force => true do |t|
     t.string   "titulo"
     t.text     "contenido"
-    t.integer  "dia_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "dia"
