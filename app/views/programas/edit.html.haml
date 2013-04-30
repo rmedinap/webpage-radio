@@ -1,7 +1,9 @@
-%h1 Editing programa
+.region
+  %h2.title 
+    = page_title! 'Editing programa'
 
-= render 'form'
-
-= link_to 'Show', @programa
-\|
-= link_to 'Back', programas_path
+  = render 'form'
+  
+  = link_to 'Show', @programa, :class => 'button'
+  \|
+  = link_to 'Back', programas_path, :class => 'button'

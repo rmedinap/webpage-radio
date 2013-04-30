@@ -20,3 +20,14 @@
   %li
     = link_to '', 'http://tunein.com/radio/Stereosonica-s197293/', :class => 'tunein'
 
+
+- if current_admin
+  %ul.menu-admin
+    %li
+      = link_to 'Diapositivas', diapositivas_path
+    %li
+      = link_to "Dj's", djs_path
+    %li
+      = link_to 'Auspiciadores', auspiciadores_path
+    %li{:style => 'display: none'}
+      = link_to 'Mensajes Recibidos', contactos_path

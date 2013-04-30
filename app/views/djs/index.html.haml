@@ -1,19 +1,12 @@
-%h1 Listing djs
-
-%table
-  %tr
-    %th Nombre
-    %th
-    %th
-    %th
+.region
+  %h2.title= page_title! "Listado de Dj's"
+ 
+  .administration.head 
+    = link_to 'Agregar Dj', new_dj_path, :class => 'button'
 
   - @djs.each do |dj|
-    %tr
-      %td= dj.nombre
-      %td= link_to 'Show', dj
-      %td= link_to 'Edit', edit_dj_path(dj)
-      %td= link_to 'Destroy', dj, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %h2{:style => 'display: inline-block; font-weight: bold'}= dj.nombre
+    = link_to 'Edit', edit_dj_path(dj), :class => 'button'
+    = link_to 'Destroy', dj, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+    %hr
 
-%br
-
-= link_to 'New Dj', new_dj_path

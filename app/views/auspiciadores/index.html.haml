@@ -1,19 +1,13 @@
-%h1 Listing auspiciadores
-
-%table
-  %tr
-    %th Link
-    %th
-    %th
-    %th
+.region
+  %h2.title
+    = page_title! 'Listado de Auspiciadores'
+  .administration.head
+    = link_to 'Agregar Auspiciador', new_auspiciador_path, :class => 'button'
 
   - @auspiciadores.each do |auspiciador|
-    %tr
-      %td= auspiciador.link
-      %td= link_to 'Show', auspiciador
-      %td= link_to 'Edit', edit_auspiciador_path(auspiciador)
-      %td= link_to 'Destroy', auspiciador, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = link_to image_tag(auspiciador.logo(:index)), auspiciador.link
+    = link_to auspiciador.link, auspiciador.link, :class => 'button'
+    = link_to 'Edit', edit_auspiciador_path(auspiciador), :class => 'button'
+    = link_to 'Destroy', auspiciador, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+    %hr
 
-%br
-
-= link_to 'New Auspiciador', new_auspiciador_path

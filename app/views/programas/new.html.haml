@@ -1,5 +1,7 @@
-%h1 New programa
+.region
+  %h2.title
+    = page_title! 'Programación'
 
-= render 'form'
-
-= link_to 'Back', programas_path
+  = render 'form'
+  
+  = link_to 'Back', programas_path, :class => 'button'

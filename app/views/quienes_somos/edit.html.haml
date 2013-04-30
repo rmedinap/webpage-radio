@@ -1,7 +1,7 @@
-%h1 Editing quienes_somos
+.region
+  %h2.title
+    = page_title! 'Editar Quiénes Somos'
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @quienes_somos
-\|
-= link_to 'Back', quienes_somos_index_path
+  = link_to 'Back', quienes_somos_index_path, :class => 'button'

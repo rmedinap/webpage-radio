@@ -2,20 +2,13 @@
   %h2.title
     = page_title! 'Categorías'
 
-%table
-  %tr
-    %th Nombre
-    %th
-    %th
-    %th
+  .administration.head
+    = link_to 'Crear Categoría', new_categoria_path, :class => 'button'
+    %br
 
   - @categorias.each do |categoria|
-    %tr
-      %td= categoria.nombre
-      %td= link_to 'Show', categoria
-      %td= link_to 'Edit', edit_categoria_path(categoria)
-      %td= link_to 'Destroy', categoria, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = link_to categoria.nombre, categoria, :class => 'button'
+    = link_to 'Edit', edit_categoria_path(categoria), :class => 'button'
+    = link_to 'Destroy', categoria, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+    %hr 
 
-%br
-
-= link_to 'New Categoria', new_categoria_path

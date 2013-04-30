@@ -1,7 +1,7 @@
-%h1 Editing auspiciador
+.region
+  %h2.title
+    = page_title! 'Editar auspiciador'
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @auspiciador
-\|
-= link_to 'Back', auspiciadores_path
+  = link_to 'Back', auspiciadores_path, :class => 'button'

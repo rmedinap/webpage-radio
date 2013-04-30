@@ -7,10 +7,7 @@
           %li= msg
 
   .field
-    = f.label :descripcion
+    = f.label :descripcion, 'Descripción'
     = f.text_area :descripcion
-  .field
-    = f.label :slug
-    = f.text_field :slug
   .actions
     = f.submit 'Save'
