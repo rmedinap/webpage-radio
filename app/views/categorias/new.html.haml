@@ -8,7 +8,12 @@
   = link_to 'Back', noticias_path, :class => 'button'
 
 
+
+- content_for :css do
+  = stylesheet_link_tag 'minicolors/jquery.minicolors.css'
 - content_for :javascript do
+  = javascript_include_tag 'minicolors/jquery.minicolors.js'
+
   :javascript
     jQuery(document).ready(function() {
       jQuery('#categoria_color').minicolors();

@@ -23,7 +23,7 @@ ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 #content {padding-top: 20px}
 
 h2.title {
-  text-align: center; font-size: 45px; padding-bottom: 40px; line-height: 100%;
+  text-align: center; font-size: 45px; padding-bottom: 40px; line-height: 100%; text-transform: lowercase;
   b {
     font-weight: bolder;
   }
@@ -170,23 +170,24 @@ footer {
 #week-days-wrapper .coda-nav li.tab7 a {border-right: 0}
 
 .social-links {
- padding-top: 5px;
  li {
-    @include inline-block; vertical-align: middle;
+    @include inline-block; vertical-align: middle; border-right: 1px solid white; 
     a {
-      background: $multiple; display: block;
+      background: $multiple; display: block; 
     }
+    &.last {border-right: 0}
   }
+
 
   #main-menu & {
     float: right;
       li {
         a {
-          @include size(30px, 40px); padding: 0; border: 0;
-          &.apple {background-position: -13px -8px}
-          &.blackberry {background-position: -73px -8px}
-          &.android {background-position: -140px -8px}
-          &.tunein {background-position: -210px -8px}
+          @include size(31px, 53px); padding: 0px; border: 0;
+          &.apple {background-position: -17px -1px}
+          &.blackberry {background-position: -74px -1px}
+          &.android {background-position: -140px -1px}
+          &.tunein {background-position: -210px -1px}
        }
     }
   }

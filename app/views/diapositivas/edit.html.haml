@@ -1,7 +1,8 @@
-%h1 Editing diapositiva
+.region
+  %h2.title
+    = page_title! 'Editar diapositiva'  
+    = image_tag @diapositiva.diapositiva_picture(:thumbs)
 
 = render 'form'
 
-= link_to 'Show', @diapositiva
-\|
-= link_to 'Back', diapositivas_path
+= link_to 'Back', diapositivas_path, :class => 'button'
