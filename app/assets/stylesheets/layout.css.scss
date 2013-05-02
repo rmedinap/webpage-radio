@@ -23,7 +23,7 @@ ul, ol, ul ul, ul ol, ol ol, ol ul {margin: 0; padding: 0}
 #content {padding-top: 20px}
 
 h2.title {
-  text-align: center; font-size: 45px; padding-bottom: 40px; line-height: 100%; text-transform: lowercase;
+  text-align: center; font-size: 45px; padding-bottom: 40px; line-height: 100%; text-transform: capitalize;
   b {
     font-weight: bolder;
   }
@@ -50,8 +50,8 @@ header {
 }
 
 footer {
-  background: $bg-footer; 
-  -pie-background: $bg-footer-pie; @include css3pie; 
+  background: $bg-footer;
+  -pie-background: $bg-footer-pie; @include css3pie;
   * {color: $white; font-weight: lighter} a, a:visited {color: orange}
   #footer-top {border-bottom: $bevel-border-bottom;
     .container {
@@ -173,9 +173,9 @@ footer {
 
 .social-links {
  li {
-    @include inline-block; vertical-align: middle; border-right: 1px solid white; 
+    @include inline-block; vertical-align: middle; border-right: 1px solid white;
     a {
-      background: $multiple; display: block; 
+      background: $multiple; display: block;
     }
     &.last {border-right: 0}
   }

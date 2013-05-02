@@ -1,3 +1,5 @@
+= javascript_include_tag 'http://s1.streammonster.com/system/streaminfo.js', 'http://s1.streammonster.com/js.php/edgaruiz/streaminfo/rnd0'
+
 = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 = javascript_include_tag 'player/jquery.jplayer.min.js'
 = javascript_include_tag 'player/jquery.godsplayer.js'
@@ -24,9 +26,11 @@
       = link_to image_tag('logo.png'), '/'
   %section#radio-online-controles
     .controles-top
-      #flash-wrapper
-        = render 'flash_wrapper'
-
+      .GodsPlayer#GodsPlayer1
+        .mute-button
+        .power-button
+        .volume
+          .slider
 
       %nav#main-menu
         .label
