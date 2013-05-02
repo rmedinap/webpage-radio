@@ -271,6 +271,7 @@ p {
     li, img {
       @include border-radius(100px);
       @include inline-block;
+      @include css3pie;
     }
     li {
       @include size(188px, 188px);
