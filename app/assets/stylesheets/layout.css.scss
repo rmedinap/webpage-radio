@@ -50,7 +50,9 @@ header {
 }
 
 footer {
-  background: $bg-footer; * {color: $white; font-weight: lighter} a, a:visited {color: orange}
+  background: $bg-footer; 
+  -pie-background: $bg-footer-pie; @include css3pie; 
+  * {color: $white; font-weight: lighter} a, a:visited {color: orange}
   #footer-top {border-bottom: $bevel-border-bottom;
     .container {
       min-height: 250px; padding-top: 100px;
@@ -194,7 +196,7 @@ footer {
   footer.main & {
     display: none;
     &.follow { float: right; display: block; text-align: center; padding-top: 20px;
-      li {margin-left: 20px;
+      li {margin-left: 20px; border-right: 0;
         a {
           @include size(34px, 40px);
           &.youtube {background-position: -280px -8px}
@@ -424,12 +426,12 @@ position: absolute; top: 30px; right: 0; }
     float: right;
     background: none;
     ul {background: $cyan; padding: 0;
-      li {border-left: 1px solid white;
+      li {
         a {width: 35px; height: 57px;
-          &.apple {background-position: -10px 0px}
-          &.blackberry {background-position: -70px 0px}
-          &.android {background-position: -137px 0px}
-          &.tunein {background-position: -207px 0px}
+          &.apple {background-position: -12px 0px}
+          &.blackberry {background-position: -72px 0px}
+          &.android {background-position: -140px 0px}
+          &.tunein {background-position: -209px 0px}
         }
       }
     }
