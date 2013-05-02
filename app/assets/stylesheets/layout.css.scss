@@ -269,7 +269,7 @@ p {
 .dj-list {
   ul {
     li, img {
-      @include border-radius(100px);
+      @include border-radius(150px);
       @include inline-block;
       @include css3pie; 
     }
