@@ -50,7 +50,9 @@ header {
 }
 
 footer {
-  background: $bg-footer; * {color: $white; font-weight: lighter} a, a:visited {color: orange}
+  background: $bg-footer; 
+  -pie-background: $bg-footer; behavior: url(PIE-1.0.0/PIE.htc);
+  * {color: $white; font-weight: lighter} a, a:visited {color: orange}
   #footer-top {border-bottom: $bevel-border-bottom;
     .container {
       min-height: 250px; padding-top: 100px;
@@ -194,7 +196,7 @@ footer {
   footer.main & {
     display: none;
     &.follow { float: right; display: block; text-align: center; padding-top: 20px;
-      li {margin-left: 20px;
+      li {margin-left: 20px; border-right: 0;
         a {
           @include size(34px, 40px);
           &.youtube {background-position: -280px -8px}
