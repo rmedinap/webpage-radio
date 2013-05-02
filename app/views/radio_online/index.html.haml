@@ -1,3 +1,22 @@
+= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+= javascript_include_tag 'player/jquery.jplayer.min.js'
+= javascript_include_tag 'player/jquery.godsplayer.js'
+
+= stylesheet_link_tag 'player/skin/style.css'
+
+:javascript
+  /* GodsPlayer v1.0.0 config */
+  var Godsplayer1 = new GodsPlayer({
+    'id': 'GodsPlayer1',
+    'socialShareUrl': 'http://www.stereosonicaraido.com',
+    'radioName': 'Stereosonica Radio',
+    'enableArtwork': true,
+    'streamUrl': 'http://68.168.103.13:8252/;stream/1&ext=.mp3',
+    'streamFormat': 'mp3',
+    'volume': 0.99,
+    'power': true,
+    'mute': false
+  });
 
 #radio-online-wrapper
   %header
