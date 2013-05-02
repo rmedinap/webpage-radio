@@ -51,7 +51,7 @@ header {
 
 footer {
   background: $bg-footer; 
-  -pie-background: $bg-footer; behavior: url(/assets/PIE-1.0.0/PIE.htc);
+  -pie-background: $bg-footer-pie; behavior: url(/assets/PIE-1.0.0/PIE.htc);
   * {color: $white; font-weight: lighter} a, a:visited {color: orange}
   #footer-top {border-bottom: $bevel-border-bottom;
     .container {
