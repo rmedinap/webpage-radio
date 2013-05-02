@@ -1,0 +1,92 @@
+.GodsPlayer {
+	position: relative;
+	width: 416px;
+	height: 118px;
+	text-align: right;
+	font-family: fixed;
+	font-family: courier;
+	font-size: 11px;
+	width: 416px;
+	height: 140px;
+	overflow: hidden;
+}
+
+.volume {
+	position: absolute;
+	left: 230px;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	top: 78px;
+}
+
+.slider {
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 60px;
+    height: 35px;
+    background-image: url('/assets/player/skin/slider.png');
+    background-repeat: no-repeat;
+}
+
+.volume-button {
+    position: absolute;
+    top: 44px;
+    width: 48px;
+    height: 35px;
+    padding-top: 13px;
+    color: #888;
+}
+
+.power-button {
+    background-image: url('/assets/player/skin/power_off.png');
+    position: absolute;
+    left: 170px;
+    top: 78px;
+    width: 35px;
+    height: 35px;
+}
+
+.power-button.on {
+    background-image: url('/assets/player/skin/power_on.png');
+    position: absolute;
+    left: 170px;
+    top: 78px;
+    width: 35px;
+    height: 35px;
+}
+
+
+.volume-button,.power-button,.mute-button {
+    cursor: pointer;
+}
+
+
+.mute-button {
+    background-image: url('/assets/player/skin/mute_off.png');
+    position: absolute;
+    left: 200px;
+    top: 78px;
+    width: 35px;
+    height: 35px;
+}
+
+.mute-button.on {
+    background-image: url('/assets/player/skin/mute_on.png');
+    position: absolute;
+    left: 200px;
+    top: 78px;
+    width: 35px;
+    height: 35px;
+}
+
+.power-button.on {
+     background-image: url('/assets/player/skin/power_on.png');
+    position: absolute;
+    left: 170px;
+    top: 78px;
+    width: 35px;
+    height: 35px;
+
+}

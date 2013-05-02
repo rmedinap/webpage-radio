@@ -1,6 +1,9 @@
 es:
   app:
     name: 'Stereosonica Radio'
+  radio_online:
+    index:
+      title: 'Reproductor Online'
   date:
     abbr_day_names:
     - dom
