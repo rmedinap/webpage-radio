@@ -281,7 +281,7 @@ p {
       -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
       &:hover {
         border-color: $cyan;
-        .button {top: 20px; opacity: 1; *filter: alpha(opacity=100)}
+        .button {top: 20px; opacity: 1; filter: alpha(opacity=100)}
       }
       .field-image {
         overflow: hidden;
