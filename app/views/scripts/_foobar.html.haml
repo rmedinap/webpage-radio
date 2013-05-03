@@ -1,44 +1,46 @@
 
 = javascript_include_tag 'jquery.foobar-2.1/jquery.foobar.2.1.min.js'
 :javascript
-  var mensaje = "#{notice}"
+  $(document).ready(function() {
+    var mensaje = "#{notice}"
 
 
-  $foobar({
-    "height" : {
-      "bar" : 100, "button" : 30
-    },
-    
-    "width": {
-      "left": "0", "center": "*",
-      "right": "0", "button": "80px"
-    },
-   
-    "display" : {
-      //"backgroundColor" : "transparent",
-      "border": "solid 3px #000",
-      "button": {
-        "backgroundColor": "#800",
-        "type": "close"
+    $foobar({
+      "height" : {
+        "bar" : 100, "button" : 30
       },
-      "theme": {
-        "bar": "x-white custom-bg"
-      }
-    },
-    
-    "messages": [
-      mensaje,
       
-    ],
-    
-    "message": {
-      "font": {
-        "color": "#ff0",
-        "size": "24px",
-        "shadow": "1px 1px 0 #444",
-        "weight": "bold"
+      "width": {
+        "left": "0", "center": "*",
+        "right": "0", "button": "80px"
+      },
+     
+      "display" : {
+        //"backgroundColor" : "transparent",
+        "border": "solid 3px #000",
+        "button": {
+          "backgroundColor": "#800",
+          "type": "close"
+        },
+        "theme": {
+          "bar": "x-white custom-bg"
+        }
+      },
+      
+      "messages": [
+        mensaje,
+        
+      ],
+      
+      "message": {
+        "font": {
+          "color": "#ff0",
+          "size": "24px",
+          "shadow": "1px 1px 0 #444",
+          "weight": "bold"
+        }
       }
-    }
+    });
   });
     
 
