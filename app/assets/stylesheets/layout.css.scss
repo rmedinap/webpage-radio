@@ -222,10 +222,10 @@ form {
   input, textarea, button {background: $multiple;  width: 300px; height: 100px; border: 0; @include inline-block}
   label {text-transform: uppercase; color: $black; @include inline-block; width: 90px; padding: 20px 5px 0 0; text-align: right}
   .field {padding-bottom: 5px;
-    input {background-position: -10px -260px; padding: 20px 25px 20px 35px; @include size(300px, 20px);
+    input {background-position: -10px -260px; padding: 15px 25px 20px 35px; @include size(360px, 65px);
       &:focus {background-position: -380px -259px}
     }
-    textarea {background-position: -10px -340px; padding: 20px 25px 20px 35px; @include size(300px, 170px);
+    textarea {background-position: -10px -340px; padding: 20px 25px 20px 35px; @include size(360px, 205px);
       &:focus {
         background-position: -380px -340px;
       }
