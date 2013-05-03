@@ -61,7 +61,7 @@
         - if current_admin
           #admin-config
             = link_to 'Cerrar Sesión', destroy_admin_session_path, :class => 'button'
-        
+
         .container.top
           %header.main.sixteen.columns{:role => 'banner'}
             .inner
@@ -103,3 +103,4 @@
        centerScreen:1
     });
 
+  = render 'shared/google_analytics'
