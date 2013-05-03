@@ -245,6 +245,9 @@ form {
   }
   &.italic {font-style: italic}
   &.full {display: block}
+  &.radio {white-space: nowrap; overflow: hidden; position: relative; height: 24px;
+    /*span {position: absolute; top: 10px; left: 10px}*/
+  }
 }
 
 #noticia {
@@ -392,10 +395,30 @@ body .rsDefault .rsCloseVideoIcn {background: url('/javascripts/libs/royal-slide
 .button a {color: white; font-size: 16px}
 
 #radio-online {width: 75px; height: 75px;
-position: absolute; top: 30px; right: 0; }
+position: absolute; top: 30px; right: 0;
+
+
+
+ }
 
 #radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
 #radio-online-link {width: 75px; height: 75px; background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
+
+#radio-online-wrapper {
+  .power-button {background: $player; @include size(75px, 75px); top: 0; left: 0;
+    &:hover {background-position: -0px -90px}
+    &.on {background-position: -91px -0}
+    &.on:hover {background-position: -90px -90px}
+  }
+
+  .volume {background: $player; background-position: 1px -175px; 
+    @include size(133px, 60px); top: 0px; left: 80px;
+  } 
+
+  .mute-button {background: $player; background-position: -6px -250px; 
+   @include size(47px, 47px); top: 0px; left: 220px;
+  } 
+}
 
 .notice {display: none}
 
