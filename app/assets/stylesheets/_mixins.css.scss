@@ -59,6 +59,7 @@
 
 @mixin box-sizing($value) {
   -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
+  behavior: url(/assets/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc)
 }
 
 @mixin clearfix2 {
@@ -69,7 +70,7 @@
 }
 
 @mixin css3pie {
-  behavior: url(/assets/PIE-1.0.0/PIE.htc);
+  behavior: url(/assets/ie-support/PIE-1.0.0/PIE.htc);
 }
 
 // core css3 animations
