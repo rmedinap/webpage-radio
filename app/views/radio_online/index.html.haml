@@ -26,15 +26,21 @@
       = link_to image_tag('logo.png'), '/'
   %section#radio-online-controles
     .controles-top
+      .label-container
+        .label.label-volume
+          Volume
+        .label.label-mute
+          Mute
+        .label.label-reproductores
+          Reproductores
       .GodsPlayer#GodsPlayer1
         .mute-button
         .power-button
-        .volume
-          .slider
+        .volume-wrapper
+          .volume
+            .slider
 
       %nav#main-menu
-        .label
-          Reproductores
         %ul.social-links
           %li
             = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'apple'
@@ -49,9 +55,9 @@
         Ahora suena
       = link_to content_tag(:span, 'Cargando...', :id => 'cc_stream_info_summary'), '/', :class => 'button default italic full radio'
 
-
-  %section#auspiciadores
-    %ul
-      - @auspiciadores.each do |auspiciador|
-        %li
-          = image_tag auspiciador.logo(:index)
+  -#
+    %section#auspiciadores
+      %ul
+        - @auspiciadores.each do |auspiciador|
+          %li
+            = image_tag auspiciador.logo(:index)

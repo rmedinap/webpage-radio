@@ -402,21 +402,42 @@ position: absolute; top: 30px; right: 0;
  }
 
 #radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
-#radio-online-link {width: 75px; height: 75px; background: url(/assets/backgrounds/play-button.png) no-repeat; display: block; float: right}
+#radio-online-link {width: 75px; height: 75px; background: $player; display: block; float: right}
 
 #radio-online-wrapper {
+  .GodsPlayer { @include size(300px, 100px); float: left}
+  .GodsPlayer {position: absolute; top: 10px; left: 0}
+  #main-menu {position: absolute; right: 0; padding-top: 10px}
+  #main-menu, .volume-wrapper, .mute-button {top:15px}
+
+  .label-container {
+    @include size(350px, 13px); position: absolute; top: 11px; right: 0;
+    .label-volume,
+    .label-mute,
+    .label-reproductores {position: absolute; top: 0px; right: 253px; display: inline; line-height: 100%}
+
+    .label-mute {right: 200px}
+    .label-reproductores {right: 0}
+  }
+
   .power-button {background: $player; @include size(75px, 75px); top: 0; left: 0;
     &:hover {background-position: -0px -90px}
     &.on {background-position: -91px -0}
     &.on:hover {background-position: -90px -90px}
   }
 
-  .volume {background: $player; background-position: 1px -175px; 
-    @include size(133px, 60px); top: 0px; left: 80px;
-  } 
+  .volume-wrapper {background: $player; background-position: -204px 0px; z-index: 100;
+    @include size(133px, 60px); position: absolute; left: 80px;
+    .volume {
+      background: none; top:17.7px; left: 15px; @include size(102px, 30px);
+      .slider {
+        background: $volume; left: 1px;
+      }
+    }
+  }
 
-  .mute-button {background: $player; background-position: -6px -250px; 
-   @include size(47px, 47px); top: 0px; left: 220px;
+  .mute-button {background: $player; background-position: -6px -180px; 
+   @include size(47px, 47px);  left: 220px;
   } 
 }
 
@@ -441,7 +462,7 @@ position: absolute; top: 30px; right: 0;
   }
 
   #flash-wrapper {float: left}
-  .controles-top {height: 90px}
+  .controles-top {height: 95px; position: relative}
 
   section {padding-top: 10px}
 
