@@ -87,10 +87,6 @@
               = render '/layouts/menu'
               = render '/shared/follow_us'
 
-          /[if IE 7]
-            .fix-ie
-          /[if IE 8]
-            .fix-ie
           #footer-bottom
             .container
               #copyright
@@ -98,6 +94,11 @@
               #autor
                 DISEÑO Y DESARROLLO WEB POR
                 =link_to 'KOSMYKA', 'http://www.kosmyka.com', :target => '_blank'
+
+          /[if IE 7]
+            .fix-ie
+          /[if IE 8]
+            .fix-ie
 
   = javascript_include_tag 'jquery.popupWindow.js'
 
