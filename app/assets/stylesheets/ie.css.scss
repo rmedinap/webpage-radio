@@ -1,0 +1,39 @@
+.lt-ie8 body{ }
+.lt-ie8 #main-menu .social-links {float: none}
+.lt-ie8 #main-menu a {width: 160px}
+.lt-ie8 a.apple {width: 37px !important; background-position: -12px -1px !important}
+.lt-ie8 a.blackberry { background-position: -72px -1px !important}
+.lt-ie8 a.tunein { background-position: -208px -1px !important}
+.lt-ie8 form .actions input {height: 60px}
+.lt-ie8 footer.main .social-links.follow {position: relative; top: -150px}   
+
+.container.top,
+#postscript-bottom {overflow: hidden}
+
+.ie7 *{zoom: 1 }
+
+.lt-ie9 .fix-ie {width: 100%; height: 15px; position: relative; bottom: 115px; left: 0;
+background: url(/assets/backgrounds/bg-footer.jpg) repeat scroll 0 0 }
+
+.lt-ie9 #footer-top {background: url(http://stereosonicaradio.com/assets/backgrounds/bg-footer.jpg) repeat scroll 0 0}
+
+
+.lt-ie9 .dj-list ul img {top: -4px; position: relative; left: -4px;}
+.lt-ie9 .dj-list ul li {width: 183px; height: 183px; border-width: 8px}
+.lt-ie9 .dj-list ul li .button {margin-top: 0; top: 0px}
+
+.ie7 form .field,
+.ie7 form .field *,
+.ie7 form .actions,
+.ie7 form .actions *{zoom: 1}
+
+
+.lt-ie10 form .field {padding-bottom: 25px}
+.lt-ie10 form .field input {background: none; padding: 0;  width: 300px; height: auto; position: relative; top:20px; left: 30px}
+.lt-ie10 form .field.textarea {padding-bottom: 40px}
+.lt-ie10 form .field textarea { background: none; width: 320px; height: 175px; position: relative; top: 16px; left: 30px; padding: 0}
+
+.lt-ie10 form .field {background: url(http://stereosonicaradio.com/assets/backgrounds/multiple.png) no-repeat 90px -260px}
+.lt-ie10 form .field.textarea {background: url(http://stereosonicaradio.com/assets/backgrounds/multiple.png) no-repeat 90px -340px;/* padding-bottom:25px*/}
+
+.ie9 form .field {padding-bottom: 20px}
