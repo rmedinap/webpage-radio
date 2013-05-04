@@ -1,14 +1,24 @@
 %ul.menu
   %li
-    = link_to 'Inicio', root_path
+    = link_to_unless_current 'Inicio', root_path do
+      %span
+        Inicio
   %li
-    = link_to 'Quiénes Somos', quienes_somos_index_path
+    = link_to_unless_current 'Quiénes Somos', quienes_somos_index_path do
+      %span 
+        Quiénes Somos
   %li
-    = link_to 'Programación', programas_path
+    = link_to_unless_current 'Programación', programas_path do
+      %span 
+        Programación
   %li
-    = link_to 'Noticias', noticias_path
+    = link_to_unless_current 'Noticias', noticias_path do
+      %span 
+        Noticias
   %li.last
-    = link_to 'Contacto', new_contacto_path
+    = link_to_unless_current 'Contacto', new_contacto_path do
+      %span
+        Contacto
 
 %ul.social-links
   %li
@@ -24,10 +34,18 @@
 - if current_admin
   %ul.menu-admin
     %li
-      = link_to 'Diapositivas', diapositivas_path
+      = link_to_unless_current 'Diapositivas', diapositivas_path do
+        %span 
+          Diapositivas
     %li
-      = link_to "Dj's", djs_path
+      = link_to_unless_current "Dj's", djs_path do
+        %span 
+          Dj's
     %li
-      = link_to 'Auspiciadores', auspiciadores_path
+      = link_to_unless_current 'Auspiciadores', auspiciadores_path do
+        %span 
+          Auspiciadores
     %li{:style => 'display: none'}
-      = link_to 'Mensajes Recibidos', contactos_path
+      = link_to_unless_current 'Mensajes Recibidos', contactos_path do
+        %span 
+          Mensajes Recibidos

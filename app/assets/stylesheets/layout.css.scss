@@ -157,16 +157,19 @@ footer {
 #days-menu,
 #week-days-wrapper .coda-nav {
  background: $cyan;
- ul, li, a {
+ ul, li, a, span {
   @include inline-block; margin: 0;/* background: transparent;*/
   }
-  a {
+  a, span {
     width: 155px; text-align: center; color: white; padding: 15px 0; text-transform: uppercase; border-right: 1px solid white;
-    &.current {
+    &.current  {
       background: black;
     }
   }
+  span {background: $black}
 }
+#main-menu .menu li {float: left}
+#main-menu .menu li a {width: 159px}
 #week-days-wrapper .coda-nav ul {width: 100% !important}
 #week-days-wrapper .coda-nav a  {width: 133px}
 #week-days-wrapper .coda-nav li.tab7 a {border-right: 0}
