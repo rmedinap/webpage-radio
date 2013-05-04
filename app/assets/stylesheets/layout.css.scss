@@ -142,10 +142,10 @@ footer {
     margin: 0 7px 7px 0;
   }
 }
-#postscript-bottom {
+#postscript-bottom {position: relative; bottom: -1px;
    background: $bg-postscript-bottom;
   .container {
-    min-height: 450px; background: $bg-postscript-bottom-inner;
+    height: 450px; background: $bg-postscript-bottom-inner;
     text-align: center;
     img {
       padding: 180px 0 160px; margin: 0;
