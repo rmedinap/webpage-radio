@@ -219,7 +219,8 @@ footer {
 }
 
 form {
-  input, textarea, button {background: $multiple;  width: 300px; height: 100px; border: 0; @include inline-block;}
+  input, textarea, button {background: $multiple;  width: 300px; height: 100px; border: 0; @include inline-block;
+  @include box-sizing(border-box)}
   label {text-transform: uppercase; color: $black; @include inline-block; width: 90px; padding: 20px 5px 0 0; text-align: right}
   .field {padding-bottom: 5px;
     input {background-position: -10px -260px; padding: 15px 25px 20px 35px; @include size(360px, 65px);
@@ -402,7 +403,12 @@ position: absolute; top: 30px; right: 0;
  }
 
 #radio-online span {position: absolute; top: 30px; right: 80px; font-style: italic}
-#radio-online-link {width: 75px; height: 75px; background: $player; display: block; float: right}
+#radio-online-link {width: 75px; height: 75px; background: $player; display: block; float: right;
+  &:hover {
+    background-position: -1px -90px; 
+  }
+}
+
 
 #radio-online-wrapper {
   .GodsPlayer { @include size(300px, 100px); float: left}
@@ -416,7 +422,7 @@ position: absolute; top: 30px; right: 0;
     .label-mute,
     .label-reproductores {position: absolute; top: 0px; right: 253px; display: inline; line-height: 100%}
 
-    .label-mute {right: 200px}
+    .label-mute {right: 203px}
     .label-reproductores {right: 0}
   }
 
@@ -436,8 +442,11 @@ position: absolute; top: 30px; right: 0;
     }
   }
 
-  .mute-button {background: $player; background-position: -6px -180px; 
+  .mute-button {background: $player; background-position: -5px -180px; 
    @include size(47px, 47px);  left: 220px;
+    &:hover, &.on {
+      background-position: -75px -180px
+    }
   } 
 }
 
