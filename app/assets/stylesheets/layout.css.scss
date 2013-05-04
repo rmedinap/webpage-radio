@@ -51,7 +51,7 @@ header {
 
 footer {
   background: $bg-footer;
-  -pie-background: $bg-footer-pie; @include css3pie; overflow: hidden;
+  -pie-background: $bg-footer-pie; @include css3pie; overflow: hidden; position: relative;
   * {color: $white; font-weight: lighter} a, a:visited {color: orange}
   #footer-top {border-bottom: $bevel-border-bottom;
     .container {
@@ -68,7 +68,7 @@ footer {
     }
   }
   #footer-bottom {
-    border-top: $bevel-border-top; font-size: 11px; padding: 10px 0;
+    border-top: $bevel-border-top; font-size: 11px; padding: 10px 0; position: relative;
     #copyright {float: left} #autor {float: right}
   }
 }
