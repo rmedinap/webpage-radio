@@ -1,4 +1,6 @@
 
+input, textarea {outline: 0}
+
 @mixin button {
   padding: $space $space*3;
   @include inline-block;
