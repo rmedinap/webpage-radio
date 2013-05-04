@@ -5,7 +5,8 @@
         // autoplay options go gere
         enabled: true,
         pauseOnHover: true,
-        stopAtAction: false
+        stopAtAction: false,
+        delay: 3000
       },
       block: {
       // animated blocks options go gere
@@ -32,7 +33,7 @@
       sliderTouch: true,
       keyboardNavEnabled: true,
       });
-  
+
     // custom script for stereosonica
     function add_numbers_to_slides() {
       bullet =  $('.rsDefault .rsBullet');
@@ -41,12 +42,12 @@
         $(this).find('span').text(numbers[$(this).index()]);
       });
     }
-  
+
     add_numbers_to_slides();
-  
-  
+
+
     });  // END OF DOCUMENT READY
-  
-  
-  
-  
+
+
+
+
