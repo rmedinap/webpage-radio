@@ -1,5 +1,5 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
+  :address              => "mail.stereosonicaradio.com",
   :port                 => 587,
   :domain               => "stereosonicaradio.com",
   :user_name            => "info@stereosonicaradio.com",
