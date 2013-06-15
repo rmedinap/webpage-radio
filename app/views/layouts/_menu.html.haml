@@ -5,15 +5,15 @@
         Inicio
   %li
     = link_to_unless_current 'Quiénes Somos', quienes_somos_index_path do
-      %span 
+      %span
         Quiénes Somos
   %li
     = link_to_unless_current 'Programación', programas_path do
-      %span 
+      %span
         Programación
   %li
     = link_to_unless_current 'Noticias', noticias_path do
-      %span 
+      %span
         Noticias
   %li.last
     = link_to_unless_current 'Contacto', new_contacto_path do
@@ -26,7 +26,7 @@
   %li
     = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'blackberry'
   %li
-    = link_to '', 'http://s1.streammonster.com/tunein.php/edgaruiz/playlist.pls', :class => 'android'
+    = link_to '', 'http://tunein.com/radio/Stereosonica-s197293/', :class => 'android'
   %li.last
     = link_to '', 'http://tunein.com/radio/Stereosonica-s197293/', :class => 'tunein'
 
@@ -35,17 +35,17 @@
   %ul.menu-admin
     %li
       = link_to_unless_current 'Diapositivas', diapositivas_path do
-        %span 
+        %span
           Diapositivas
     %li
       = link_to_unless_current "Dj's", djs_path do
-        %span 
+        %span
           Dj's
     %li
       = link_to_unless_current 'Auspiciadores', auspiciadores_path do
-        %span 
+        %span
           Auspiciadores
     %li{:style => 'display: none'}
       = link_to_unless_current 'Mensajes Recibidos', contactos_path do
-        %span 
+        %span
           Mensajes Recibidos

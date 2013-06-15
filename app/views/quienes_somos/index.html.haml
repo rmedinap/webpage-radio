@@ -20,4 +20,4 @@
         .field-image
           = image_tag(dj.imagen_dj(:index))
         %h3.button
-          = dj.nombre
+          = link_to dj.nombre, dj.link
