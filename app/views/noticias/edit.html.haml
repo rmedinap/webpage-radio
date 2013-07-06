@@ -1,10 +1,8 @@
 .region
   %h2.title
-    = page_title! 'Editar noticia ' 
-    %b= @noticia.titulo
+    = page_title! 'Editando ' + @noticia.titulo
 
   = render 'form'
 
-  = link_to 'Show', @noticia, :class => 'button'
-  \|
-  = link_to 'Back', noticias_path, :class => 'button'
+= link_to 'Ver', @noticia, :class => 'button'
+= link_to 'Regresar', noticias_path, :class => 'button'

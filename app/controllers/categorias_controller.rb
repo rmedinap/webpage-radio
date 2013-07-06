@@ -6,7 +6,7 @@ class CategoriasController < InheritedResources::Base
   end
 
   def create
-    create!{categorias_path}
+    create! {categorias_path}
   end
 
 end

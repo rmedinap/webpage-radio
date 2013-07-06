@@ -1,11 +1,10 @@
 
 .region
-  %h2.title= page_title! "Diapositivas"
- 
-  .administration.head 
-    = link_to 'Agregar Diapositiva', new_diapositiva_path, :class => 'button'
+  %h2.title= page_title! "Banners"
 
-    
+  .administration.head
+    = link_to 'Nuevo Banner', new_diapositiva_path, :class => 'button'
+
   - @diapositivas.each do |diapositiva|
     .div{:style => 'float: left; margin-right: 10px'}
       = image_tag diapositiva.diapositiva_picture(:thumbs)
@@ -13,11 +12,7 @@
 
       %h3= diapositiva.pie_de_foto
       = link_to diapositiva.link, diapositiva.link, :class => 'link', :target => '_blank'
-      %br 
-      = link_to 'Edit', edit_diapositiva_path(diapositiva), :class => 'button'
-      = link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
+      %br
+      = link_to 'Editar', edit_diapositiva_path(diapositiva), :class => 'button'
+      = link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, :class => 'button'
     %hr
-
-
-
-

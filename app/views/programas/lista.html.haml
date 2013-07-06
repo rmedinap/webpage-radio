@@ -1,0 +1,13 @@
+.region
+  %h2.title= page_title! 'Lista de programas'
+
+  .administration.head
+    = link_to 'Agregar Programa', new_programa_path, :class => 'button new'
+
+  %table
+    - @programas.each do |programa|
+      %tr
+        %td= programa.titulo
+        %td= link_to 'Editar', edit_programa_path(programa), :class => 'button'
+        %td= link_to 'Programación', dias_programa_path(programa), :class => 'button'
+        %td= link_to 'Elimnar', programa, :method => :delete, :data => { :confirm => '¿Está seguro?' }, :class => 'button'

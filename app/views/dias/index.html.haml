@@ -1,0 +1,11 @@
+.region
+  %h2.title Días
+
+  %table
+    - @dias.each do |dia|
+      %tr
+        %td= dia.nombre
+        %td= link_to 'Editar', edit_dia_path(dia), class: 'button'
+        %td= link_to 'Eliminar', dia, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
+
+= link_to 'Nuevo Día', new_dia_path, class: 'button'

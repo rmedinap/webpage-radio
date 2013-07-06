@@ -1,5 +1,7 @@
 Stereosonica::Application.routes.draw do
 
+  resources :dias
+
   get "radio_online/index"
 
   resources :quienes_somos
@@ -20,7 +22,16 @@ Stereosonica::Application.routes.draw do
 
   resources :auspiciadores
 
-  resources :programas
+  resources :programas do
+    collection do
+      get :lista
+    end
+    member do
+      get :dias
+      post :agregar_dia
+      post :eliminar_dia
+    end
+  end
 
   resources :contactos
 

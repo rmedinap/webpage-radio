@@ -2,23 +2,35 @@
   %li
     = link_to_unless_current 'Inicio', root_path do
       %span
-        Inicio
+        INICIO
   %li
     = link_to_unless_current 'Quiénes Somos', quienes_somos_index_path do
       %span
-        Quiénes Somos
+        QUIÉNES SOMOS
   %li
-    = link_to_unless_current 'Programación', programas_path do
-      %span
-        Programación
+    - if current_admin
+      = link_to_unless_current 'Programación', lista_programas_path do
+        %span
+          PROGRAMACIÓN
+    - else
+      = link_to_unless_current 'Programación', programas_path do
+        %span
+          PROGRAMACIÓN
   %li
     = link_to_unless_current 'Noticias', noticias_path do
       %span
-        Noticias
-  %li.last
-    = link_to_unless_current 'Contacto', new_contacto_path do
-      %span
-        Contacto
+        NOTICIAS
+  - if current_admin
+    %li
+      = link_to_unless_current 'Mensajes', contactos_path do
+        %span
+          MENSAJES
+  - else
+    %li.last
+      = link_to_unless_current 'Contacto', new_contacto_path do
+        %span
+          CONTACTO
+
 
 %ul.social-links
   %li
@@ -34,18 +46,14 @@
 - if current_admin
   %ul.menu-admin
     %li
-      = link_to_unless_current 'Diapositivas', diapositivas_path do
-        %span
-          Diapositivas
-    %li
       = link_to_unless_current "Dj's", djs_path do
         %span
-          Dj's
+          DJ'S
     %li
-      = link_to_unless_current 'Auspiciadores', auspiciadores_path do
+      = link_to_unless_current 'Banners', diapositivas_path do
         %span
-          Auspiciadores
-    %li{:style => 'display: none'}
-      = link_to_unless_current 'Mensajes Recibidos', contactos_path do
+          BANNERS
+    %li
+      = link_to_unless_current 'Cerrar Sesión', destroy_admin_session_path do
         %span
-          Mensajes Recibidos
+          CERRAR SESIÓN

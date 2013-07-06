@@ -3,12 +3,11 @@
     = page_title! 'Categorías'
 
   .administration.head
-    = link_to 'Crear Categoría', new_categoria_path, :class => 'button'
+    = link_to 'Nueva Categoría', new_categoria_path, :class => 'button'
     %br
-
-  - @categorias.each do |categoria|
-    = link_to categoria.nombre, categoria, :class => 'button'
-    = link_to 'Edit', edit_categoria_path(categoria), :class => 'button'
-    = link_to 'Destroy', categoria, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button'
-    %hr 
-
+  %table
+    - @categorias.each do |categoria|
+      %tr
+        %td= categoria.nombre
+        %td= link_to 'Editar', edit_categoria_path(categoria), class: 'button'
+        %td= link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'

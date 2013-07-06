@@ -58,9 +58,6 @@
   %body{id: bodyid, class: bodyclass}
     #wrapper
       #wrapper-inner
-        - if current_admin
-          #admin-config
-            = link_to 'Cerrar Sesión', destroy_admin_session_path, :class => 'button'
 
         .container.top
           %header.main.sixteen.columns{:role => 'banner'}

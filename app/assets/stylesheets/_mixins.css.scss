@@ -2,9 +2,10 @@
 input, textarea {outline: 0}
 
 @mixin button {
-  padding: $space $space*3;
+  padding: $space*2 $space*4;
   @include inline-block;
-  font-size: $font-size-2;
+  font-size: $font-menu;
+  font-weight: lighter;
   background: $cyan;
   color: white; text-align: center; position: relative;
 }
@@ -13,7 +14,7 @@ input, textarea {outline: 0}
   &:after {
     border-color: transparent transparent $cyan transparent;
     border-style: solid;
-    border-width: 10px;  
+    border-width: 10px;
     content:"";
     @include absolute(left, bottom, 92px, 100%);
   }
@@ -26,7 +27,6 @@ input, textarea {outline: 0}
 
 
 
-// core 
 @mixin full-width {
   width: 100%; float: left; clear: left;
 }

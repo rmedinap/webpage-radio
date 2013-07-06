@@ -1,23 +1,20 @@
-%h1 Listing contactos
+.region
+  %h2.title Mensajes recibidos
 
-%table
-  %tr
-    %th Nombre
-    %th Email
-    %th Mensaje
-    %th
-    %th
-    %th
-
-  - @contactos.each do |contacto|
+  %table
     %tr
-      %td= contacto.nombre
-      %td= contacto.email
-      %td= contacto.mensaje
-      %td= link_to 'Show', contacto
-      %td= link_to 'Edit', edit_contacto_path(contacto)
-      %td= link_to 'Destroy', contacto, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Nombre
+      %th Email
+      %th Mensaje
+      %th
+      %th
+      %th
+    - @contactos.each do |contacto|
+      %tr
+        %td= contacto.nombre
+        %td= contacto.email
+        %td= truncate(contacto.mensaje, length: 30)
+        %td= link_to 'Ver', contacto, class: 'button'
+        %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
 
-%br
-
-= link_to 'New Contacto', new_contacto_path
+  = will_paginate @contactos

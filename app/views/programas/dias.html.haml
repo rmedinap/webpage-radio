@@ -1,10 +1,7 @@
 .region
   %h2.title
-    = page_title! 'Editando ' + @programa.titulo
-
-  = render 'form'
-
-.region
+    %b
+      = page_title! @programa.titulo
 
   = 'Programar ' + @programa.titulo + ' al día:'
 

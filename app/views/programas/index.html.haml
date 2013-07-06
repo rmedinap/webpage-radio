@@ -10,11 +10,11 @@
     .administration.head
       = link_to 'Agregar Programa', new_programa_path, :class => 'button new'
   #week-days.coda-slider
-    - Programa::DIAS.each_with_index do |dia, i|
+    - @dias.each_with_index do |dia, i|
       %div
         %h2.dia
-          = dia
-        - Programa.where("dia = ?", i).each do |programa|
+          = dia.nombre
+        - dia.programas.each do |programa|
           .content
             %article
               %header
@@ -25,4 +25,4 @@
             - if current_admin
               .administration.iteration
                 = link_to 'Editar', edit_programa_path(programa), :class => 'button edit'
-                = link_to 'Eliminar', programa_path(programa), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'button delete'
+                = link_to 'Eliminar', programa_path(programa), :method => :delete, :data => { :confirm => '¿Estás seguro?' }, :class => 'button delete'

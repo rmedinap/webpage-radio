@@ -1,8 +1,8 @@
 .region
   %h2.title
-    = page_title! 'Editar diapositiva'  
+    = page_title! 'Editando banner'
     = image_tag @diapositiva.diapositiva_picture(:thumbs)
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Back', diapositivas_path, :class => 'button'
+= link_to 'Regresar', diapositivas_path, :class => 'button'

@@ -1,7 +1,6 @@
-%h1 Editing categoria
+.region
+  %h2.title= page_title! 'Editando ' + @categoria.nombre
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @categoria
-\|
-= link_to 'Back', categorias_path
+= link_to 'Regresar', categorias_path, class: 'button'
