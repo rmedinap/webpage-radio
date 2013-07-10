@@ -9,4 +9,5 @@
           = link_to image_tag(diapositiva.diapositiva_picture(:index)), diapositiva.link
         - else
           = image_tag(diapositiva.diapositiva_picture(:index))
-        = link_to diapositiva.pie_de_foto, diapositiva.link, :class => 'caption rsABlock'
+        - if diapositiva.pie_de_foto?
+          = link_to diapositiva.pie_de_foto, diapositiva.link, :class => 'caption rsABlock'
