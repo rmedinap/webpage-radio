@@ -2,8 +2,8 @@
 class HomeController < ApplicationController
   def index
 
-    @categorias = Categoria.limit(3)
-    @maximo_noticias = 1
+    @categorias = Categoria.all
+    @maximo_noticias = 2
 
     # @auspiciadores_left = Auspiciador.where("lado = ?", "Izquierdo")
     # @auspiciadores_right = Auspiciador.where("lado = ?", "Derecho")

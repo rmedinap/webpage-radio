@@ -13,5 +13,13 @@
     = link_to 'Nueva Noticia', new_noticia_path, :class => 'button new'
     = link_to 'Administrar Categorías', categorias_path, :class => 'button new'
 
+  %table
+    - @noticias.each do |noticia|
+      %tr
+        %td= noticia.titulo
+        %td= link_to 'Ver', noticia, :class => 'button'
+        %td= link_to 'Editar', edit_noticia_path(noticia), :class => 'button'
+        %td= link_to 'Elimnar', noticia, :method => :delete, :data => { :confirm => '¿Está seguro?' }, :class => 'button'
 
-= render 'megafolio/megafolio'
+- else
+  = render 'megafolio/megafolio'

@@ -10,7 +10,7 @@
 
   .megafolio-container.noborder.norounded.dark-bg-entries
     - @categorias.each_with_index do |categoria, index|
-      - categoria.noticias.limit(@maximo_noticias).each do |noticia|
+      - categoria.noticias.order("created_at DESC").limit(@maximo_noticias).each do |noticia|
         - unless noticia.fotos.empty?
           %div{:class => 'mega-entry cat-all ' + 'megafolio-elemento-' + index.to_s, :"data-src" => noticia.fotos.first.imagen_foto(:index), :"data-width" => '504', :"data-height" => '400'}
             // covercaption

@@ -6,7 +6,7 @@ class NoticiasController < InheritedResources::Base
   def index
     @categorias = Categoria.all
     @maximo_noticias = Noticia.all.size
-    @noticias = Noticia.all
+    @noticias = Noticia.order("created_at DESC")
   end
 
 end
