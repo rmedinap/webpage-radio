@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html style="height: 100%; overflow: auto;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+
+    <title> Documentation | RoyalSlider</title>
+
+    <meta content="Touch-enabled image gallery and content slider plugin, that focuses on providing great user experience on every desktop and mobile device." name="description">
+    <meta name="keywords" content="content slider, gallery, plugin, jquery, banner rotator">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta name="author" content="Dmitry Semenov">
+
+    
+
+    
+     
+        <script src="Documentation%20%7C%20RoyalSlider_files/ga.js" async="" type="text/javascript"></script><script src="Documentation%20%7C%20RoyalSlider_files/highlight.js"></script>
+     
+        <script src="Documentation%20%7C%20RoyalSlider_files/jquery-1.js"></script>
+     
+    
+    <link href="Documentation%20%7C%20RoyalSlider_files/reset.css" rel="stylesheet">
+    
+     
+        <link href="Documentation%20%7C%20RoyalSlider_files/github.css" rel="stylesheet">
+     
+    
+
+    
+  </head>
+  <body style="height: 100%; overflow: auto;">
+  <header id="main-header" class="clearfix">  
+    <div class="page wrapper"> 
+       <div class="col span_6">
+         <a id="logo" href="http://dimsemenov.com/plugins/royal-slider">Royal Slider</a>
+         <nav>
+            <a href="http://dimsemenov.com/plugins/royal-slider/templates">Templates<span class="templates-count">11</span></a>
+            <a href="http://dimsemenov.com/plugins/royal-slider/wordpress">WordPress Version</a>
+            <a href="http://dimsemenov.com/plugins/royal-slider/faq">FAQ</a>
+         </nav>
+          <a id="buy-slider" href="http://codecanyon.net/item/royalslider-touchenabled-jquery-image-gallery/461126?ref=Semenov" onclick="recordOutboundLink(this, 'Get RoyalSlider HTML','/documentation/index.html'); return false;">Get this slider from CodeCanyon ▸</a>
+       </div>
+    </div>
+  </header>
+  <div class="page wrapper">  
+      <script>
+        hljs.tabReplace = '    ';
+        hljs.initHighlightingOnLoad();
+</script>
+<div class="row clearfix logo_shift">
+<div id="docs" class="span_5 col "><div id="docs-menu"><div class="dmenu-inside"><h4>Contents</h4><ul><li><a href="#basic-usage">Basic Usage</a></li><li><a href="#images">Images</a></li><li><a href="#options">Options</a></li><li><a href="#global-caption">Caption</a></li><li><a href="#thumbnails">Thumbnails &amp; tabs</a></li><li><a href="#fullscreen">Fullscreen</a></li><li><a href="#deeplinking">Deep linking</a></li><li><a href="#autoplay">Autoplay</a></li><li><a href="#video">Video</a></li><li><a href="#animated-blocks">Animated blocks</a></li><li><a href="#easing">Easing</a></li><li><a href="#api">API</a></li><li><a href="#tips-and-tricks">Tips &amp; Tricks</a></li></ul></div><div class="support-forum-link"><a href="http://dimsemenov.com/private/forum.php">Support forum <br>&amp; knowledge base ▸</a></div></div>
+<h1>Documentation<a href="http://dimsemenov.com/plugins/royal-slider/changelog/" style="vertical-align: text-top; font-size: 12px;">changelog</a></h1><p>If you have any problems, looking for some specific solution, or have a suggestion, please visit private <a href="http://dimsemenov.com/private/forum.php">knowledge base and support forum</a>. There are many useful articles there.</p><h2 id="basic-usage">Basic Usage</h2><p>1. Upload <code>royalslider</code> folder to your server and add the required files in your page (usually in the <code>head</code> section). Use the <a href="http://dimsemenov.com/plugins/royal-slider/build/">online build tool</a> to optimize your slider build and create the main JS file.</p>
+<pre><code data-result="[object Object]" class="xml"><span class="comment">&lt;!-- basic stylesheet --&gt;</span>
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"royalslider/royalslider.css"</span>&gt;</span>
+
+<span class="comment">&lt;!-- skin stylesheet (change it if you use another) --&gt;</span>
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"royalslider/default/rs-default.css"</span>&gt;</span> 
+
+<span class="comment">&lt;!-- Plugin requires jQuery 1.7+  --&gt;</span>
+<span class="comment">&lt;!-- If you already have jQuery on your page, you shouldn't include it second time. --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">'royalslider/jquery-1.8.0.min.js'</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="comment">&lt;!-- Main slider JS script file --&gt;</span> 
+<span class="comment">&lt;!-- Create it with slider online build tool for better performance. --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"royalslider/jquery.royalslider.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre>
+<p>Check <a href="http://dimsemenov.com/private/forum.php?to=kb/royalslider-jquery-plugin-faq/how-to-use-another-skin">how to use another skin</a> section in knowledge base if you want to use another skin.</p><p>2. Add the slider HTML code to the <code>body</code> section (<code>rsDefault</code> CSS class means that slider is using default skin). <strong>Every child element will be treated as a slide.</strong> <strong>The tag name doesn't matter</strong>,
+ it can be an unordered list, just list of divs, whatever. You can learn
+ more about slide types in next sections of documentation.</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider rsDefault"</span>&gt;</span>
+    <span class="comment">&lt;!-- simple image slide --&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image desc"</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- lazy loaded image slide --&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">href</span>=<span class="value">"image.jpg"</span>&gt;</span>image desc<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+    <span class="comment">&lt;!-- HTML content slide --&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Content goes here<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+
+    <span class="comment">&lt;!-- image and content --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsVideo</span>=<span class="value">"https://vimeo.com/44878206"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Some content after...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="comment">&lt;!-- HTML content --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        Put any HTML content here
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="comment">&lt;!-- HTML content (100% with and height) --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        Put any HTML content here
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>	</code></pre>
+<p>3. Initialize the slider (usually at the end of the <code>body</code> section. For slider settings, check <a href="#options">options</a> section.</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+        $(<span class="string">".royalSlider"</span>).royalSlider({
+            <span class="comment">// options go here</span>
+            <span class="comment">// as an example, enable keyboard arrows nav</span>
+            keyboardNavEnabled: <span class="literal">true</span>
+        });  
+    });
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre>
+<p>4. Add slider size via CSS (optional). If you need the slider to resize dynamically, take a look in the <a href="#options">options</a> section.</p>
+<pre><code data-result="[object Object]" class="">.royalSlider {
+  width: 500px;
+  height 300px;
+}</code></pre>
+<p>If you're having issues with this section or you don't know where to put some code, please take a look at <a href="http://dimsemenov.com/private/forum.php?to=kb/royalslider-jquery-plugin-issues/html-page-with-simple-slider">simple HTML page with slider</a>.</p><h2 id="images">Images</h2><p>If you want RoyalSlider to resize/preload images, you need to add <code>rsImg</code> class to it. Examples:</p>
+<pre><code data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider rsDefault"</span>&gt;</span>
+    <span class="comment">&lt;!-- simple image --&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image description"</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- lazy loaded image--&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">href</span>=<span class="value">"image.jpg"</span>&gt;</span>image description<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<h2 id="options">Options</h2><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>autoScaleSlider</td>
+			<td>false</td>
+			<td>Automatically updates slider height based on base width.</td>
+		</tr>
+		<tr>
+			<td>autoScaleSliderWidth</td>
+			<td>800</td>
+			<td>Base slider width. Slider will autocalculate the ratio based on these values.</td>
+		</tr>
+		<tr>
+			<td>autoScaleSliderHeight</td>
+			<td>400</td>
+			<td>Base slider height</td>
+		</tr>
+		<tr>
+			<td>imageScaleMode</td>
+			<td>'fit-if-smaller'</td>
+			<td>Scale mode for images. "fill", "fit", "fit-if-smaller" or "none"</td>
+		</tr>
+		<tr>
+			<td>imageAlignCenter</td>
+			<td>true</td>
+			<td>Aligns image to center of slide.</td>
+		</tr>
+		<tr>
+			<td>imageScalePadding</td>
+			<td>4</td>
+			<td>Distance between image and edge of slide (doesn't work with 'fill' scale mode).</td>
+		</tr>
+
+
+
+		<tr>
+			<td>controlNavigation</td>
+			<td>'bullets'</td>
+			<td>Navigation type, can be 'bullets', 'thumbnails' or 'tabs'</td>
+		</tr>
+		<tr>
+			<td>arrowsNav</td>
+			<td>true</td>
+			<td>Direction arrows navigation.</td>
+		</tr>
+		<tr>
+			<td>arrowsNavAutoHide</td>
+			<td>true</td>
+			<td>Auto hide arrows.</td>
+		</tr>
+		<tr>
+			<td>arrowsNavHideOnTouch</td>
+			<td>false</td>
+			<td>Hides arrows completely on touch devices.</td>
+		</tr>
+
+		<tr>
+			<td>slidesSpacing</td>
+			<td>8</td>
+			<td>Spacing between slides in pixels.</td>
+		</tr>
+		<tr>
+			<td>startSlideId</td>
+			<td>0</td>
+			<td>Start slide index</td>
+		</tr>
+		<tr>
+			<td>loop</td>
+			<td>false</td>
+			<td>Makes slider to go from last slide to first.</td>
+		</tr>
+		<tr>
+			<td>loopRewind</td>
+			<td>false</td>
+			<td>Makes slider to go from last slide to first with rewind. Overrides prev option</td>
+		</tr>
+		<tr>
+			<td>randomizeSlides</td>
+			<td>false</td>
+			<td>Randomizes all slides at start.</td>
+		</tr>
+		<tr>
+			<td>numImagesToPreload</td>
+			<td>4</td>
+			<td>Number of slides to preload on sides. If you set it to 0, only one slide will be kept in the display list at once.</td>
+		</tr>
+		<tr>
+			<td>slidesOrientation</td>
+			<td>'horizontal'</td>
+			<td>Can be 'vertical' or 'horizontal'.</td>
+		</tr>
+		<tr>
+			<td>transitionType</td>
+			<td>'move</td>
+			<td>'move' or 'fade'</td>
+		</tr>
+		<tr>
+			<td>transitionSpeed</td>
+			<td>600</td>
+			<td>Slider transition speed, in ms.</td>
+		</tr>
+		<tr>
+			<td>easeInOut</td>
+			<td>'easeInOutSine'</td>
+			<td>Easing function for simple transition. Read more in <a href="#easing">the easing</a> section of the documentation.</td>
+		</tr>
+		<tr>
+			<td>easeOut</td>
+			<td>'easeOutSine'</td>
+			<td>Easing function of animation after ending of the swipe gesture. Read more in <a href="#easing">the easing</a> section of the documentation.</td>
+		</tr>
+		<tr>
+			<td>controlsInside</td>
+			<td>true</td>
+			<td>If set to true adds arrows and fullscreen button inside rsOverflow container, otherwise inside root slider container..</td>
+		</tr>
+
+
+		<tr>
+			<td>navigateByClick</td>
+			<td>true</td>
+			<td>Navigates forward by clicking on slide.</td>
+		</tr>
+
+		<tr>
+			<td>sliderDrag</td>
+			<td>true</td>
+			<td>Mouse drag navigation over slider.</td>
+		</tr>
+		<tr>
+			<td>sliderTouch</td>
+			<td>true</td>
+			<td>Touch navigation of slider.</td>
+		</tr>
+
+
+		<tr>
+			<td>keyboardNavEnabled</td>
+			<td>false</td>
+			<td>Navigate slider with keyboard left and right arrows.</td>
+		</tr>
+
+		<tr>
+			<td>fadeinLoadedSlide</td>
+			<td>true</td>
+			<td>Fades in slide after it's loaded.</td>
+		</tr>
+
+		<tr>
+			<td>allowCSS3</td>
+			<td>true</td>
+			<td>Allows usage of CSS3 transitions. Might be useful if you're experiencing font-rendering problems, or other CSS3-related bugs.</td>
+		</tr>
+		<tr>
+			<td>globalCaption</td>
+			<td>true</td>
+			<td>Adds global caption element to slider, read more in <a href="#global-caption">the global caption section</a> of documentation.</td>
+		</tr>
+
+		<tr>
+			<td>addActiveClass</td>
+			<td>false</td>
+			<td>Adds <code>rsActiveSlide</code> class to current slide before transition.</td>
+		</tr>
+		<tr>
+			<td>addActiveClass</td>
+			<td>false</td>
+			<td>Adds <code>rsActiveSlide</code> class to current slide before transition.</td>
+		</tr>
+		<tr>
+			<td>minSlideOffset</td>
+			<td>10</td>
+			<td>Minimum distance in pixels to show next slide while dragging. Added in version 9.1.7.</td>
+		</tr>
+
+		<tr id="auto-height">
+			<td>autoHeight</td>
+			<td>false</td>
+			<td>Scales and animates height based on current slide.<br><strong>Please note:</strong> if you have images in slide that don't have <code>rsImg</code> class) or don't have fixed size, use <code>$(window).load()</code> instead of <code>$(document).ready()</code> before initializing slider.<br>Also, autoHeight doesn't work with properties like autoScaleSlider, imageScaleMode and imageAlignCenter.</td>
+		</tr>
+
+		<tr>
+			<td>slides</td>
+			<td>null</td>
+			<td>Overrides HTML of slides, used for creating of slides from HTML that is not attached to DOM. More info in <a href="http://dimsemenov.com/private/forum.php?to=kb/royalslider-javascript-api/create-slides-from-array">knowledge base</a>.</td>
+		</tr>
+	</tbody>
+</table><h2 id="global-caption">Caption</h2><p>Slider can automatically grab an image caption from <code>alt</code> attribute (if <code>img</code> is used),<br> from contents of image <code>a</code> tag, or from element with class <code>rsCaption</code> inside slide (tag name doesn't matter).<br> See examples below:</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider"</span>&gt;</span>
+    <span class="comment">&lt;!-- simple image  --&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image1.jpg"</span> <span class="attribute">alt</span>=<span class="value">"This is caption text"</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- lazy loaded image --&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">href</span>=<span class="value">"image1.jpg"</span>&gt;</span>This is caption <span class="tag">&lt;<span class="title">b</span>&gt;</span>HTML<span class="tag">&lt;/<span class="title">b</span>&gt;</span> text<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+    <span class="comment">&lt;!-- slide with any content --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image1.jpg"</span> <span class="attribute">alt</span>=<span class="value">"This text will be IGNORED!"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">figure</span> <span class="attribute">class</span>=<span class="value">"rsCaption"</span>&gt;</span>This caption <span class="tag">&lt;<span class="title">b</span>&gt;</span>HTML<span class="tag">&lt;/<span class="title">b</span>&gt;</span> text will be used.<span class="tag">&lt;/<span class="title">figure</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p><code>globalCaption:true</code> option must be added to slider to make slider parse this data. Generated element with caption will have class <code>rsGCaption</code> class and will be placed in root slider element, you can style and position it however you need.</p><p>Content
+ of caption changes before animation of slides start. Global caption 
+module must be present in build. You can see example in <a href="http://dimsemenov.com/plugins/royal-slider/visible-nearby/">visible nearby gallery</a> template.</p><h2 id="thumbnails">Thumbnails &amp; tabs</h2><p>To get thumbnail slider searches for an element with class <code>rsTmb</code> inside slide. If not found, it searches for image URL in <code>data-rsTmb</code> attribute of slide and creates image based on it. To enable thumbnails you need to set them as navigation in slider options. <code>controlNavigation: 'thumbnails'</code>.</p><p>In contrast to thumbnails, tabs can have different size but cannot be scrollable. Tabs use same rsTmb markup.</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider rsDefault"</span>&gt;</span>
+    <span class="comment">&lt;!-- simple image with thumbnail --&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsTmb</span>=<span class="value">"small-image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image description"</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- lazy loaded image with thumbnail --&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">href</span>=<span class="value">"image.jpg"</span>&gt;</span>image description<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"small-image.jpg"</span> <span class="attribute">class</span>=<span class="value">"rsTmb"</span> /&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+    <span class="comment">&lt;!-- Image with HTML thumbnail --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image description"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsTmb"</span>&gt;</span>Thumbnail HTML content<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Thumbnails options:</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>drag</td>
+			<td>true</td>
+			<td>Thumbnails mouse drag</td>
+		</tr>
+		<tr>
+			<td>touch</td>
+			<td>true</td>
+			<td>Thumbnails touch</td>
+		</tr>
+		<tr>
+			<td>orientation</td>
+			<td>'horizontal'</td>
+			<td>'horizontal' or 'vertical'. If you want them to appear above the slider, check <a href="http://dimsemenov.com/private/forum.php?to=kb/royalslider-jquery-plugin-faq/how-to-position-thumbnails-tabs-or-bullets-above-the-slider">this article</a>.</td>
+		</tr>
+		<tr>
+			<td>arrows</td>
+			<td>true</td>
+			<td>Thumbnails arrows</td>
+		</tr>
+		<tr>
+			<td>spacing</td>
+			<td>4</td>
+			<td>Spacing between thumbs</td>
+		</tr>
+		<tr>
+			<td>arrowsAutoHide</td>
+			<td>false</td>
+			<td>Auto hide thumbnails arrows on hover</td>
+		</tr>
+		<tr>
+			<td>autoCenter</td>
+			<td>true</td>
+			<td>Automatically centers container with thumbs if there are small number of items</td>
+		</tr>
+		<tr>
+			<td>transitionSpeed</td>
+			<td>600</td>
+			<td>Thumbnails transition speed.</td>
+		</tr>
+		<tr>
+			<td>fitInViewport</td>
+			<td>true</td>
+			<td>Reduces size of main viewport area by thumbnails width or height,
+ use it when you set 100% width to slider. This option is always true, 
+when slider is in fullscreen mode.</td>
+		</tr>
+		<tr>
+			<td>firstMargin</td>
+			<td>true</td>
+			<td>Margin that equals thumbs spacing for first and last item.</td>
+		</tr>
+		<tr>
+			<td>arrowLeft</td>
+			<td>null</td>
+			<td>Replaces default thumbnail arrow. Variable accepts jQuery element <code>$('<span>This is left arrow</span>')</code> that will be used as arrow. You have to add it to DOM manually. Option added in version 9.1.9 +</td>
+		</tr>
+		<tr>
+			<td>arrowRight</td>
+			<td>null</td>
+			<td>Same as option above, just for right arrow.</td>
+		</tr>
+       <tr>
+			<td>appendSpan</td>
+			<td>false</td>
+			<td>Adds span element with class <code>thumbIco</code> to every thumbnail. Useful for styling. Added in 9.2.0.</td>
+		</tr>
+	</tbody>
+</table><p>Example of initializing slider with thumbnails options:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	thumbs: {
+    		<span class="comment">// thumbnails options go gere</span>
+    		spacing: <span class="number">10</span>,
+    		arrowsAutoHide: <span class="literal">true</span>
+    	}
+    });  
+});</code></pre>
+<h2 id="fullscreen">Fullscreen</h2><p>You may specify larger images when slider is in fullscreen mode by adding <code>data-rsBigImg</code> attribute to <code>rsImg</code> element. A few examples:</p>
+<pre><code data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">data-rsBigImg</span>=<span class="value">"bigimage.jpg"</span> <span class="attribute">href</span>=<span class="value">"normalimage.jpg"</span>&gt;</span>Image desc<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">data-rsBigImg</span>=<span class="value">"bigimage.jpg"</span> <span class="attribute">src</span>=<span class="value">"normalimage.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image desc"</span> /&gt;</span></code></pre>
+<p>Fullscreen module options:</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>enabled</td>
+			<td>false</td>
+			<td>Fullscreen functions enabled.</td>
+		</tr>
+		<tr>
+			<td>keyboardNav</td>
+			<td>true</td>
+			<td>Force keyboard arrows nav in fullscreen.</td>
+		</tr>
+		<tr>
+			<td>buttonFS</td>
+			<td>true</td>
+			<td>Fullscreen button at top right.</td>
+		</tr>
+		<tr>
+			<td>nativeFS</td>
+			<td>false</td>
+			<td>Native browser fullscreen.</td>
+		</tr>
+	</tbody>
+</table><p>JavaScript API to enter and exit fullscreen can be found in <a href="#api">API</a> section. Example of using fullscreen options:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	fullscreen: {
+    		<span class="comment">// fullscreen options go gere</span>
+    		enabled: <span class="literal">true</span>,
+    		native: <span class="literal">true</span>
+    	}
+    });  
+});</code></pre>
+<h2 id="deeplinking">Deep linking</h2><p>Deep linking module makes URL automatically change when you switch slides and you can easily link to specific slide. Options:</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>enabled</td>
+			<td>false</td>
+			<td>Linking to slides by appending <code>#SLIDE_INDEX</code> to url. Slides count starts from 1. If <code>change</code> is set to false hash is only read once, after page load. </td>
+		</tr>
+		<tr>
+			<td>change</td>
+			<td>false</td>
+			<td>Automatically change URL after transition and listen for hash change.</td>
+		</tr>
+		<tr>
+			<td>prefix</td>
+			<td>''</td>
+			<td>Prefix that will be added to hash. For example if you set it to 'gallery-', hash would look like this: <code>#gallery-5</code></td>
+		</tr>
+	</tbody>
+</table><p>Example of using deep linking module:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	deeplinking: {
+    		<span class="comment">// deep linking options go gere</span>
+    		enabled: <span class="literal">true</span>,
+    		prefix: <span class="string">'slider-'</span>
+    	}
+    });  
+});</code></pre>
+<h2 id="autoplay">Autoplay</h2><p>Autoplay slideshow can be enabled via 
+slider options. Delay between items can be set globally via delay 
+option, or specifically for each item by adding <code>data-rsDelay="1000"</code> to root element of the slide (1000 = 1sec).</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>enabled</td>
+			<td>false</td>
+			<td>Enable autoplay or not.</td>
+		</tr>
+		<tr>
+			<td>stopAtAction</td>
+			<td>true</td>
+			<td>Stop autoplay at first user action.</td>
+		</tr>
+		<tr>
+			<td>pauseOnHover</td>
+			<td>true</td>
+			<td>Pause autoplay on hover.</td>
+		</tr>
+		<tr>
+			<td>delay</td>
+			<td>300</td>
+			<td>Delay between items in ms.</td>
+		</tr>
+	</tbody>
+</table><p>Example of using autoplay options:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	autoPlay: {
+    		<span class="comment">// autoplay options go gere</span>
+    		enabled: <span class="literal">true</span>,
+    		pauseOnHover: <span class="literal">true</span>
+    	}
+    });  
+});</code></pre>
+<p>Example of slide specific delay:</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider"</span>&gt;</span>
+    <span class="comment">&lt;!-- slide with any content --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>  <span class="attribute">data-rsDelay</span>=<span class="value">"2000"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image1.jpg"</span> <span class="attribute">alt</span>=<span class="value">"This text will be IGNORED!"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">figure</span> <span class="attribute">class</span>=<span class="value">"rsCaption"</span>&gt;</span>This caption <span class="tag">&lt;<span class="title">b</span>&gt;</span>HTML<span class="tag">&lt;/<span class="title">b</span>&gt;</span> text will be used.<span class="tag">&lt;/<span class="title">figure</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<h2 id="video">Video</h2><p>To add video to slide, you need to add <code>data-rsVideo=""</code> attribute to image. It can contain link to YouTube or Vimeo video. Examples:</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider"</span>&gt;</span>
+    <span class="comment">&lt;!-- simple image with Vimeo video --&gt;</span>
+    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsVideo</span>=<span class="value">"https://vimeo.com/44878206"</span> /&gt;</span>
+
+    <span class="comment">&lt;!-- lazy loaded image with YouTube video --&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">href</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsVideo</span>=<span class="value">"http://www.youtube.com/watch?v=Eip7JrQ6IdE"</span>&gt;</span>This is caption <span class="tag">&lt;<span class="title">b</span>&gt;</span>HTML<span class="tag">&lt;/<span class="title">b</span>&gt;</span> text<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+    <span class="comment">&lt;!-- slide with any content --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsVideo</span>=<span class="value">"https://vimeo.com/44878206"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>Some content after...<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Video options:</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>autoHideArrows</td>
+			<td>true</td>
+			<td>Auto hide arrows when video is playing</td>
+		</tr>
+		<tr>
+			<td>autoHideControlNav</td>
+			<td>false</td>
+			<td>Auto hide navigation when video is playing.</td>
+		</tr>
+		<tr>
+			<td>autoHideBlocks</td>
+			<td>false</td>
+			<td>Auto hide animated blocks when video is playing.</td>
+		</tr>
+		<tr>
+			<td>youTubeCode</td>
+			<td>'&lt;iframe src="http://www.youtube.com/embed/%id%?rel=1&amp;autoplay=1&amp;showinfo=0" frameborder="no"&gt;&lt;/iframe&gt;'</td>
+			<td>Youtube embed code. <code>%id%</code> is replaced by video id.</td>
+		</tr>
+		<tr>
+			<td>vimeoCode</td>
+			<td>'&lt;iframe 
+src="http://player.vimeo.com/video/%id%?byline=0&amp;amp;portrait=0&amp;amp;autoplay=1"
+ frameborder="no" webkitAllowFullScreen mozallowfullscreen 
+allowFullScreen&gt;&lt;/iframe&gt;'</td>
+			<td>Vimeo embed code. <code>%id%</code> is replaced by video id.</td>
+		</tr>
+	</tbody>
+</table><p>If you want to use another video player, please check <a href="http://dimsemenov.com/private/forum.php?to=kb/royalslider-javascript-api/adding-support-for-third-party-video-player">how to add another player</a> article.</p><p>Example of using video options:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	video: {
+    		<span class="comment">// video options go gere</span>
+    		autoHideBlocks: <span class="literal">true</span>,
+    		autoHideArrows: <span class="literal">false</span>
+    	}
+    });  
+});</code></pre>
+<h2 id="animated-blocks">Animated blocks</h2><p>All elements inside slide that have class <code>rsABlock</code>
+ will be treated by slider as animated blocks (tag name doesn't matter).
+ Blocks can not be nested, but you can put multiple instances of them 
+into one slide, or make slide itself animated block.</p><p>Block examples:</p>
+<pre><code data-second_best="[object Object]" data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"royalSlider rsDefault"</span>&gt;</span>
+    <span class="comment">&lt;!-- image + animated block with text --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">data-rsTmb</span>=<span class="value">"small-image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image description"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span>&gt;</span>Block content<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    
+    <span class="comment">&lt;!-- two animated blocks in one slide --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span>&gt;</span>Block content 1<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span>&gt;</span>Block <span class="tag">&lt;<span class="title">b</span>&gt;</span>content<span class="tag">&lt;/<span class="title">b</span>&gt;</span> 2<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="comment">&lt;!-- HTML content + animated block as an image --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        HTML content...
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span> <span class="attribute">src</span>=<span class="value">"block-image.jpg"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    <span class="comment">&lt;!-- image + animated block with HTML title and text --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsContent"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"rsImg"</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"image description"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Dummy title<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>Dummy text of block with title and text.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>By default blocks are have <code>absolute position</code> and can be positioned with <code>left</code>, <code>right</code>, <code>top</code> or <code>bottom</code> CSS properties. Please note, if you set position to <code>bottom</code> or <code>right</code>, so you need to set <code>top:auto</code> and <code>right:auto;</code>. But you may set <code>position: relative;</code> to them too.</p><p>It's not recommended to apply any CSS3 transitions or transforms to element with class <code>rsABlock</code>,
+ but you can style it's child elements however you want. Also, you 
+shouldn't set margin to block in percents or em's, as this property is 
+animated.</p><p>Please use animation wisely and minify the number of blocks as much as possible.</p><p>Block-specific options:</p>
+<pre><code data-result="[object Object]" class="javascript">data-fade-effect=<span class="string">"true"</span>	<span class="comment">// fade effect, can be 'true' or 'false'</span>
+
+data-move-effect=<span class="string">"left"</span>	<span class="comment">// direction of move effect, </span>
+                        <span class="comment">// can be 'left', 'right', 'top', 'bottom' or 'none'</span>
+
+data-move-offset=<span class="string">"20"</span>	<span class="comment">// distance of move effect in pixels</span>
+
+data-speed=<span class="string">"300"</span>	<span class="comment">// transition speed of block, in ms</span>
+data-delay=<span class="string">"400"</span>	<span class="comment">// delay before block will show up</span>
+data-easing=<span class="string">"easeOutSine"</span>  <span class="comment">// animation easing function, read more in easing types section</span></code></pre>
+<p>Example of using block-specific options:</p>
+<pre><code data-result="[object Object]" class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"rsABlock"</span> <span class="attribute">data-move-effect</span>=<span class="value">"left"</span> <span class="attribute">data-fade-effect</span>=<span class="value">"false"</span>&gt;</span>Content<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre>
+<p>Animated blocks global options (overriden by block-specific options):</p><table class="tc-variables-table">
+	<thead>
+		<tr>
+			<th width="100">Variable</th>
+			<th width="100">Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>fadeEffect</td>
+			<td>true</td>
+			<td>true or false</td>
+		</tr>
+		<tr>
+			<td>moveEffect</td>
+			<td>'top'</td>
+			<td>Move effect direction. Can be 'left', 'right', 'top', 'bottom' or 'none'.</td>
+		</tr>
+		<tr>
+			<td>moveOffset</td>
+			<td>20</td>
+			<td>Distance for move effect in pixels.</td>
+		</tr>
+		<tr>
+			<td>speed</td>
+			<td>400</td>
+			<td>Transition speed of block, in ms.</td>
+		</tr>
+		<tr>
+			<td>easing</td>
+			<td>'easeOutSine'</td>
+			<td>Easing function of block animation. Read more in <a href="#easing">easing</a> section of docs.</td>
+		</tr>
+		<tr>
+			<td>delay</td>
+			<td>200</td>
+			<td>Delay between each block show up, in ms.</td>
+		</tr>
+	</tbody>
+</table><p>Example of using block options:</p>
+<pre><code data-result="[object Object]" class="javascript">jQuery(document).ready(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
+    $(<span class="string">".royalSlider"</span>).royalSlider({
+    	<span class="comment">// general options go gere</span>
+    	autoScaleSlider: <span class="literal">true</span>,
+    	block: {
+    		<span class="comment">// animated blocks options go gere</span>
+    		fadeEffect: <span class="literal">false</span>,
+    		moveEffect: <span class="string">'left'</span>
+    	}
+    });  
+});</code></pre>
+<h2 id="easing">Easing</h2><p>By default the slider includes <code>easeOutSine</code>, <code>easeInOutSine</code> and <code>linear</code> easing types. If you want to add another, you should include <code>royalslider/jquery-easing-1.3.js</code>.</p><p>Functions for CSS3 easing types are stored in <code>jQuery.rsCSS3Easing</code> variable. You can find cubic-bezier function <a href="http://matthewlein.com/ceaser/">here</a>. </p><p>Example of how to add back easing:</p>
+<pre><code data-result="[object Object]" class="">jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';</code></pre>
+<h2 id="api">API</h2><p>Public methods:</p>
+<pre><code data-result="[object Object]" class="javascript"><span class="comment">// save slider instance</span>
+<span class="keyword">var</span> sliderInstance = $(<span class="string">".royalSlider"</span>).data(<span class="string">'royalSlider'</span>);
+
+<span class="comment">// Methods can be also called jQuery-way - $(".royalSlider").royalSlider('startAutoPlay');</span>
+<span class="comment">// But it's recommended to get instance once if you have many calls:</span>
+
+sliderInstance.goTo(<span class="number">3</span>); <span class="comment">// go to slide with id</span>
+sliderInstance.next();  <span class="comment">// next slide</span>
+sliderInstance.prev();  <span class="comment">// prev slide</span>
+
+sliderInstance.updateSliderSize(); <span class="comment">// updates size of slider. Use after you resize slider with js. </span>
+sliderInstance.updateSliderSize(<span class="literal">true</span>); <span class="comment">// Function has "forceResize" Boolean paramater.</span>
+
+sliderInstance.destroy(); <span class="comment">// removes all events and slider from page. </span>
+
+<span class="comment">// Dynamic slides adding/removing</span>
+<span class="comment">// More info in Javascript API section of support desk - http://dimsemenov.com/private/forum.php</span>
+sliderInstance.appendSlide( HTML_jQuery_object, index(optional) );
+sliderInstance.removeSlide( index(optional) );
+
+
+<span class="comment">// Thumbnails public methods</span>
+sliderInstance.setThumbsOrientation(<span class="string">'vertical'</span>); <span class="comment">// changes orientation of thumbnails</span>
+sliderInstance.updateThumbsSize(); <span class="comment">// updates size of thumbnails</span>
+
+<span class="comment">// Fullscreen public methods</span>
+sliderInstance.enterFullscreen();
+sliderInstance.exitFullscreen();
+
+<span class="comment">// Autoplay public methods</span>
+sliderInstance.startAutoPlay();
+sliderInstance.stopAutoPlay();
+sliderInstance.toggleAutoPlay(); <span class="comment">// since version 9.2.1</span>
+
+<span class="comment">// Video public methods</span>
+sliderInstance.toggleVideo();
+sliderInstance.playVideo();
+sliderInstance.stopVideo();</code></pre>
+<p>Public properties:</p>
+<pre><code data-result="[object Object]" class="javascript">sliderInstance.currSlideId <span class="comment">// current slide index</span>
+sliderInstance.currSlide <span class="comment">// current slide object</span>
+
+sliderInstance.numSlides <span class="comment">// current slide object</span>
+
+sliderInstance.isFullscreen <span class="comment">// indicates if slider is in fullscreen mode. Boolean.</span>
+
+sliderInstance.dragSuccess <span class="comment">// Boolean, changes on mouseup, indicates if slide was dragged. Used to check if event is drag or click.</span>
+
+sliderInstance.slides <span class="comment">// array, contains RoyalSlider slide data objects (stores all data related to slide).</span>
+slidesInstance.slidesJQ <span class="comment">// array, contains list of HTML slides that are added to slider</span>
+
+sliderInstance.st <span class="comment">// object with slider settings</span>
+sliderInstance.ev <span class="comment">// jQuery object with slider events</span></code></pre>
+<p>Events:</p>
+<pre><code data-result="[object Object]" class="javascript">sliderInstance.ev.on(<span class="string">'rsAfterSlideChange'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// after slide change</span>
+});
+sliderInstance.ev.on(<span class="string">'rsBeforeAnimStart'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// before animation between slides start</span>
+});
+sliderInstance.ev.on(<span class="string">'rsBeforeSizeSet'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// before size of slider is changed</span>
+});
+sliderInstance.ev.on(<span class="string">'rsDragStart'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// mouse/touch drag start</span>
+});
+sliderInstance.ev.on(<span class="string">'rsDragRelease'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// mouse/touch drag end</span>
+});
+sliderInstance.ev.on(<span class="string">'rsBeforeDestroy'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// triggers before slider in destroyed</span>
+});
+sliderInstance.ev.on(<span class="string">'rsOnCreateVideoElement'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e, url)</span>) {</span>
+    <span class="comment">// triggers before video element is created, after click on play button. </span>
+    <span class="comment">// Read more in Tips&amp;Tricks section</span>
+});
+
+
+sliderInstance.slides[<span class="number">2</span>].holder.on(<span class="string">'rsAfterContentSet'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// fires when third slide content is loaded and added to DOM</span>
+});
+<span class="comment">// or globally</span>
+sliderInstance.ev.on(<span class="string">'rsAfterContentSet'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e, slideObject)</span> {</span>
+    <span class="comment">// fires when every time when slide content is loaded and added to DOM</span>
+});
+
+
+
+<span class="comment">// Next events TRIGGER DIRECTLY ON SLIDER INITIALIZATION</span>
+<span class="comment">// if you bind them after slider init they'll not fire</span>
+<span class="comment">// used for module development</span>
+sliderInstance.ev.on(<span class="string">'rsAfterInit'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="comment">// after slider is initialized, </span>
+});
+sliderInstance.ev.on(<span class="string">'rsBeforeParseNode'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e, content, obj)</span> {</span>
+    <span class="comment">// before slide node is parsed</span>
+    <span class="comment">// content - HTML object of slide that is parsed</span>
+    <span class="comment">// obj - RoyalSlider data object (stores image URLs)</span>
+});</code></pre>
+<h2 id="tips-and-tricks">Tips &amp; Tricks</h2><p>This section moved to <a href="http://dimsemenov.com/private/forum.php?to=kb/">knowledge base</a>.</p>
+</div>
+</div>
+<script>
+	jQuery(document).ready(function($) {
+		var docs = $('#docs'),
+			h2s = docs.find('h2'),
+			item,
+			menu = '<div id="docs-menu"><div class="dmenu-inside"><h4>Contents</h4><ul>',
+			children;
+
+		h2s.each(function(id, obj) {
+			item = $(obj);
+			children = item.nextUntil('h2').filter('h3');
+			menu += '<li><a href="#'+item.attr('id')+'">'+item.html()+'</a>';
+			if(children.length) {
+				menu += '<ul>';
+					children.each(function(id, obj) {
+						item = $(obj);
+						menu += '<li><a href="#'+item.attr('id')+'">'+item.html()+'</a>';
+					});
+				menu += '</ul>';
+			}
+			menu += '</li>';
+		});
+
+		menu += '</ul></div>';
+		menu += '<div class="support-forum-link"><a href="http://dimsemenov.com/private/forum.php">Support forum <br>&amp; knowledge base ▸</a></div>';
+		menu += '</div>';
+		docs.prepend(menu);
+
+		$('html, body').css({height:'100%',overflow:'auto'});
+	});
+</script>
+  <footer class="row clearfix" id="main-footer">
+    <div class="col span_6">
+      <nav><a href="http://dimsemenov.com/subscribe.html">Email Newsletter</a><a href="http://twitter.com/dimsemenov">Twitter</a><a href="http://dimsemenov.com/plugins/royal-slider/documentation">Documentation</a><a href="mailto:diiiimaaaa@gmail.com?subject=[Royal%20Slider]%20Report%20Bug">Report Bug</a></nav>
+      <p class="copy">© 2011-2012 <a href="http://dimsemenov.com/">Dmitry Semenov</a></p>
+    </div>
+  </footer>
+  
+
+  
+  <div style="display:none;"><script type="text/javascript">
+  (function(w, c) {
+      (w[c] = w[c] || []).push(function() {
+          try {
+              w.yaCounter11382601 = new Ya.Metrika({id:11382601, enableAll: true, trackHash:false, webvisor:true});
+          }
+          catch(e) { }
+      });
+  })(window, "yandex_metrika_callbacks");
+  </script></div>
+  <script src="Documentation%20%7C%20RoyalSlider_files/watch.js" type="text/javascript" defer="defer"></script>
+  <noscript><div><img src="//mc.yandex.ru/watch/11382601" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25969065-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    function recordOutboundLink(link, category, action) {
+      _gat._getTrackerByName()._trackEvent(category, action);
+      setTimeout('document.location = "' + link.href + '"', 100);
+    }
+</script>
+      
+  </div>
+  
+
+</body></html>

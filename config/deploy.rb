@@ -10,7 +10,7 @@ server "stereosonicaradio.com", :web, :app, :db, primary: true
 
 set :application, "stereosonica"
 set :user, "paul"
-set :deploy_to, "/var/www/#{application}"
+set :deploy_to, "/var/www2/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
