@@ -1,4 +1,4 @@
-root = "/var/www/stereosonica/current"
+root = "/var/www2/stereosonica/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
