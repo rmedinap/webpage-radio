@@ -5,7 +5,9 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/var/www2/stereosonica/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="$APP_ROOT/bin/unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+UNICORN_OPTS="-D -c $APP_ROOT/config/unicorn.rb -E production"
+# CMD="$APP_ROOT/bin/unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+CMD="cd $APP_ROOT; bundle exec unicorn $UNICORN_OPTS"
 action="$1"
 set -u
 

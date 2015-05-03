@@ -63,7 +63,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     sudo "mkdir -p #{shared_path}/config"
-    sudo "wget --no-check-certificate 'https://raw.github.com/paulsutcliffe/stereosonica/master/config/database.example.yml' -O #{shared_path}/config/database.yml"
+    # sudo "wget --no-check-certificate 'https://raw.github.com/paulsutcliffe/stereosonica/master/config/database.example.yml' -O #{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
 
