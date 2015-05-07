@@ -1,6 +1,6 @@
 class Noticia < ActiveRecord::Base
 
-  attr_accessible :autor, :contenido, :titulo, :fotos_attributes, :itunes_players_attributes, :soundclouds_attributes, :videos_attributes, :categoria_id, :imagen_foto, :embed
+  attr_accessible :autor, :contenido, :titulo, :fotos_attributes, :itunes_players_attributes, :soundclouds_attributes, :videos_attributes, :categoria_id, :imagen_foto, :embed, :active
 
 
   has_many :fotos

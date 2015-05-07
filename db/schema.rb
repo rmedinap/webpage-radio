@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704211900) do
+ActiveRecord::Schema.define(:version => 20150507004730) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130704211900) do
 
   create_table "auspiciadores", :force => true do |t|
     t.string   "link"
-    t.string   "lado"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "logo_file_name"
@@ -118,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20130704211900) do
     t.string   "slug"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.boolean  "active"
   end
 
   create_table "programas", :force => true do |t|
