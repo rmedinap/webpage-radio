@@ -17,12 +17,14 @@
   .eight.columns.omega.like-it
     %p
       <div class="fb-like" data-href="https://www.facebook.com/stereosonicaradio" data-send="false" data-width="450" data-show-faces="true"></div>
-#noticias.region
-  %h2.title
-    %b
-      Noticias
-  .content
-    = render 'megafolio/megafolio'
+
+- if @numnoticias > 0
+  #noticias.region
+    %h2.title
+      %b
+        Noticias
+    .content
+      = render 'megafolio/megafolio'
 
 #mensaje-front.region
   %h2.title
