@@ -16,10 +16,17 @@
       = link_to_unless_current 'Programación', programas_path do
         %span
           PROGRAMACIÓN
-  %li
-    = link_to_unless_current 'Noticias', noticias_path do
-      %span
-        NOTICIAS
+  - if current_admin
+    %li
+      = link_to_unless_current 'Noticias', noticias_path do
+        %span
+          NOTICIAS
+  - else
+    - if @numnoticias > 0
+      %li
+        = link_to_unless_current 'Noticias', noticias_path do
+          %span
+            NOTICIAS
   - if current_admin
     %li
       = link_to_unless_current 'Mensajes', contactos_path do

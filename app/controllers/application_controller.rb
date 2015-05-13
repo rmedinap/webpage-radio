@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :setnumnoticias
 
+  def setnumnoticias
+    @numnoticias = Noticia.where("active = 1").count
+  end
+  
   def bodyid 
     @bodyid = params[:controller].parameterize
   end
