@@ -191,7 +191,7 @@ footer {
       li {
         a {
           @include size(31px, 53px); padding: 0px; border: 0;
-          &.apple {background-position: -17px -1px}
+          &.apple {border-left: 1px solid; background-position: -13px -1px}
           &.blackberry {background-position: -74px -1px}
           &.android {background-position: -140px -1px}
           &.tunein {background-position: -210px -1px}

@@ -1,7 +1,10 @@
 .lt-ie8 body{ }
 .lt-ie8 #main-menu .social-links {float: none}
 .lt-ie8 #main-menu a {width: 160px}
-.lt-ie8 a.apple {width: 37px !important; background-position: -12px -1px !important}
+.lt-ie8 a.apple {
+  border-left-color: white;
+  border-left-style: solid;
+  border-left-width: 1px; width: 37px !important; background-position: -12px -1px !important}
 .lt-ie8 a.blackberry { background-position: -72px -1px !important}
 .lt-ie8 a.tunein { background-position: -208px -1px !important}
 .lt-ie8 form .actions input {height: 60px}
