@@ -21,10 +21,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem "rails-erd"
+end
+
 group :development, :test do
   gem "rspec-rails", "~> 2.13.0"
   gem "factory_girl_rails", "~> 4.2.1"
 end
+
 group :test do
   gem "faker", "~> 1.1.2"
   gem "capybara", "~> 2.0.2"
